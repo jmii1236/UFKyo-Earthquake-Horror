@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UFKyo-Earthquake-Horror", "UFKyo-Earthquake-Horror.csproj", "{EFEA8E6F-C83D-4140-ACF6-B5B860458B1F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFEA8E6F-C83D-4140-ACF6-B5B860458B1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFEA8E6F-C83D-4140-ACF6-B5B860458B1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFEA8E6F-C83D-4140-ACF6-B5B860458B1F}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{EFEA8E6F-C83D-4140-ACF6-B5B860458B1F}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{EFEA8E6F-C83D-4140-ACF6-B5B860458B1F}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{EFEA8E6F-C83D-4140-ACF6-B5B860458B1F}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
