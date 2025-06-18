@@ -1,47 +1,76 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfbigehpeh3n5"]
+[gd_scene load_steps=13 format=3 uid="uid://cfbigehpeh3n5"]
 
 [ext_resource type="PackedScene" uid="uid://c47krvq3ghs5w" path="res://PlayerDad/player_dad.tscn" id="1_u52ul"]
+[ext_resource type="Script" uid="uid://dfqmsjpo51kt7" path="res://level/MomNPC/MomNPC.cs" id="2_5gx2l"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5xgho"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qohg2"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 
-[sub_resource type="Sky" id="Sky_u52ul"]
-sky_material = SubResource("ProceduralSkyMaterial_5xgho")
+[sub_resource type="Sky" id="Sky_vkbyq"]
+sky_material = SubResource("ProceduralSkyMaterial_qohg2")
 
-[sub_resource type="Environment" id="Environment_vonw3"]
+[sub_resource type="Environment" id="Environment_ktfr2"]
 background_mode = 2
-sky = SubResource("Sky_u52ul")
+sky = SubResource("Sky_vkbyq")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u52ul"]
+[sub_resource type="NavigationMesh" id="NavigationMesh_qohg2"]
+vertices = PackedVector3Array(-4.57738, 0.420666, -4.57738, -4.57738, 0.420666, 4.67262, 4.67262, 0.420666, 4.67262, 4.67262, 0.420666, -4.57738)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+agent_height = 2.0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_u52ul"]
-material = SubResource("StandardMaterial3D_u52ul")
-size = Vector2(1000, 1000)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5gx2l"]
+albedo_color = Color(0.0348697, 0.511545, 0.0284888, 1)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_u52ul"]
-data = PackedVector3Array(50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, 50, -50, 0, -50, 50, 0, -50)
+[sub_resource type="PlaneMesh" id="PlaneMesh_44x8d"]
+material = SubResource("StandardMaterial3D_5gx2l")
+size = Vector2(10, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qohg2"]
+points = PackedVector3Array(5.07738, 0.079334, 5.07738, -5.07738, -0.079334, -5.07738, -5.07738, 0.079334, -5.07738, 5.07738, -0.079334, -5.07738, -5.07738, -0.079334, 5.07738, -5.07738, 0.079334, 5.07738, 5.07738, 0.079334, -5.07738, 5.07738, -0.079334, 5.07738)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qohg2"]
+albedo_color = Color(1, 0.498039, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vkbyq"]
+material = SubResource("StandardMaterial3D_qohg2")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ktfr2"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_vonw3")
+environment = SubResource("Environment_ktfr2")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0117872, -0.00678158, 0.0106611)
-mesh = SubResource("PlaneMesh_u52ul")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_u52ul")
-
 [node name="PlayerDad" parent="." instance=ExtResource("1_u52ul")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -3)
-linear_damp = 3.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54035, 1.01986, 0.206365)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_qohg2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+mesh = SubResource("PlaneMesh_44x8d")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_qohg2")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32331, 1.03055, 1.23089)
+script = ExtResource("2_5gx2l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("CapsuleMesh_vkbyq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_ktfr2")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="CharacterBody3D"]

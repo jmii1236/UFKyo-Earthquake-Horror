@@ -37,27 +37,27 @@ use_collision = true
 size = Vector3(10, 1, 10)
 
 [node name="NavigationNPC" parent="." instance=ExtResource("1_0afpl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.808, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.44493, 1.09915, -1.92823)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 8, 0)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16131, 0.478657, 1.33219)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50533, 0.491103, 0.590202)
 use_collision = true
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.247974, 0.499354, -0.151115)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.081135, 0.499354, -0.151115)
 use_collision = true
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.956391, 0.510753, -1.98989)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95954, 0.510753, -3.36344)
 use_collision = true
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.134171, 0.537388, 2.32372)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.134171, 0.537388, 2.8642)
 use_collision = true
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94808, 0.482023, 0.442144)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.45272, 0.482023, 0.442144)
 use_collision = true

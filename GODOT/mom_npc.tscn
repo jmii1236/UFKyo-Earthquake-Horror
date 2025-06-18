@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://c87ymy87kyhyv"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_orsqi"]
+script/source = "using Godot;
+using System;
+
+public partial class MomNpc : CharacterBody3D
+{
+	[Export]
+	public float Speed = 3.0f;
+
+	private NavigationAgent3D navAgent;
+
+	public override void _Ready()
+	{
+		navAgent = GetNode<NavigationAgent3D>(\"NavigationAgent3D\");
+	}
+
+	public override void _PhysicsProcess(double delta)
+	{
+		Vector3 currentLocation = GlobalTransform.Origin;
+		Vector3 nextLocation = navAgent.GetNextLocation();
+		Vector3 newVelocity = (nextLocation - currentLocation).Normalized() * Speed;
+
+		navAgent.SetVelocity(newVelocity);
+	}
+
+	public void UpdateTargetLocation(Vector3 targetLocation)
+	{
+		navAgent.SetTargetLocation(targetLocation);
+	}
+
+	private void _OnNavigationAgent3DTargetReached()
+	{
+		GD.Print(\"in range\");
+	}
+
+	private void _OnNavigationAgent3DVelocityComputed(Vector3 safeVelocity)
+	{
+		Velocity = Velocity.MoveToward(safeVelocity, 0.25f);
+		MoveAndSlide();
+	}
+}
+"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kjvxa"]
+albedo_color = Color(1, 0.482353, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_dlx3v"]
+material = SubResource("StandardMaterial3D_kjvxa")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gighq"]
+
+[node name="MomNPC" type="CharacterBody3D" groups=["momnpc"]]
+script = SubResource("CSharpScript_orsqi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_dlx3v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_gighq")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+avoidance_enabled = true
