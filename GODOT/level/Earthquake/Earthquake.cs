@@ -9,7 +9,6 @@ public partial class Earthquake : Node3D
     public override void _Ready()
     {
         _timer = GetNode<Timer>("Timer");
-        _timer.Timeout += () => GD.Print("Timeout!!");
         _timer.Timeout += () => globals.EmitSignal(Globals.SignalName.EarthquakeOccurs);
 
         globals = GetNode("/root/Globals") as Globals;
