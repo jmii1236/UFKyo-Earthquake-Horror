@@ -44,4 +44,6 @@ shape = SubResource("ConcavePolygonShape3D_u52ul")
 
 [node name="PlayerDad" parent="." instance=ExtResource("1_u52ul")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -3)
+contact_monitor = true
+max_contacts_reported = 1
 linear_damp = 3.0
