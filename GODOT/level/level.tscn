@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cfbigehpeh3n5"]
+[gd_scene load_steps=16 format=3 uid="uid://cfbigehpeh3n5"]
 
 [ext_resource type="PackedScene" uid="uid://c47krvq3ghs5w" path="res://PlayerDad/player_dad.tscn" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://fgwhvvmeae7m" path="res://level/Earthquake/earthquake.tscn" id="2_5gx2l"]
 [ext_resource type="Script" uid="uid://do5uypden6jop" path="res://level/GameOver.cs" id="3_qohg2"]
+[ext_resource type="Script" uid="uid://m4xso41vrq7c" path="res://MomNPC/MomNPC.cs" id="4_vkbyq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5xgho"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -17,6 +18,21 @@ sky = SubResource("Sky_u52ul")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="LabelSettings" id="LabelSettings_5gx2l"]
+font_size = 100
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktfr2"]
+albedo_color = Color(1, 0.423529, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_44x8d"]
+material = SubResource("StandardMaterial3D_ktfr2")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ivpvi"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_vkbyq"]
+vertices = PackedVector3Array(-499.512, 0.493218, -499.489, -499.512, 0.493218, 499.511, 499.488, 0.493218, 499.511, 499.488, 0.493218, -499.489)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u52ul"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_u52ul"]
@@ -25,9 +41,6 @@ size = Vector2(1000, 1000)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_u52ul"]
 data = PackedVector3Array(50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, 50, -50, 0, -50, 50, 0, -50)
-
-[sub_resource type="LabelSettings" id="LabelSettings_5gx2l"]
-font_size = 100
 
 [node name="Node3D" type="Node3D"]
 
@@ -38,17 +51,8 @@ environment = SubResource("Environment_vonw3")
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0117872, -0.00678158, 0.0106611)
-mesh = SubResource("PlaneMesh_u52ul")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_u52ul")
-
 [node name="PlayerDad" parent="." instance=ExtResource("1_u52ul")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0944, -3)
 contact_monitor = true
 max_contacts_reported = 1
 linear_damp = 3.0
@@ -76,3 +80,28 @@ layout_mode = 2
 text = "Game Over!"
 label_settings = SubResource("LabelSettings_5gx2l")
 horizontal_alignment = 1
+
+[node name="MomNPC" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04914, 0)
+script = ExtResource("4_vkbyq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MomNPC"]
+mesh = SubResource("CapsuleMesh_44x8d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MomNPC"]
+shape = SubResource("CapsuleShape3D_ivpvi")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="MomNPC"]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_vkbyq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0117872, -0.00678158, 0.0106611)
+mesh = SubResource("PlaneMesh_u52ul")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_u52ul")
