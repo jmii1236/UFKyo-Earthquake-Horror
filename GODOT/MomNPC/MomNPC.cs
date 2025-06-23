@@ -16,7 +16,6 @@ public partial class MomNPC : CharacterBody3D
 		playerDad = GetNode<RigidBody3D>("../PlayerDad");
 	}
 	
-	
 	public override void _PhysicsProcess(double delta)
 	{
 		// Make sure we have a valid target
@@ -37,6 +36,21 @@ public partial class MomNPC : CharacterBody3D
 
 		Velocity = Velocity.Lerp(direction * speed, (float)(accel * delta));
 
+			
+		Vector3 direction = Vector3.Zero;
+		
+		nav.TargetPosition = playerDad.GlobalPosition;
+		
+		// Check if we have a valid path
+		if (nav.IsNavigationFinished())
+			return;
+		
+		direction = nav.GetNextPathPosition() - GlobalPosition;
+		direction = direction.Normalized();
+		
+		Velocity = Velocity.Lerp(direction * speed, (float)(accel * delta));
+		
+    
 		MoveAndSlide();
 	}
 }
