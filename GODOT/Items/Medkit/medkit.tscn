@@ -6,7 +6,7 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_qa1p5"]
 
-[node name="Medkit" type="RigidBody3D"]
+[node name="Medkit" type="Area3D" groups=["Item"]]
 script = ExtResource("1_qa1p5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
