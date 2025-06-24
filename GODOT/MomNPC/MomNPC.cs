@@ -35,8 +35,7 @@ public partial class MomNPC : CharacterBody3D
 		direction = direction.Normalized();
 
 		Velocity = Velocity.Lerp(direction * speed, (float)(accel * delta));
-
-			
+    
 		direction = Vector3.Zero;
 		
 		nav.TargetPosition = playerDad.GlobalPosition;
@@ -50,7 +49,7 @@ public partial class MomNPC : CharacterBody3D
 		
 		Velocity = Velocity.Lerp(direction * speed, (float)(accel * delta));
 		
-    
+	
 		MoveAndSlide();
 	}
 }

@@ -1,18 +1,17 @@
-[gd_scene load_steps=41 format=3 uid="uid://cfbigehpeh3n5"]
+[gd_scene load_steps=40 format=3 uid="uid://cfbigehpeh3n5"]
 
 [ext_resource type="PackedScene" uid="uid://c47krvq3ghs5w" path="res://PlayerDad/player_dad.tscn" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://fgwhvvmeae7m" path="res://level/Earthquake/earthquake.tscn" id="2_5gx2l"]
 [ext_resource type="Script" uid="uid://do5uypden6jop" path="res://level/GameOver.cs" id="3_qohg2"]
 [ext_resource type="Script" uid="uid://m4xso41vrq7c" path="res://MomNPC/MomNPC.cs" id="4_vkbyq"]
 [ext_resource type="Script" uid="uid://cssam1v6lavyf" path="res://FireAI/FireAI.cs" id="6_44x8d"]
-[ext_resource type="PackedScene" uid="uid://dylrm1rbyavji" path="res://house/house_interior_pt_1.tscn" id="6_ivpvi"]
 [ext_resource type="Shader" uid="uid://r6gx1x8qs5wc" path="res://FireAI/FireShader.tres" id="7_ivpvi"]
 [ext_resource type="Texture2D" uid="uid://dsmkru5jwi1tx" path="res://FireAI/Voronoi01.png" id="7_rhqlf"]
 [ext_resource type="Texture2D" uid="uid://d27inr8m357y4" path="res://FireAI/Flame02.png" id="9_m3nah"]
 [ext_resource type="Shader" uid="uid://c8imwsi8pibue" path="res://FireAI/SimpleParticles.tres" id="10_fm1jd"]
 [ext_resource type="Texture2D" uid="uid://baekufnl0oyln" path="res://FireAI/Flare00.PNG" id="11_7jqyl"]
 [ext_resource type="PackedScene" uid="uid://dssace8rxnxga" path="res://FireAI/fire_trail.tscn" id="11_rhqlf"]
-[ext_resource type="PackedScene" uid="uid://cd7hhr2ghs3bw" path="res://Items/Medkit/medkit.tscn" id="13_l5lfc"]
+[ext_resource type="PackedScene" uid="uid://bqmplpp74sffc" path="res://house/House_Interior_Pt1.glb" id="12_rhqlf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5xgho"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -247,10 +246,7 @@ lifetime = 2.0
 process_material = SubResource("ParticleProcessMaterial_h74y2")
 draw_pass_1 = SubResource("QuadMesh_7cdnq")
 
-[node name="House_Interior_Pt1" parent="." instance=ExtResource("6_ivpvi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
-
 [node name="FireTrail" parent="." instance=ExtResource("11_rhqlf")]
 
-[node name="Medkit" parent="." instance=ExtResource("13_l5lfc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.181489, 0.493219, -9.67069)
+[node name="House_Interior_Pt1" parent="." instance=ExtResource("12_rhqlf")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 7.20462, -0.582192, 28.0032)
