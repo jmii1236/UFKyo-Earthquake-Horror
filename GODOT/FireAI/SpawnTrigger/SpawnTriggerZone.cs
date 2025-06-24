@@ -13,9 +13,7 @@ public partial class SpawnTriggerZone : Area3D
 
     public void _On_Body_Entered(Node3D body)
     {
-        if ()
-        GD.Print("Hey!");
-        if (thing_to_spawn == null) return;
+        if (thing_to_spawn == null && body.IsInGroup("Player")) return;
         AddChild(thing_to_spawn);
     }
 }
