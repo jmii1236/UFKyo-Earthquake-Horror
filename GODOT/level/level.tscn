@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cfbigehpeh3n5"]
+[gd_scene load_steps=42 format=3 uid="uid://cfbigehpeh3n5"]
 
 [ext_resource type="PackedScene" uid="uid://c47krvq3ghs5w" path="res://PlayerDad/player_dad.tscn" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://fgwhvvmeae7m" path="res://level/Earthquake/earthquake.tscn" id="2_5gx2l"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dssace8rxnxga" path="res://FireAI/fire_trail.tscn" id="11_rhqlf"]
 [ext_resource type="PackedScene" uid="uid://bqmplpp74sffc" path="res://house/House_Interior_Pt1.glb" id="12_rhqlf"]
 [ext_resource type="PackedScene" uid="uid://cd7hhr2ghs3bw" path="res://Items/Medkit/medkit.tscn" id="13_l5lfc"]
+[ext_resource type="PackedScene" uid="uid://clnnp3e7xet7j" path="res://FireAI/SpawnTrigger/spawn_trigger_zone.tscn" id="14_m3nah"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5xgho"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -254,3 +255,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 7.20462, -0.582192, 28.0032)
 
 [node name="Medkit" parent="." instance=ExtResource("13_l5lfc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.268802, 0.493218, -11.3065)
+
+[node name="SpawnTriggerZone" parent="." instance=ExtResource("14_m3nah")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3981, 0, 0)
