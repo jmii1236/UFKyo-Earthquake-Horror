@@ -21,19 +21,8 @@ public partial class MomNPC : CharacterBody3D
 		// Make sure we have a valid target
 		if (playerDad == null)
 			return;
-
+			
 		Vector3 direction = Vector3.Zero;
-
-		nav.TargetPosition = playerDad.GlobalPosition - Vector3.One; // Offset slightly to avoid collision;
-
-		// Check if we have a valid path
-		if (nav.IsNavigationFinished())
-			return;
-
-		direction = nav.GetNextPathPosition() - GlobalPosition;
-		direction = direction.Normalized();
-
-		Velocity = Velocity.Lerp(direction * speed, (float)(accel * delta));
 		
 		nav.TargetPosition = playerDad.GlobalPosition;
 		
@@ -46,7 +35,6 @@ public partial class MomNPC : CharacterBody3D
 		
 		Velocity = Velocity.Lerp(direction * speed, (float)(accel * delta));
 		
-	
 		MoveAndSlide();
 	}
 }
