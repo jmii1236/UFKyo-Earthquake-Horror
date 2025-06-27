@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://clnnp3e7xet7j"]
+
+[ext_resource type="Script" uid="uid://b4lfvwhpngjau" path="res://FireAI/SpawnTrigger/SpawnTriggerZone.cs" id="1_us1d8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ysr17"]
+size = Vector3(50, 50, 10)
+
+[node name="SpawnTriggerZone" type="Area3D"]
+script = ExtResource("1_us1d8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ysr17")

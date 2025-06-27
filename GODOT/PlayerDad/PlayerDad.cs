@@ -12,6 +12,9 @@ public partial class PlayerDad : RigidBody3D
 	private Camera3D Camera;
 	private Node3D TwistPivot;
 	private Node3D PitchPivot;
+	private Globals globals = null;
+	private RayCast3D raycast;
+	private bool is_holding_item = false;
 
 	private float PitchAngle = 0.0f; // to track the current pitch for clamping
 
@@ -21,29 +24,37 @@ public partial class PlayerDad : RigidBody3D
 		TwistPivot = GetNode<Node3D>("TwistPivot");
 		PitchPivot = TwistPivot.GetNode<Node3D>("PitchPivot");
 		Camera = PitchPivot.GetNode<Camera3D>("Camera3D");
+
+		globals = GetNode("/root/Globals") as Globals;
+		raycast = GetNode("%ItemChecker") as RayCast3D;
 	}
 
 	public override void _Process(double delta)
 	{
 		Vector3 input = Vector3.Zero;
 		input.X = Input.GetAxis("move_left", "move_right");
-		input.Z = Input.GetAxis("move_forward", "move_backward"); 
+		input.Z = Input.GetAxis("move_forward", "move_backward");
 
 		// Rotate input relative to player facing direction (TwistPivot)
 		Vector3 direction = TwistPivot.Basis * input;
 		ApplyCentralForce(direction * 1200.0f * (float)delta);
-		
+
 		// Jump, crawl mechanics
-		if (GetContactCount() > 0) {
-			if (Input.IsActionJustPressed("jump")) {
+		if (GetContactCount() > 0)
+		{
+			if (Input.IsActionJustPressed("jump"))
+			{
 				ApplyCentralImpulse(new Vector3(0, JumpVelocity, 0));
 			}
-			else if (Input.IsActionJustPressed("crawl")) {
+			else if (Input.IsActionJustPressed("crawl"))
+			{
 				Crawling = !Crawling;
-				if (Crawling) {
+				if (Crawling)
+				{
 					Camera.Position = new Vector3(0, 0.1f, 0);
 				}
-				else {
+				else
+				{
 					Camera.Position = new Vector3(0, 0.5f, 0);
 				}
 			}
@@ -53,10 +64,19 @@ public partial class PlayerDad : RigidBody3D
 		{
 			Input.MouseMode = Input.MouseModeEnum.Visible;
 		}
-		
-		
+
+		if (raycast.IsColliding())
+		{
+			Node3D Collider = raycast.GetCollider() as Node3D;
+			if (Collider.IsInGroup("Item") && Input.IsActionJustPressed("interact"))
+			{
+				Item item = Collider as Item;
+				_On_Item_Interaction(item);				
+			}
+		}
+
 		// Apply horizontal rotation
-		TwistPivot.RotateY(TwistInput);
+			TwistPivot.RotateY(TwistInput);
 
 		// Apply vertical pitch with clamping
 		PitchAngle = Mathf.Clamp(PitchAngle + PitchInput, Mathf.DegToRad(-30), Mathf.DegToRad(30));
@@ -74,5 +94,17 @@ public partial class PlayerDad : RigidBody3D
 			TwistInput = -mouseMotion.Relative.X * MouseSensitivity;
 			PitchInput = -mouseMotion.Relative.Y * MouseSensitivity;
 		}
+	}
+
+	private void _On_Item_Interaction(Node3D item)
+	{
+		if (is_holding_item) return;
+
+		item.Reparent(this);
+		Vector3 NewPosition = new Vector3(0, 0, 0);
+
+		item.Position = NewPosition;
+
+		is_holding_item = true;
 	}
 }

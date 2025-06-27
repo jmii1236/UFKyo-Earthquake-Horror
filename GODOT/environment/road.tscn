@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyfwc8ufnsr25"]
+
+[ext_resource type="Texture2D" uid="uid://dt00pu26ir6is" path="res://environment/road/Road.png" id="1_ghify"]
+
+[sub_resource type="Curve3D" id="Curve3D_166il"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.86619, 0, 0.906319, 0, 0, 0, 0, 0, 0, -1.92387, 0, -0.288374, 0, 0, 0, 0, 0, 0, -2.0145, 0, -1.04639, 0, 0, 0, 0, 0, 0, -1.0917, 0, -1.18645, 0, 0, 0, 0, 0, 0, 0.564389, 0, -1.1535, 0, 0, 0, 0, 0, 0, 1.48719, 0, -1.14526, 0, 0, 0, 0, 0, 0, 1.56134, 0, -0.156546, 0, 0, 0, 0, 0, 0, 1.66021, 0, 0.881601),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xvgt6"]
+albedo_texture = ExtResource("1_ghify")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_166il")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D"]
+use_collision = true
+polygon = PackedVector2Array(0, 0, -0.00463867, 0.0121002, 0.995728, 0.0130539, 1, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("StandardMaterial3D_xvgt6")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd7hhr2ghs3bw"]
+
+[ext_resource type="Script" uid="uid://b2sdat78t2s66" path="res://Items/Medkit/Medkit.cs" id="1_qa1p5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kb7bx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qa1p5"]
+
+[node name="Medkit" type="Area3D" groups=["Item"]]
+script = ExtResource("1_qa1p5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_kb7bx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_qa1p5")
