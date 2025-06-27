@@ -1,12 +1,12 @@
 using Godot;
 
-public partial class MomNPC : CharacterBody3D
+public partial class ChildNpc : CharacterBody3D
 {
-	private float speed = 2.0f;
-	private float accel = 10.0f;
+	private float speed = 1.3f;
+	private float accel = 7.0f;
 	
 	private NavigationAgent3D nav;
-	[Export] private Node3D playerDad;
+	[Export] private CharacterBody3D playerDad;
 	
 	public override void _Ready()
 	{
