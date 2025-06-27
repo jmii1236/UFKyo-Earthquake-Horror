@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+[gd_scene load_steps=3 format=3 uid="uid://dvqwtta5pblt7"]
+=======
 [gd_scene load_steps=3 format=3 uid="uid://dvhysox4grosx"]
+>>>>>>> main
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_fm1jd"]
 
@@ -8,6 +12,10 @@ data = PackedVector3Array(0, 1, 0, 0, 1, 0, 0, 0.9924, -0.0868, 0, 1, 0, -0.0085
 [node name="MomTarget" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+<<<<<<< HEAD
+transparency = 1.0
+=======
+>>>>>>> main
 mesh = SubResource("CapsuleMesh_fm1jd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
