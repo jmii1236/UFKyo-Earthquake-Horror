@@ -22,6 +22,7 @@ public partial class MomNPC : CharacterBody3D
 		if (playerDad == null)
 			return;
 
+
 		Vector3 direction = Vector3.Zero;
 
 		nav.TargetPosition = playerDad.GlobalPosition - Vector3.One; // Offset slightly to avoid collision;
@@ -34,6 +35,8 @@ public partial class MomNPC : CharacterBody3D
 		direction = direction.Normalized();
 
 		Velocity = Velocity.Lerp(direction * speed, (float)(accel * delta));
+    
+		direction = Vector3.Zero;
 		
 		nav.TargetPosition = playerDad.GlobalPosition;
 		
