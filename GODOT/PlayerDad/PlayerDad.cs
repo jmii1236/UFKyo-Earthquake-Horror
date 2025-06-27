@@ -1,12 +1,11 @@
 using Godot;
 using System;
 
-public partial class PlayerDad : CharacterBody3D
+public partial class PlayerDad : RigidBody3D
 {
 	private float MouseSensitivity = 0.001f;
 	private float TwistInput = 0.0f;
 	private float PitchInput = 0.0f;
-	private float Speed = 5.0f;
 	private float JumpVelocity = 4.5f;
 	private float Gravity = 9.8f;
 	private bool Crawling = false;
@@ -30,28 +29,13 @@ public partial class PlayerDad : CharacterBody3D
 		raycast = GetNode("%ItemChecker") as RayCast3D;
 	}
 
-	public override void _PhysicsProcess(double delta)
+	public override void _Process(double delta)
 	{
 		Vector3 input = Vector3.Zero;
 		input.X = Input.GetAxis("move_left", "move_right");
 		input.Z = Input.GetAxis("move_forward", "move_backward");
 
 		// Rotate input relative to player facing direction (TwistPivot)
-		Vector3 direction = (TwistPivot.Basis * input).Normalized();
-		Vector3 V = Velocity;
-		V.X = direction.X * Speed;
-		V.Z = direction.Z * Speed;
-		
-		// Gravity
-		if (!IsOnFloor()) {
-			V.Y -= Gravity * (float)delta;
-		}
-		
-		// Jump, crawl mechanics
-		if (IsOnFloor()) {
-			if (Input.IsActionJustPressed("jump")) {
-				V.Y = JumpVelocity;
-
 		Vector3 direction = TwistPivot.Basis * input;
 		ApplyCentralForce(direction * 1200.0f * (float)delta);
 
@@ -98,9 +82,6 @@ public partial class PlayerDad : CharacterBody3D
 		PitchAngle = Mathf.Clamp(PitchAngle + PitchInput, Mathf.DegToRad(-30), Mathf.DegToRad(30));
 		PitchPivot.Rotation = new Vector3(PitchAngle, 0, 0);
 
-		Velocity = V;
-		MoveAndSlide();
-		
 		// Reset inputs each frame
 		TwistInput = 0.0f;
 		PitchInput = 0.0f;

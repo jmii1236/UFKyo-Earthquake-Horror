@@ -6,7 +6,7 @@ public partial class FireAI : CharacterBody3D
 	private float accel = 10.0f;
 
 	private NavigationAgent3D nav;
-	private CharacterBody3D playerDad;
+	private RigidBody3D playerDad;
 
 	private PackedScene fireTrailScene;
 	private float trailTimer = 0.0f;
@@ -17,7 +17,7 @@ public partial class FireAI : CharacterBody3D
 		nav = GetNode<NavigationAgent3D>("NavigationAgent3D");
 
 		// Find PlayerDad directly
-		playerDad = GetNode<CharacterBody3D>("../PlayerDad");
+		playerDad = GetNode<RigidBody3D>("../PlayerDad");
 
 		fireTrailScene = GD.Load<PackedScene>("res://FireAI/fire_trail.tscn");
 
