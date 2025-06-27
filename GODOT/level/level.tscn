@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cfbigehpeh3n5"]
+[gd_scene load_steps=42 format=3 uid="uid://cfbigehpeh3n5"]
 
 [ext_resource type="PackedScene" uid="uid://c47krvq3ghs5w" path="res://PlayerDad/player_dad.tscn" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://fgwhvvmeae7m" path="res://level/Earthquake/earthquake.tscn" id="2_5gx2l"]
@@ -129,6 +129,9 @@ turbulence_noise_scale = 4.873
 
 [sub_resource type="QuadMesh" id="QuadMesh_7cdnq"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_7jqyl"]
+size = Vector3(5.06003, 1, 0.78894)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -140,9 +143,6 @@ shadow_enabled = true
 
 [node name="PlayerDad" parent="." instance=ExtResource("1_u52ul")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.1936, 1.85469, -3)
-contact_monitor = true
-max_contacts_reported = 1
-linear_damp = 3.0
 
 [node name="Earthquake" parent="." instance=ExtResource("2_5gx2l")]
 
@@ -237,9 +237,6 @@ draw_pass_1 = SubResource("QuadMesh_7cdnq")
 [node name="FireTrail" parent="." instance=ExtResource("11_rhqlf")]
 transform = Transform3D(-0.528601, 0, -0.84887, 0, 1, 0, 0.84887, 0, -0.528601, -40.7299, 1.49907, 5.29755)
 
-[node name="House_Interior_Pt1" parent="." instance=ExtResource("12_rhqlf")]
-transform = Transform3D(-0.117323, 0, -1.99656, 0, 2, 0, 1.99656, 0, -0.117323, -54.2355, -0.582192, -12.0344)
-
 [node name="Medkit" parent="." instance=ExtResource("13_l5lfc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.9321, 1.05077, -12.6826)
 
@@ -248,3 +245,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3981, 0, 0)
 
 [node name="MomTarget" parent="." instance=ExtResource("16_7jqyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.6643, 1.15272, -24.3089)
+
+[node name="House_Interior_Pt1" parent="." instance=ExtResource("12_rhqlf")]
+transform = Transform3D(2.38498e-08, 0, -2, 0, 2, 0, 2, 0, 2.38498e-08, -60.28, -0.4, -1.637)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House_Interior_Pt1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House_Interior_Pt1/StaticBody3D"]
+transform = Transform3D(0.840567, 0.541708, 0, -0.541708, 0.840567, 0, 0, 0, 1, -1.49407, 1.22029, 3.63636)
+shape = SubResource("BoxShape3D_7jqyl")

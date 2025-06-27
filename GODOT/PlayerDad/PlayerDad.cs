@@ -52,6 +52,17 @@ public partial class PlayerDad : CharacterBody3D
 			if (Input.IsActionJustPressed("jump")) {
 				V.Y = JumpVelocity;
 			}
+			else if (Input.IsActionJustPressed("crawl")) {
+				Crawling = !Crawling;
+				if (Crawling)
+				{
+					Camera.Position = new Vector3(0, 0.1f, 0);
+				}
+				else
+				{
+					Camera.Position = new Vector3(0, 0.5f, 0);
+				}
+			}
 		}
 
 		// Jump, crawl mechanics
