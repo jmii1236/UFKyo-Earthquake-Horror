@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cfbigehpeh3n5"]
+[gd_scene load_steps=43 format=3 uid="uid://cfbigehpeh3n5"]
 
 [ext_resource type="PackedScene" uid="uid://c47krvq3ghs5w" path="res://PlayerDad/player_dad.tscn" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://fgwhvvmeae7m" path="res://level/Earthquake/earthquake.tscn" id="2_5gx2l"]
