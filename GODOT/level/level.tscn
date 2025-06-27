@@ -264,3 +264,21 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14.69, -0.1, -29.5)
 
 [node name="Road3" parent="." instance=ExtResource("17_m5ivw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14.69, -0.1, -40.5)
+
+[node name="Road4" parent="." instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.98907, -0.0763947, -18.6427)
+
+[node name="Road5" parent="." instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.99444, -0.1, -29.5021)
+
+[node name="Road6" parent="." instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.99444, -0.1, -40.5021)
+
+[node name="Road7" parent="." instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.68631, -0.0763947, -18.6644)
+
+[node name="Road8" parent="." instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.68094, -0.1, -29.5238)
+
+[node name="Road9" parent="." instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.68094, -0.1, -40.5238)
