@@ -51,30 +51,29 @@ public partial class PlayerDad : CharacterBody3D
 		if (IsOnFloor()) {
 			if (Input.IsActionJustPressed("jump")) {
 				V.Y = JumpVelocity;
-
-		Vector3 direction = TwistPivot.Basis * input;
-		ApplyCentralForce(direction * 1200.0f * (float)delta);
-
-		// Jump, crawl mechanics
-		if (GetContactCount() > 0)
-		{
-			if (Input.IsActionJustPressed("jump"))
-			{
-				ApplyCentralImpulse(new Vector3(0, JumpVelocity, 0));
-			}
-			else if (Input.IsActionJustPressed("crawl"))
-			{
-				Crawling = !Crawling;
-				if (Crawling)
-				{
-					Camera.Position = new Vector3(0, 0.1f, 0);
-				}
-				else
-				{
-					Camera.Position = new Vector3(0, 0.5f, 0);
-				}
 			}
 		}
+
+		// Jump, crawl mechanics
+		//if (GetContactCount() > 0)
+		//{
+			//if (Input.IsActionJustPressed("jump"))
+			//{
+				//ApplyCentralImpulse(new Vector3(0, JumpVelocity, 0));
+			//}
+			//else if (Input.IsActionJustPressed("crawl"))
+			//{
+				//Crawling = !Crawling;
+				//if (Crawling)
+				//{
+					//Camera.Position = new Vector3(0, 0.1f, 0);
+				//}
+				//else
+				//{
+					//Camera.Position = new Vector3(0, 0.5f, 0);
+				//}
+			//}
+		//}
 
 		if (Input.IsActionJustPressed("ui_cancel"))
 		{
@@ -92,7 +91,7 @@ public partial class PlayerDad : CharacterBody3D
 		}
 
 		// Apply horizontal rotation
-			TwistPivot.RotateY(TwistInput);
+		TwistPivot.RotateY(TwistInput);
 
 		// Apply vertical pitch with clamping
 		PitchAngle = Mathf.Clamp(PitchAngle + PitchInput, Mathf.DegToRad(-30), Mathf.DegToRad(30));

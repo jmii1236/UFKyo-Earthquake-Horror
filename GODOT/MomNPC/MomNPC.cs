@@ -6,14 +6,14 @@ public partial class MomNPC : CharacterBody3D
 	private float accel = 10.0f;
 	
 	private NavigationAgent3D nav;
-	private RigidBody3D playerDad;
+	private CharacterBody3D playerDad;
 	
 	public override void _Ready()
 	{
 		nav = GetNode<NavigationAgent3D>("NavigationAgent3D");
 		
 		// Find PlayerDad directly
-		playerDad = GetNode<RigidBody3D>("../PlayerDad");
+		playerDad = GetNode<CharacterBody3D>("../PlayerDad");
 	}
 	
 	public override void _PhysicsProcess(double delta)
