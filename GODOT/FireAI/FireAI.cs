@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Godot;
 
 public partial class FireAI : CharacterBody3D
@@ -11,6 +12,7 @@ public partial class FireAI : CharacterBody3D
 	private PackedScene fireTrailScene;
 	private float trailTimer = 0.0f;
 	private float trailInterval = 0.2f;
+	private Globals globals = null;
 
 	public override void _Ready()
 	{
@@ -24,6 +26,8 @@ public partial class FireAI : CharacterBody3D
 		if (fireTrailScene == null)
 			GD.PushError("FireTrail.tscn could not be loaded. Check the path.");
 
+		globals = GetNode("/root/Globals") as Globals;
+		globals.DisableFire += _On_Fire_Disable;
 	}
 
 
@@ -64,6 +68,11 @@ public partial class FireAI : CharacterBody3D
 		// Add it to the root of the scene, NOT under FireAI
 		GetTree().CurrentScene.AddChild(trail);
 		GD.Print("Spawned fire trail at: " + GlobalPosition);
- 
+
+	}
+
+	private void _On_Fire_Disable()
+	{
+		ProcessMode = Node.ProcessModeEnum.Disabled;
 	}
 }
