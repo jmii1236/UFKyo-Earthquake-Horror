@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cfbigehpeh3n5"]
+[gd_scene load_steps=43 format=3 uid="uid://cfbigehpeh3n5"]
 
 [ext_resource type="PackedScene" uid="uid://c47krvq3ghs5w" path="res://PlayerDad/player_dad.tscn" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://fgwhvvmeae7m" path="res://level/Earthquake/earthquake.tscn" id="2_5gx2l"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bqmplpp74sffc" path="res://house/House_Interior_Pt1.glb" id="12_rhqlf"]
 [ext_resource type="PackedScene" uid="uid://cd7hhr2ghs3bw" path="res://Items/Medkit/medkit.tscn" id="13_l5lfc"]
 [ext_resource type="PackedScene" uid="uid://clnnp3e7xet7j" path="res://FireAI/SpawnTrigger/spawn_trigger_zone.tscn" id="14_m3nah"]
+[ext_resource type="PackedScene" uid="uid://c4h65fys53dtx" path="res://FireAI/FireSafeZone/fire_safe_zone.tscn" id="15_m5ivw"]
 [ext_resource type="PackedScene" uid="uid://dvhysox4grosx" path="res://MomNPC/mom_target.tscn" id="16_7jqyl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5xgho"]
@@ -242,6 +243,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.9321, 1.05077, -12.6826)
 
 [node name="SpawnTriggerZone" parent="." instance=ExtResource("14_m3nah")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3981, 0, 0)
+
+[node name="FireSafeZone" parent="." instance=ExtResource("15_m5ivw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.5986, 6.50576, 26.0793)
 
 [node name="MomTarget" parent="." instance=ExtResource("16_7jqyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.6643, 1.15272, -24.3089)

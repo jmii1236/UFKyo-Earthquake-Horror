@@ -9,4 +9,6 @@ public partial class Globals : Node
 	public delegate void DeathEventHandler();
 	[Signal]
 	public delegate void GameOverEventHandler();
+	[Signal]
+	public delegate void DisableFireEventHandler();
 }
