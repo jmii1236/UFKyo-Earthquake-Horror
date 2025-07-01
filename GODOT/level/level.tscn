@@ -194,7 +194,7 @@ navigation_mesh = SubResource("NavigationMesh_fm1jd")
 [node name="World" parent="NavigationRegion3D" instance=ExtResource("5_fm1jd")]
 transform = Transform3D(400, 0, 0, 0, 400, 0, 0, 0, 400, -3.00684, -32.8963, 4.55495)
 
-[node name="FireAI" type="CharacterBody3D" parent="."]
+[node name="FireAI" type="CharacterBody3D" parent="." groups=["Fire"]]
 transform = Transform3D(-0.993562, 0, 0.11329, 0, 1, 0, -0.11329, 0, -0.993562, -42.2384, 1.88853, 7.72164)
 script = ExtResource("6_44x8d")
 

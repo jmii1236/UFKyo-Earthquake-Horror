@@ -5,4 +5,8 @@ public partial class Globals : Node
 {
 	[Signal]
 	public delegate void EarthquakeOccursEventHandler();
+	[Signal]
+	public delegate void DeathEventHandler();
+	[Signal]
+	public delegate void GameOverEventHandler();
 }

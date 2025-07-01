@@ -16,8 +16,8 @@ public partial class PlayerDad : CharacterBody3D
 	private Globals globals = null;
 	private RayCast3D raycast;
 	private bool is_holding_item = false;
-
 	private float PitchAngle = 0.0f; // to track the current pitch for clamping
+	private Area3D FireDetector = null;
 
 	public override void _Ready()
 	{
@@ -28,6 +28,10 @@ public partial class PlayerDad : CharacterBody3D
 
 		globals = GetNode("/root/Globals") as Globals;
 		raycast = GetNode("%ItemChecker") as RayCast3D;
+		FireDetector = GetNode("FireDetector") as Area3D;
+
+		FireDetector.BodyEntered += _On_Body_Entered;
+		globals.Death += _On_Death;
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -41,18 +45,22 @@ public partial class PlayerDad : CharacterBody3D
 		Vector3 V = Velocity;
 		V.X = direction.X * Speed;
 		V.Z = direction.Z * Speed;
-		
+
 		// Gravity
-		if (!IsOnFloor()) {
+		if (!IsOnFloor())
+		{
 			V.Y -= Gravity * (float)delta;
 		}
-		
+
 		// Jump, crawl mechanics
-		if (IsOnFloor()) {
-			if (Input.IsActionJustPressed("jump")) {
+		if (IsOnFloor())
+		{
+			if (Input.IsActionJustPressed("jump"))
+			{
 				V.Y = JumpVelocity;
 			}
-			else if (Input.IsActionJustPressed("crawl")) {
+			else if (Input.IsActionJustPressed("crawl"))
+			{
 				Crawling = !Crawling;
 				if (Crawling)
 				{
@@ -68,22 +76,22 @@ public partial class PlayerDad : CharacterBody3D
 		// Jump, crawl mechanics
 		//if (GetContactCount() > 0)
 		//{
-			//if (Input.IsActionJustPressed("jump"))
-			//{
-				//ApplyCentralImpulse(new Vector3(0, JumpVelocity, 0));
-			//}
-			//else if (Input.IsActionJustPressed("crawl"))
-			//{
-				//Crawling = !Crawling;
-				//if (Crawling)
-				//{
-					//Camera.Position = new Vector3(0, 0.1f, 0);
-				//}
-				//else
-				//{
-					//Camera.Position = new Vector3(0, 0.5f, 0);
-				//}
-			//}
+		//if (Input.IsActionJustPressed("jump"))
+		//{
+		//ApplyCentralImpulse(new Vector3(0, JumpVelocity, 0));
+		//}
+		//else if (Input.IsActionJustPressed("crawl"))
+		//{
+		//Crawling = !Crawling;
+		//if (Crawling)
+		//{
+		//Camera.Position = new Vector3(0, 0.1f, 0);
+		//}
+		//else
+		//{
+		//Camera.Position = new Vector3(0, 0.5f, 0);
+		//}
+		//}
 		//}
 
 		if (Input.IsActionJustPressed("ui_cancel"))
@@ -97,7 +105,7 @@ public partial class PlayerDad : CharacterBody3D
 			if (Collider.IsInGroup("Item") && Input.IsActionJustPressed("interact"))
 			{
 				Item item = Collider as Item;
-				_On_Item_Interaction(item);				
+				_On_Item_Interaction(item);
 			}
 		}
 
@@ -110,7 +118,7 @@ public partial class PlayerDad : CharacterBody3D
 
 		Velocity = V;
 		MoveAndSlide();
-		
+
 		// Reset inputs each frame
 		TwistInput = 0.0f;
 		PitchInput = 0.0f;
@@ -135,5 +143,19 @@ public partial class PlayerDad : CharacterBody3D
 		item.Position = NewPosition;
 
 		is_holding_item = true;
+	}
+
+	private void _On_Body_Entered(Node3D body)
+	{
+		if (body.IsInGroup("Fire"))
+		{
+			_On_Death();
+		}
+	}
+
+	private void _On_Death()
+	{
+		EmitSignal("GameOver");
+		GD.Print("Game Over, Died");
 	}
 }
