@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cagnctsnr11yr"]
+
+[ext_resource type="Script" uid="uid://ddtk7hpcrexws" path="res://level/WinTriggerZone/WinTriggerZone.cs" id="1_wpcsh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rm4gh"]
+size = Vector3(10, 10, 5)
+
+[node name="WinTriggerZone" type="Area3D"]
+script = ExtResource("1_wpcsh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_rm4gh")

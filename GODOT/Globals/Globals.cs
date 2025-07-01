@@ -11,4 +11,6 @@ public partial class Globals : Node
 	public delegate void GameOverEventHandler();
 	[Signal]
 	public delegate void DisableFireEventHandler();
+	[Signal]
+	public delegate void WinGameEventHandler();
 }
