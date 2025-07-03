@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cfbigehpeh3n5"]
+[gd_scene load_steps=44 format=3 uid="uid://cfbigehpeh3n5"]
 
 [ext_resource type="PackedScene" uid="uid://c47krvq3ghs5w" path="res://PlayerDad/player_dad.tscn" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://fgwhvvmeae7m" path="res://level/Earthquake/earthquake.tscn" id="2_5gx2l"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://clnnp3e7xet7j" path="res://FireAI/SpawnTrigger/spawn_trigger_zone.tscn" id="14_m3nah"]
 [ext_resource type="PackedScene" uid="uid://dvhysox4grosx" path="res://MomNPC/mom_target.tscn" id="16_7jqyl"]
 [ext_resource type="PackedScene" uid="uid://eon0ykmpok72" path="res://Roads/road.tscn" id="17_m5ivw"]
+[ext_resource type="PackedScene" uid="uid://dkutcelr7122u" path="res://ModernApartmentComplex.glb" id="18_sui6v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5xgho"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -239,7 +240,7 @@ draw_pass_1 = SubResource("QuadMesh_7cdnq")
 transform = Transform3D(-0.528601, 0, -0.84887, 0, 1, 0, 0.84887, 0, -0.528601, -40.7299, 1.49907, 5.29755)
 
 [node name="Medkit" parent="." instance=ExtResource("13_l5lfc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.2628, 1.25644, -12.7616)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.1323, 1.25632, -58.9999)
 
 [node name="SpawnTriggerZone" parent="." instance=ExtResource("14_m3nah")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3981, 0, 0)
@@ -248,7 +249,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3981, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.6643, 1.15272, -24.3089)
 
 [node name="House_Interior_Pt1" parent="." instance=ExtResource("12_rhqlf")]
-transform = Transform3D(2.38498e-08, 0, -2, 0, 2, 0, 2, 0, 2.38498e-08, -60.28, -0.4, -1.637)
+transform = Transform3D(2.38498e-08, 0, -2, 0, 2, 0, 2, 0, 2.38498e-08, -43.1495, -0.400122, -47.8753)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="House_Interior_Pt1"]
 
@@ -399,3 +400,13 @@ metadata/_edit_lock_ = true
 [node name="Road36" parent="." instance=ExtResource("17_m5ivw")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.6141, -0.1, -73.1104)
 metadata/_edit_lock_ = true
+
+[node name="ModernApartmentComplex" parent="." instance=ExtResource("18_sui6v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4159, 8.25875, -50.3242)
+metadata/_edit_lock_ = true
+
+[node name="ModernApartmentComplex2" parent="." instance=ExtResource("18_sui6v")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25.0011, 7.53431, -121.076)
+
+[node name="ModernApartmentComplex3" parent="." instance=ExtResource("18_sui6v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.129, 7, -148.631)
