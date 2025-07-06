@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cfbigehpeh3n5"]
+[gd_scene load_steps=46 format=3 uid="uid://cfbigehpeh3n5"]
 
 [ext_resource type="PackedScene" uid="uid://c47krvq3ghs5w" path="res://PlayerDad/player_dad.tscn" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://fgwhvvmeae7m" path="res://level/Earthquake/earthquake.tscn" id="2_5gx2l"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cd7hhr2ghs3bw" path="res://Items/Medkit/medkit.tscn" id="13_l5lfc"]
 [ext_resource type="PackedScene" uid="uid://clnnp3e7xet7j" path="res://FireAI/SpawnTrigger/spawn_trigger_zone.tscn" id="14_m3nah"]
 [ext_resource type="PackedScene" uid="uid://dvhysox4grosx" path="res://MomNPC/mom_target.tscn" id="16_7jqyl"]
-[ext_resource type="Script" uid="uid://b67kiqe7vt3rf" path="res://level/ChildNpc.cs" id="17_m5ivw"]
+[ext_resource type="Script" uid="uid://b67kiqe7vt3rf" path="res://ChildNPC/ChildNpc.cs" id="17_m5ivw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5xgho"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -139,6 +139,8 @@ material = SubResource("StandardMaterial3D_m5ivw")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tv7ir"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m5ivw"]
+
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -182,7 +184,7 @@ navigation_mesh = SubResource("NavigationMesh_fm1jd")
 transform = Transform3D(400, 0, 0, 0, 400, 0, 0, 0, 400, -3.00684, -32.8963, 4.55495)
 
 [node name="FireAI" type="CharacterBody3D" parent="."]
-transform = Transform3D(-0.993562, 0, 0.11329, 0, 1, 0, -0.11329, 0, -0.993562, -42.2384, 1.88853, 7.72164)
+transform = Transform3D(-0.993562, 0, 0.11329, 0, 1, 0, -0.11329, 0, -0.993562, -47.6939, 1.88853, 7.72164)
 script = ExtResource("6_44x8d")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FireAI"]
@@ -196,7 +198,7 @@ shape = SubResource("CylinderShape3D_6gtgk")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="FireAI"]
 
 [node name="FireShader" type="Node3D" parent="FireAI"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13379, -0.038104, 0)
+transform = Transform3D(-0.956453, 0, 0.291888, 0, 1, 0, -0.291888, 0, -0.956453, -2.39793, -0.267224, -1.6701)
 
 [node name="Flames" type="GPUParticles3D" parent="FireAI/FireShader"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.170472, 0)
@@ -223,7 +225,7 @@ process_material = SubResource("ParticleProcessMaterial_h74y2")
 draw_pass_1 = SubResource("QuadMesh_7cdnq")
 
 [node name="FireTrail" parent="." instance=ExtResource("11_rhqlf")]
-transform = Transform3D(-0.528601, 0, -0.84887, 0, 1, 0, 0.84887, 0, -0.528601, -40.7299, 1.49907, 5.29755)
+transform = Transform3D(-0.528601, 0, -0.84887, 0, 1, 0, 0.84887, 0, -0.528601, -46.2439, 1.49907, 5.29755)
 
 [node name="Medkit" parent="." instance=ExtResource("13_l5lfc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.9321, 1.05077, -12.6826)
@@ -262,7 +264,7 @@ shape = SubResource("CapsuleShape3D_44x8d")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.3775, 1.15272, -294.046)
 
 [node name="ChildNPC" type="CharacterBody3D" parent="." node_paths=PackedStringArray("playerDad")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.0715, 1.42926, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -41.0715, 1.42926, 0)
 script = ExtResource("17_m5ivw")
 playerDad = NodePath("../PlayerDad")
 
@@ -273,3 +275,8 @@ mesh = SubResource("CapsuleMesh_sui6v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ChildNPC"]
 shape = SubResource("CapsuleShape3D_tv7ir")
+
+[node name="PickUpArea" type="Area3D" parent="ChildNPC"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChildNPC/PickUpArea"]
+shape = SubResource("CapsuleShape3D_m5ivw")
