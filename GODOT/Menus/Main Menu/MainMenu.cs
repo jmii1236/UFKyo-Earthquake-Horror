@@ -17,7 +17,7 @@ public partial class MainMenu : Control
 
     private void on_play_button_pressed()
     {
-        GD.Print("Ready Pressed");
+        GetTree().ChangeSceneToFile("res://level/level.tscn");
     }
 
     private void on_settings_button_pressed()
@@ -27,6 +27,6 @@ public partial class MainMenu : Control
     
     private void on_quit_button_pressed()
     {
-        GD.Print("Quit Pressed");
+        GetTree().Quit();
     }
 }
