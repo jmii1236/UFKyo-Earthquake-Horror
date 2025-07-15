@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cfbigehpeh3n5"]
+[gd_scene load_steps=41 format=3 uid="uid://cfbigehpeh3n5"]
 
 [ext_resource type="PackedScene" uid="uid://c47krvq3ghs5w" path="res://PlayerDad/player_dad.tscn" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://fgwhvvmeae7m" path="res://level/Earthquake/earthquake.tscn" id="2_5gx2l"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://d27inr8m357y4" path="res://FireAI/Flame02.png" id="9_m3nah"]
 [ext_resource type="Shader" uid="uid://c8imwsi8pibue" path="res://FireAI/SimpleParticles.tres" id="10_fm1jd"]
 [ext_resource type="Texture2D" uid="uid://baekufnl0oyln" path="res://FireAI/Flare00.PNG" id="11_7jqyl"]
-[ext_resource type="PackedScene" uid="uid://dssace8rxnxga" path="res://FireAI/fire_trail.tscn" id="11_rhqlf"]
 [ext_resource type="PackedScene" uid="uid://bqmplpp74sffc" path="res://house/House_Interior_Pt1.glb" id="12_rhqlf"]
 [ext_resource type="PackedScene" uid="uid://cd7hhr2ghs3bw" path="res://Items/Medkit/medkit.tscn" id="13_l5lfc"]
 [ext_resource type="PackedScene" uid="uid://clnnp3e7xet7j" path="res://FireAI/SpawnTrigger/spawn_trigger_zone.tscn" id="14_m3nah"]
@@ -132,7 +131,7 @@ turbulence_noise_scale = 4.873
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jqyl"]
 size = Vector3(5.06003, 1, 0.78894)
 
-[node name="Node3D" type="Node3D"]
+[node name="Level" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vonw3")
@@ -233,9 +232,6 @@ material_override = SubResource("StandardMaterial3D_ml0fe")
 lifetime = 2.0
 process_material = SubResource("ParticleProcessMaterial_h74y2")
 draw_pass_1 = SubResource("QuadMesh_7cdnq")
-
-[node name="FireTrail" parent="." instance=ExtResource("11_rhqlf")]
-transform = Transform3D(-0.528601, 0, -0.84887, 0, 1, 0, 0.84887, 0, -0.528601, -40.7299, 1.49907, 5.29755)
 
 [node name="Medkit" parent="." instance=ExtResource("13_l5lfc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.9321, 1.05077, -12.6826)
