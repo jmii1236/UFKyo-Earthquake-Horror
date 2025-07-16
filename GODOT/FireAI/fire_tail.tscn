@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://iju2j7wvlqbd"]
+[gd_scene load_steps=18 format=3 uid="uid://bg8kl8vnbddnc"]
 
 [ext_resource type="Shader" uid="uid://r6gx1x8qs5wc" path="res://FireAI/FireShader.tres" id="1_ihs7u"]
 [ext_resource type="Texture2D" uid="uid://dsmkru5jwi1tx" path="res://FireAI/Voronoi01.png" id="2_5dcx1"]

@@ -1,13 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://cd7hhr2ghs3bw"]
+[gd_scene load_steps=10 format=3 uid="uid://cd7hhr2ghs3bw"]
 
 [ext_resource type="Script" uid="uid://b2sdat78t2s66" path="res://Items/Medkit/Medkit.cs" id="1_qa1p5"]
+[ext_resource type="Script" uid="uid://ct6e3f1hbbgvu" path="res://Inventory/InventoryData.cs" id="2_cw7p3"]
+[ext_resource type="Resource" uid="uid://nka1dva2r3oo" path="res://Items/Items/other_medkit.tres" id="3_ix758"]
+[ext_resource type="Script" uid="uid://djlrkrs2nf3bi" path="res://Inventory/SlotData.cs" id="4_2rp6u"]
+
+[sub_resource type="Resource" id="Resource_bl0pw"]
+script = ExtResource("4_2rp6u")
+ItemData = ExtResource("3_ix758")
+Quantity = 1
+stackSizeMin = 1
+stackSizeMax = 99
+metadata/_custom_type_script = "uid://djlrkrs2nf3bi"
+
+[sub_resource type="Resource" id="Resource_8lbv3"]
+script = ExtResource("2_cw7p3")
+slotdatas = Array[ExtResource("4_2rp6u")]([SubResource("Resource_bl0pw"), null, null, null, null])
+metadata/_custom_type_script = "uid://ct6e3f1hbbgvu"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kb7bx"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_qa1p5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qa1p5"]
+albedo_color = Color(0.471334, 0.0130852, 0.00727499, 1)
 
-[node name="Medkit" type="Area3D" groups=["Item"]]
+[sub_resource type="BoxMesh" id="BoxMesh_qa1p5"]
+material = SubResource("StandardMaterial3D_qa1p5")
+
+[node name="Medkit" type="Area3D" groups=["ExternalInventory", "Item"]]
 script = ExtResource("1_qa1p5")
+inventoryData = SubResource("Resource_8lbv3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_kb7bx")

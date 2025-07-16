@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://0eumeh08jh6b"]
+
+[ext_resource type="Script" uid="uid://c1y228j5sgvoy" path="res://Items/ItemData.cs" id="1_o6bue"]
+[ext_resource type="Texture2D" uid="uid://bhbtnpvfw6syr" path="res://Items/icons/2D Pickups v6.2 spritesheet.png" id="1_ud1cl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_micai"]
+atlas = ExtResource("1_ud1cl")
+region = Rect2(0, 0, 32, 32)
+
+[resource]
+script = ExtResource("1_o6bue")
+Name = "MedKit"
+Description = "medical kit
+"
+Stackable = false
+Texture = SubResource("AtlasTexture_micai")
+metadata/_custom_type_script = "uid://c1y228j5sgvoy"
