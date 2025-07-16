@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dljriqour1qbh"]
+
+[ext_resource type="Texture2D" uid="uid://bhbtnpvfw6syr" path="res://Items/icons/2D Pickups v6.2 spritesheet.png" id="1_baneh"]
+
+[resource]
+atlas = ExtResource("1_baneh")
+region = Rect2(0, 0, 32, 32)

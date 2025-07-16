@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://b0bq00kh07w5y"]
+
+[ext_resource type="Texture2D" uid="uid://bgyfylgp3ov1g" path="res://Items/icons/FreePixelSurvivalItemsPack.png" id="1_4kx08"]
+[ext_resource type="Script" uid="uid://c1y228j5sgvoy" path="res://Items/ItemData.cs" id="2_8qysk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qysk"]
+atlas = ExtResource("1_4kx08")
+region = Rect2(128, 288, 32, 32)
+
+[resource]
+script = ExtResource("2_8qysk")
+Name = "water"
+Description = "water bottle"
+Stackable = true
+Texture = SubResource("AtlasTexture_8qysk")
+metadata/_custom_type_script = "uid://c1y228j5sgvoy"
