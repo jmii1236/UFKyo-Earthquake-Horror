@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://cfbigehpeh3n5"]
+[gd_scene load_steps=45 format=3 uid="uid://cfbigehpeh3n5"]
 
 [ext_resource type="PackedScene" uid="uid://c47krvq3ghs5w" path="res://PlayerDad/player_dad.tscn" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://fgwhvvmeae7m" path="res://level/Earthquake/earthquake.tscn" id="2_5gx2l"]
@@ -133,6 +133,9 @@ turbulence_noise_scale = 4.873
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jqyl"]
 size = Vector3(5.06003, 1, 0.78894)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sui6v"]
+size = Vector3(200.018, 30.6724, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -410,3 +413,37 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25.001
 
 [node name="ModernApartmentComplex3" parent="." instance=ExtResource("18_sui6v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.129, 7, -148.631)
+
+[node name="Area3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.899, 3.73947, -23.2235)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -43.5, -0.954009, -108.503)
+shape = SubResource("BoxShape3D_sui6v")
+metadata/_edit_lock_ = true
+
+[node name="Area3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.899, 10.4755, -23.2235)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.1598, -12.9589, -208.22)
+shape = SubResource("BoxShape3D_sui6v")
+metadata/_edit_lock_ = true
+
+[node name="Area3D4" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.899, 10.4755, -23.2235)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.16, -12.959, -8)
+shape = SubResource("BoxShape3D_sui6v")
+
+[node name="Area3D3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.899, 3.73947, -23.2235)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 153.5, -0.954, -108.503)
+shape = SubResource("BoxShape3D_sui6v")
+metadata/_edit_lock_ = true
