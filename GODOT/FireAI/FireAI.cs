@@ -74,7 +74,7 @@ public partial class FireAI : CharacterBody3D
 
 	GetTree().CurrentScene.AddChild(trail); // add to scene first
 	trail.GlobalPosition = GlobalPosition;  // then set position
-	GD.Print("Spawned fire trail at: " + GlobalPosition);
+	// GD.Print("Spawned fire trail at: " + GlobalPosition);
 }
 
 
