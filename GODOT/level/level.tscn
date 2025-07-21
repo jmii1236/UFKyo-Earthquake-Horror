@@ -1,13 +1,12 @@
-[gd_scene load_steps=60 format=3 uid="uid://i81kygw2dbc6"]
+[gd_scene load_steps=59 format=3 uid="uid://i81kygw2dbc6"]
 
 [ext_resource type="Script" uid="uid://byfog84srimr2" path="res://level/Level.cs" id="1_b7y0n"]
 [ext_resource type="PackedScene" uid="uid://c47krvq3ghs5w" path="res://PlayerDad/player_dad.tscn" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://fgwhvvmeae7m" path="res://level/Earthquake/earthquake.tscn" id="2_5gx2l"]
 [ext_resource type="Script" uid="uid://ct6e3f1hbbgvu" path="res://Inventory/InventoryData.cs" id="3_ml0fe"]
 [ext_resource type="Script" uid="uid://do5uypden6jop" path="res://level/GameOver.cs" id="3_qohg2"]
-[ext_resource type="Script" uid="uid://djlrkrs2nf3bi" path="res://Inventory/SlotData.cs" id="4_h74y2"]
-[ext_resource type="Script" uid="uid://m4xso41vrq7c" path="res://FamilyAI/MomNPC/MomNPC.cs" id="4_vkbyq"]
-[ext_resource type="Resource" uid="uid://0eumeh08jh6b" path="res://Items/Items/medkit.tres" id="5_7cdnq"]
+[ext_resource type="Script" uid="uid://djlrkrs2nf3bi" path="res://Inventory/SlotData.cs" id="4_kdsbj"]
+[ext_resource type="Script" uid="uid://m4xso41vrq7c" path="res://HumanAI/MomNPC/MomNPC.cs" id="4_vkbyq"]
 [ext_resource type="PackedScene" uid="uid://boh40r2qld4na" path="res://environment/world.tscn" id="5_fm1jd"]
 [ext_resource type="Script" uid="uid://cssam1v6lavyf" path="res://FireAI/FireAI.cs" id="6_44x8d"]
 [ext_resource type="Shader" uid="uid://r6gx1x8qs5wc" path="res://FireAI/FireShader.tres" id="7_ivpvi"]
@@ -19,13 +18,16 @@
 [ext_resource type="PackedScene" uid="uid://bqmplpp74sffc" path="res://house/House_Interior_Pt1.glb" id="12_rhqlf"]
 [ext_resource type="PackedScene" uid="uid://cd7hhr2ghs3bw" path="res://Items/Medkit/medkit.tscn" id="13_l5lfc"]
 [ext_resource type="PackedScene" uid="uid://clnnp3e7xet7j" path="res://FireAI/SpawnTrigger/spawn_trigger_zone.tscn" id="14_m3nah"]
-[ext_resource type="PackedScene" uid="uid://dvhysox4grosx" path="res://FamilyAI/MomNPC/mom_target.tscn" id="16_7jqyl"]
-[ext_resource type="Script" uid="uid://b67kiqe7vt3rf" path="res://FamilyAI/ChildNPC/ChildNpc.cs" id="17_m5ivw"]
+[ext_resource type="PackedScene" uid="uid://dvhysox4grosx" path="res://HumanAI/MomNPC/mom_target.tscn" id="16_7jqyl"]
+[ext_resource type="Script" uid="uid://b67kiqe7vt3rf" path="res://HumanAI/ChildNPC/ChildNpc.cs" id="17_m5ivw"]
 [ext_resource type="PackedScene" uid="uid://c08d03sj4go74" path="res://Inventory/slot.tscn" id="18_tv7ir"]
 [ext_resource type="PackedScene" uid="uid://gqyqyv1w3s2o" path="res://Inventory/inventory.tscn" id="19_kp5pi"]
 [ext_resource type="Script" uid="uid://ck2uu6c31y1mu" path="res://Inventory/InventoryInterface.cs" id="20_xl7j7"]
 [ext_resource type="PackedScene" uid="uid://cpb27cldleyft" path="res://Items/PickUp/pickup.tscn" id="23_xl7j7"]
 [ext_resource type="Resource" uid="uid://nka1dva2r3oo" path="res://Items/Items/other_medkit.tres" id="24_kdsbj"]
+[ext_resource type="PackedScene" uid="uid://dj0b43515uoo8" path="res://HumanAI/CrowdAI/crowd.tscn" id="26_ml0fe"]
+[ext_resource type="PackedScene" uid="uid://c6tp6560403w0" path="res://HumanAI/CrowdAI/crowdAnotherMan.tscn" id="27_h74y2"]
+[ext_resource type="PackedScene" uid="uid://cnpgh72e65lmp" path="res://HumanAI/CrowdAI/crowdFirstWoman.tscn" id="28_7cdnq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5xgho"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -40,32 +42,9 @@ sky = SubResource("Sky_u52ul")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="Resource" id="Resource_wjlw4"]
-script = ExtResource("4_h74y2")
-ItemData = ExtResource("5_7cdnq")
-Quantity = 1
-stackSizeMin = 1
-stackSizeMax = 99
-metadata/_custom_type_script = "uid://djlrkrs2nf3bi"
-
-[sub_resource type="Resource" id="Resource_j36rg"]
-script = ExtResource("4_h74y2")
-ItemData = ExtResource("24_kdsbj")
-Quantity = 1
-stackSizeMin = 1
-stackSizeMax = 99
-metadata/_custom_type_script = "uid://djlrkrs2nf3bi"
-
-[sub_resource type="Resource" id="Resource_28igi"]
-script = ExtResource("4_h74y2")
-Quantity = 1
-stackSizeMin = 1
-stackSizeMax = 99
-metadata/_custom_type_script = "uid://djlrkrs2nf3bi"
-
 [sub_resource type="Resource" id="Resource_lsj08"]
 script = ExtResource("3_ml0fe")
-slotdatas = Array[ExtResource("4_h74y2")]([null, SubResource("Resource_wjlw4"), SubResource("Resource_j36rg"), null, SubResource("Resource_28igi"), null])
+slotdatas = []
 metadata/_custom_type_script = "uid://ct6e3f1hbbgvu"
 
 [sub_resource type="LabelSettings" id="LabelSettings_5gx2l"]
@@ -178,8 +157,8 @@ material = SubResource("StandardMaterial3D_m5ivw")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m5ivw"]
 
-[sub_resource type="Resource" id="Resource_ml0fe"]
-script = ExtResource("4_h74y2")
+[sub_resource type="Resource" id="Resource_kdsbj"]
+script = ExtResource("4_kdsbj")
 ItemData = ExtResource("24_kdsbj")
 Quantity = 1
 stackSizeMin = 1
@@ -367,4 +346,25 @@ offset_bottom = 64.0
 
 [node name="OtherMedKit" parent="." instance=ExtResource("23_xl7j7")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -54.0267, 2.728, -12.7)
-SlotData = SubResource("Resource_ml0fe")
+SlotData = SubResource("Resource_kdsbj")
+
+[node name="CrowdAI" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.2351, 0, -14.779)
+
+[node name="Crowd2" parent="CrowdAI" instance=ExtResource("26_ml0fe")]
+
+[node name="Crowd3" parent="CrowdAI" instance=ExtResource("26_ml0fe")]
+
+[node name="Crowd4" parent="CrowdAI" instance=ExtResource("26_ml0fe")]
+
+[node name="Crowd" parent="CrowdAI" instance=ExtResource("27_h74y2")]
+
+[node name="Crowd5" parent="CrowdAI" instance=ExtResource("27_h74y2")]
+
+[node name="Crowd6" parent="CrowdAI" instance=ExtResource("27_h74y2")]
+
+[node name="Crowd7" parent="CrowdAI" instance=ExtResource("28_7cdnq")]
+
+[node name="Crowd8" parent="CrowdAI" instance=ExtResource("28_7cdnq")]
+
+[node name="Crowd9" parent="CrowdAI" instance=ExtResource("28_7cdnq")]
