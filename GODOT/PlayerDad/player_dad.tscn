@@ -1,12 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://c47krvq3ghs5w"]
+[gd_scene load_steps=5 format=3 uid="uid://c47krvq3ghs5w"]
 
 [ext_resource type="Script" uid="uid://bl1fy0ytg217y" path="res://PlayerDad/PlayerDad.cs" id="1_4hbp1"]
-[ext_resource type="Script" uid="uid://ct6e3f1hbbgvu" path="res://Inventory/InventoryData.cs" id="2_xj4et"]
-
-[sub_resource type="Resource" id="Resource_j4yqd"]
-script = ExtResource("2_xj4et")
-slotdatas = [null, null, null, null, null]
-metadata/_custom_type_script = "uid://ct6e3f1hbbgvu"
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rerps"]
 
@@ -17,7 +11,6 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 
 [node name="PlayerDad" type="CharacterBody3D"]
 script = ExtResource("1_4hbp1")
-InventoryData = SubResource("Resource_j4yqd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_rerps")
@@ -47,5 +40,4 @@ collide_with_areas = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("CapsuleShape3D_xj4et")
 
-[connection signal="HealthChange" from="." to="." method="OnHealthChanged"]
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

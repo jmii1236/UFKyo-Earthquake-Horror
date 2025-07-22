@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ced68wxragqi"]
+
+[ext_resource type="PackedScene" uid="uid://db1ncxcdsahw3" path="res://HumanAI/ChildNPC/Model/boyPose.tscn" id="1_1gxm8"]
+[ext_resource type="AnimationLibrary" uid="uid://cs61sbp36fs53" path="res://HumanAI/ChildNPC/Model/Animations/BoyAnimations.res" id="2_xchaw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l5fn6"]
+
+[node name="Boy" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_l5fn6")
+
+[node name="Boy" parent="." instance=ExtResource("1_1gxm8")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.921279, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Boy"]
+libraries = {
+&"BoyAnimations": ExtResource("2_xchaw")
+}

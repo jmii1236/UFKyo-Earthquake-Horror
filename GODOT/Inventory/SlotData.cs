@@ -5,6 +5,7 @@ using System;
 public partial class SlotData : Resource
 {
     const int MAX_STACK_SIZE = 99;
+    public int index;
     [Export] public ItemData ItemData { get; set; }
     private int _quantity = 1;
     [Export]
@@ -29,6 +30,10 @@ public partial class SlotData : Resource
             _quantity = quantity;
         }
     }
+    public void SetIndex(int index)
+{
+    this.index = index;
+}
     
 
 }

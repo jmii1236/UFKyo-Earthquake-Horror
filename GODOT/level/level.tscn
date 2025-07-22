@@ -1,8 +1,9 @@
-[gd_scene load_steps=59 format=3 uid="uid://i81kygw2dbc6"]
+[gd_scene load_steps=63 format=3 uid="uid://i81kygw2dbc6"]
 
 [ext_resource type="Script" uid="uid://byfog84srimr2" path="res://level/Level.cs" id="1_b7y0n"]
 [ext_resource type="PackedScene" uid="uid://c47krvq3ghs5w" path="res://PlayerDad/player_dad.tscn" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://fgwhvvmeae7m" path="res://level/Earthquake/earthquake.tscn" id="2_5gx2l"]
+[ext_resource type="Resource" uid="uid://behfighj4vqhk" path="res://Inventory/test_inv.tres" id="3_h74y2"]
 [ext_resource type="Script" uid="uid://ct6e3f1hbbgvu" path="res://Inventory/InventoryData.cs" id="3_ml0fe"]
 [ext_resource type="Script" uid="uid://do5uypden6jop" path="res://level/GameOver.cs" id="3_qohg2"]
 [ext_resource type="Script" uid="uid://djlrkrs2nf3bi" path="res://Inventory/SlotData.cs" id="4_kdsbj"]
@@ -16,11 +17,13 @@
 [ext_resource type="Texture2D" uid="uid://baekufnl0oyln" path="res://FireAI/Flare00.PNG" id="11_7jqyl"]
 [ext_resource type="PackedScene" uid="uid://bqmplpp74sffc" path="res://house/House_Interior_Pt1.glb" id="12_rhqlf"]
 [ext_resource type="PackedScene" uid="uid://cd7hhr2ghs3bw" path="res://Items/Medkit/medkit.tscn" id="13_l5lfc"]
+[ext_resource type="Resource" uid="uid://b0bq00kh07w5y" path="res://Items/Items/water.tres" id="15_lsj08"]
 [ext_resource type="PackedScene" uid="uid://dvhysox4grosx" path="res://HumanAI/MomNPC/mom_target.tscn" id="16_7jqyl"]
 [ext_resource type="Script" uid="uid://b67kiqe7vt3rf" path="res://HumanAI/ChildNPC/ChildNpc.cs" id="17_m5ivw"]
 [ext_resource type="PackedScene" uid="uid://c08d03sj4go74" path="res://Inventory/slot.tscn" id="18_tv7ir"]
 [ext_resource type="PackedScene" uid="uid://gqyqyv1w3s2o" path="res://Inventory/inventory.tscn" id="19_kp5pi"]
 [ext_resource type="Script" uid="uid://ck2uu6c31y1mu" path="res://Inventory/InventoryInterface.cs" id="20_xl7j7"]
+[ext_resource type="PackedScene" uid="uid://ced68wxragqi" path="res://HumanAI/ChildNPC/boy.tscn" id="21_u5n7q"]
 [ext_resource type="PackedScene" uid="uid://cpb27cldleyft" path="res://Items/PickUp/pickup.tscn" id="23_xl7j7"]
 [ext_resource type="Resource" uid="uid://nka1dva2r3oo" path="res://Items/Items/other_medkit.tres" id="24_kdsbj"]
 [ext_resource type="PackedScene" uid="uid://dj0b43515uoo8" path="res://HumanAI/CrowdAI/crowd.tscn" id="26_ml0fe"]
@@ -40,11 +43,6 @@ background_mode = 2
 sky = SubResource("Sky_u52ul")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="Resource" id="Resource_lsj08"]
-script = ExtResource("3_ml0fe")
-slotdatas = []
-metadata/_custom_type_script = "uid://ct6e3f1hbbgvu"
 
 [sub_resource type="LabelSettings" id="LabelSettings_5gx2l"]
 font_size = 100
@@ -137,6 +135,19 @@ turbulence_noise_scale = 4.873
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lsj08"]
 
+[sub_resource type="Resource" id="Resource_u5n7q"]
+script = ExtResource("4_kdsbj")
+ItemData = ExtResource("15_lsj08")
+Quantity = 1
+stackSizeMin = 1
+stackSizeMax = 99
+metadata/_custom_type_script = "uid://djlrkrs2nf3bi"
+
+[sub_resource type="Resource" id="Resource_qslh7"]
+script = ExtResource("3_ml0fe")
+slotdatas = [null, SubResource("Resource_u5n7q"), null]
+metadata/_custom_type_script = "uid://ct6e3f1hbbgvu"
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jqyl"]
 size = Vector3(5.06003, 1, 0.78894)
 
@@ -148,6 +159,14 @@ material = SubResource("StandardMaterial3D_ktfr2")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_44x8d"]
 
+[sub_resource type="Resource" id="Resource_kdsbj"]
+script = ExtResource("4_kdsbj")
+ItemData = ExtResource("24_kdsbj")
+Quantity = 1
+stackSizeMin = 1
+stackSizeMax = 99
+metadata/_custom_type_script = "uid://djlrkrs2nf3bi"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m5ivw"]
 albedo_color = Color(0.147859, 0.333988, 0.800969, 1)
 
@@ -157,14 +176,6 @@ material = SubResource("StandardMaterial3D_m5ivw")
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tv7ir"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m5ivw"]
-
-[sub_resource type="Resource" id="Resource_kdsbj"]
-script = ExtResource("4_kdsbj")
-ItemData = ExtResource("24_kdsbj")
-Quantity = 1
-stackSizeMin = 1
-stackSizeMax = 99
-metadata/_custom_type_script = "uid://djlrkrs2nf3bi"
 
 [node name="Node3D" type="Node3D" node_paths=PackedStringArray("player", "inventoryInterface")]
 script = ExtResource("1_b7y0n")
@@ -180,7 +191,7 @@ shadow_enabled = true
 
 [node name="PlayerDad" parent="." instance=ExtResource("1_u52ul")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.1936, 1.85469, -3)
-InventoryData = SubResource("Resource_lsj08")
+InventoryData = ExtResource("3_h74y2")
 
 [node name="Earthquake" parent="." instance=ExtResource("2_5gx2l")]
 
@@ -261,6 +272,7 @@ shape = SubResource("CapsuleShape3D_lsj08")
 
 [node name="Medkit" parent="." instance=ExtResource("13_l5lfc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.5989, 1.05077, -12.7277)
+inventoryData = SubResource("Resource_qslh7")
 
 [node name="House_Interior_Pt1" parent="." instance=ExtResource("12_rhqlf")]
 transform = Transform3D(2.38498e-08, 0, -2, 0, 2, 0, 2, 0, 2.38498e-08, -60.28, -0.4, -1.637)
@@ -291,24 +303,6 @@ shape = SubResource("CapsuleShape3D_44x8d")
 
 [node name="MomTarget" parent="Mom" instance=ExtResource("16_7jqyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.3775, 1.15272, -294.046)
-
-[node name="ChildNPC" type="CharacterBody3D" parent="." node_paths=PackedStringArray("playerDad")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -41.0715, 1.42926, 0)
-script = ExtResource("17_m5ivw")
-playerDad = NodePath("../PlayerDad")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ChildNPC"]
-mesh = SubResource("CapsuleMesh_sui6v")
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="ChildNPC"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ChildNPC"]
-shape = SubResource("CapsuleShape3D_tv7ir")
-
-[node name="PickUpArea" type="Area3D" parent="ChildNPC"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ChildNPC/PickUpArea"]
-shape = SubResource("CapsuleShape3D_m5ivw")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -371,3 +365,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.2351, 0, -14.779)
 [node name="Crowd9" parent="CrowdAI" instance=ExtResource("28_7cdnq")]
 
 [node name="CanvasLayer" parent="." instance=ExtResource("29_lsj08")]
+
+[node name="Boy" parent="." node_paths=PackedStringArray("playerDad") instance=ExtResource("21_u5n7q")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -41.0715, 1.42926, 0)
+script = ExtResource("17_m5ivw")
+playerDad = NodePath("../PlayerDad")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boy"]
+visible = false
+mesh = SubResource("CapsuleMesh_sui6v")
+skeleton = NodePath("")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Boy"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Boy"]
+shape = SubResource("CapsuleShape3D_tv7ir")
+
+[node name="PickUpArea" type="Area3D" parent="Boy"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boy/PickUpArea"]
+shape = SubResource("CapsuleShape3D_m5ivw")

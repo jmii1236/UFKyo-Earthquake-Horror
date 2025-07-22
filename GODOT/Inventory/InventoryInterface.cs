@@ -14,7 +14,6 @@ public partial class InventoryInterface : Control
     public override void _Ready()
     {
         playerInventory = GetNode<PanelContainer>("PlayerInventory");
-
         grabbedSlot = GetNode<PanelContainer>("GrabbedSlot");
         externalInventory = GetNode<PanelContainer>("ExternalInventory");
     }
@@ -30,6 +29,17 @@ public partial class InventoryInterface : Control
 
     public void SetPlayerInventoryData(InventoryData inventoryData)
     {
+        if (inventoryData == null)
+    {
+        GD.PrintErr("InventoryData is null in SetPlayerInventoryData!");
+        return;
+    }
+
+    if (playerInventory == null)
+    {
+        GD.PrintErr("PlayerInventory UI is not assigned!");
+        return;
+    }
         inventoryData.InventoryInteract += OnInventoryInteract;
         var inventory = playerInventory as Inventory;
         inventory?.SetInventoryData(inventoryData);
@@ -37,6 +47,13 @@ public partial class InventoryInterface : Control
     public void SetExternalInventory(InventoryData _externalInventory)
     {
         //GD.Print("Setting external inventory data: " + _externalInventory.ToString());
+        if (_externalInventory == null)
+    {
+        GD.PrintErr("External InventoryData is null in SetPlayerInventoryData!");
+        return;
+    }
+
+
         externalInventoryOwner = _externalInventory;
         InventoryData inventoryData = externalInventoryOwner;
         inventoryData.InventoryInteract += OnInventoryInteract;
