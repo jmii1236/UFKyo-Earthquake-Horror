@@ -19,7 +19,7 @@ public partial class FireAI : CharacterBody3D
 		nav = GetNode<NavigationAgent3D>("NavigationAgent3D");
 
 		// Find PlayerDad directly
-		playerDad = GetTree().Root.GetNode("%PlayerDad") as CharacterBody3D;
+		// playerDad = GetTree().Root.GetNode("%PlayerDad") as CharacterBody3D;
 
 		fireTrailScene = GD.Load<PackedScene>("res://FireAI/fire_trail.tscn");
 

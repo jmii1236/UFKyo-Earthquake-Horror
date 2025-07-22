@@ -33,6 +33,16 @@ sky = SubResource("Sky_u52ul")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m5ivw"]
+albedo_color = Color(0.147859, 0.333988, 0.800969, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_sui6v"]
+material = SubResource("StandardMaterial3D_m5ivw")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tv7ir"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m5ivw"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_5gx2l"]
 font_size = 100
 
@@ -51,16 +61,6 @@ material = SubResource("StandardMaterial3D_ktfr2")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_44x8d"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m5ivw"]
-albedo_color = Color(0.147859, 0.333988, 0.800969, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_sui6v"]
-material = SubResource("StandardMaterial3D_m5ivw")
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tv7ir"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m5ivw"]
-
 [sub_resource type="Resource" id="Resource_ml0fe"]
 script = ExtResource("4_h74y2")
 stackSizeMin = 1
@@ -78,8 +78,25 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="PlayerDad" parent="." instance=ExtResource("1_u52ul")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.1936, 1.85469, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.4564, 1.8197, -3)
+
+[node name="ChildNPC" type="CharacterBody3D" parent="." node_paths=PackedStringArray("playerDad")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -61.3242, 1.59442, -1.2664)
+script = ExtResource("17_m5ivw")
+playerDad = NodePath("../PlayerDad")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ChildNPC"]
+mesh = SubResource("CapsuleMesh_sui6v")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="ChildNPC"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChildNPC"]
+shape = SubResource("CapsuleShape3D_tv7ir")
+
+[node name="PickUpArea" type="Area3D" parent="ChildNPC"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChildNPC/PickUpArea"]
+shape = SubResource("CapsuleShape3D_m5ivw")
 
 [node name="Earthquake" parent="." instance=ExtResource("2_5gx2l")]
 
@@ -120,10 +137,12 @@ PlayerDad = NodePath("../../PlayerDad")
 debug = true
 
 [node name="FireSafeZone" parent="TriggerZones" instance=ExtResource("15_m5ivw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.5986, 6.50576, 26.0793)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.5986, 4.90571, 40.1918)
+debug = true
 
 [node name="WinTriggerZone" parent="TriggerZones" instance=ExtResource("15_sui6v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9898, -1.34295, -42.8042)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9898, 5.79924, -42.8042)
+debug = true
 
 [node name="Medkit" parent="." instance=ExtResource("13_l5lfc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.5989, 1.05077, -12.7277)
@@ -157,24 +176,6 @@ shape = SubResource("CapsuleShape3D_44x8d")
 
 [node name="MomTarget" parent="Mom" instance=ExtResource("16_7jqyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.3775, 1.15272, -294.046)
-
-[node name="ChildNPC" type="CharacterBody3D" parent="." node_paths=PackedStringArray("playerDad")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -41.0715, 1.42926, 0)
-script = ExtResource("17_m5ivw")
-playerDad = NodePath("../PlayerDad")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ChildNPC"]
-mesh = SubResource("CapsuleMesh_sui6v")
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="ChildNPC"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ChildNPC"]
-shape = SubResource("CapsuleShape3D_tv7ir")
-
-[node name="PickUpArea" type="Area3D" parent="ChildNPC"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ChildNPC/PickUpArea"]
-shape = SubResource("CapsuleShape3D_m5ivw")
 
 [node name="UI" type="CanvasLayer" parent="."]
 

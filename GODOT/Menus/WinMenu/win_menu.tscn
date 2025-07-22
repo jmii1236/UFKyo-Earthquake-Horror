@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://br70pwqtk64sl"]
+[gd_scene load_steps=2 format=3 uid="uid://br70pwqtk64sl"]
+
+[ext_resource type="Script" uid="uid://1qraprx83rkl" path="res://Menus/WinMenu/WinMenu.cs" id="1_ibngu"]
 
 [node name="WinMenu" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ibngu")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
