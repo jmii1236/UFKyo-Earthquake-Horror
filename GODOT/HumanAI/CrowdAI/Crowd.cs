@@ -135,7 +135,7 @@ public partial class Crowd : Node3D
       animationPlayer = FindAnimationPlayerRecursive(this);
       if (animationPlayer != null)
       {
-        GD.Print("Found AnimationPlayer through recursive search");
+        
       }
     }
 
@@ -143,7 +143,7 @@ public partial class Crowd : Node3D
     {
       // Debug: Print available animations
       var animations = animationPlayer.GetAnimationList();
-      GD.Print($"Available animations: {string.Join(", ", animations)}");
+      
     }
     else
     {
@@ -441,12 +441,10 @@ public partial class Crowd : Node3D
     {
       animationPlayer.Play(animationName);
       currentAnimation = animationName;
-      GD.Print($"Playing animation: {animationName}");
     }
     else
     {
-      GD.PrintErr($"Animation '{animationName}' not found in AnimationPlayer!");
-      GD.Print("Available animations:");
+
       foreach (string anim in animationPlayer.GetAnimationList())
       {
         GD.Print($"  - {anim}");

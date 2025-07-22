@@ -14,10 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://d27inr8m357y4" path="res://FireAI/Flame02.png" id="9_m3nah"]
 [ext_resource type="Shader" uid="uid://c8imwsi8pibue" path="res://FireAI/SimpleParticles.tres" id="10_fm1jd"]
 [ext_resource type="Texture2D" uid="uid://baekufnl0oyln" path="res://FireAI/Flare00.PNG" id="11_7jqyl"]
-[ext_resource type="PackedScene" uid="uid://dssace8rxnxga" path="res://FireAI/fire_trail.tscn" id="11_rhqlf"]
 [ext_resource type="PackedScene" uid="uid://bqmplpp74sffc" path="res://house/House_Interior_Pt1.glb" id="12_rhqlf"]
 [ext_resource type="PackedScene" uid="uid://cd7hhr2ghs3bw" path="res://Items/Medkit/medkit.tscn" id="13_l5lfc"]
-[ext_resource type="PackedScene" uid="uid://clnnp3e7xet7j" path="res://FireAI/SpawnTrigger/spawn_trigger_zone.tscn" id="14_m3nah"]
 [ext_resource type="PackedScene" uid="uid://dvhysox4grosx" path="res://HumanAI/MomNPC/mom_target.tscn" id="16_7jqyl"]
 [ext_resource type="Script" uid="uid://b67kiqe7vt3rf" path="res://HumanAI/ChildNPC/ChildNpc.cs" id="17_m5ivw"]
 [ext_resource type="PackedScene" uid="uid://c08d03sj4go74" path="res://Inventory/slot.tscn" id="18_tv7ir"]
@@ -28,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://dj0b43515uoo8" path="res://HumanAI/CrowdAI/crowd.tscn" id="26_ml0fe"]
 [ext_resource type="PackedScene" uid="uid://c6tp6560403w0" path="res://HumanAI/CrowdAI/crowdAnotherMan.tscn" id="27_h74y2"]
 [ext_resource type="PackedScene" uid="uid://cnpgh72e65lmp" path="res://HumanAI/CrowdAI/crowdFirstWoman.tscn" id="28_7cdnq"]
+[ext_resource type="PackedScene" uid="uid://drv88pq7gq3ol" path="res://PlayerDad/HealthStatus/canvas_layer.tscn" id="29_lsj08"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5xgho"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -135,6 +134,8 @@ turbulence_enabled = true
 turbulence_noise_scale = 4.873
 
 [sub_resource type="QuadMesh" id="QuadMesh_7cdnq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lsj08"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jqyl"]
 size = Vector3(5.06003, 1, 0.78894)
@@ -252,14 +253,14 @@ lifetime = 2.0
 process_material = SubResource("ParticleProcessMaterial_h74y2")
 draw_pass_1 = SubResource("QuadMesh_7cdnq")
 
-[node name="FireTrail" parent="." instance=ExtResource("11_rhqlf")]
-transform = Transform3D(-0.528601, 0, -0.84887, 0, 1, 0, 0.84887, 0, -0.528601, -46.2439, 1.49907, 5.29755)
+[node name="Area3D" type="Area3D" parent="FireAI" groups=["enemies"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FireAI/Area3D"]
+visible = false
+shape = SubResource("CapsuleShape3D_lsj08")
 
 [node name="Medkit" parent="." instance=ExtResource("13_l5lfc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.5989, 1.05077, -12.7277)
-
-[node name="SpawnTriggerZone" parent="." instance=ExtResource("14_m3nah")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3981, 0, 0)
 
 [node name="House_Interior_Pt1" parent="." instance=ExtResource("12_rhqlf")]
 transform = Transform3D(2.38498e-08, 0, -2, 0, 2, 0, 2, 0, 2.38498e-08, -60.28, -0.4, -1.637)
@@ -368,3 +369,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.2351, 0, -14.779)
 [node name="Crowd8" parent="CrowdAI" instance=ExtResource("28_7cdnq")]
 
 [node name="Crowd9" parent="CrowdAI" instance=ExtResource("28_7cdnq")]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("29_lsj08")]
