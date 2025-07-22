@@ -1,8 +1,13 @@
 using Godot;
+using Microsoft.VisualBasic;
 using System;
 
 public partial class PlayerDad : CharacterBody3D
 {
+	[Signal] public delegate void ToggleInventoryEventHandler();
+	[Export] public InventoryData InventoryData { get; set; }
+	
+	
 	private float MouseSensitivity = 0.001f;
 	private float TwistInput = 0.0f;
 	private float PitchInput = 0.0f;
@@ -33,6 +38,16 @@ public partial class PlayerDad : CharacterBody3D
 		FireDetector.BodyEntered += _On_Body_Entered;
 		globals.Death += _On_Death;
 	}
+
+	public override void _UnhandledKeyInput(InputEvent @event)
+	{
+		if (Input.IsActionJustPressed("inventory"))
+		{
+			EmitSignal(SignalName.ToggleInventory);
+			Interaction();
+		}
+	}
+
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -73,27 +88,6 @@ public partial class PlayerDad : CharacterBody3D
 			}
 		}
 
-		// Jump, crawl mechanics
-		//if (GetContactCount() > 0)
-		//{
-		//if (Input.IsActionJustPressed("jump"))
-		//{
-		//ApplyCentralImpulse(new Vector3(0, JumpVelocity, 0));
-		//}
-		//else if (Input.IsActionJustPressed("crawl"))
-		//{
-		//Crawling = !Crawling;
-		//if (Crawling)
-		//{
-		//Camera.Position = new Vector3(0, 0.1f, 0);
-		//}
-		//else
-		//{
-		//Camera.Position = new Vector3(0, 0.5f, 0);
-		//}
-		//}
-		//}
-
 		if (Input.IsActionJustPressed("ui_cancel"))
 		{
 			Input.MouseMode = Input.MouseModeEnum.Visible;
@@ -102,10 +96,29 @@ public partial class PlayerDad : CharacterBody3D
 		if (raycast.IsColliding())
 		{
 			Node3D Collider = raycast.GetCollider() as Node3D;
-			if (Collider.IsInGroup("Item") && Input.IsActionJustPressed("interact"))
+			
+			if (Input.IsActionJustPressed("interact"))
 			{
-				Item item = Collider as Item;
-				_On_Item_Interaction(item);
+				// Handle regular Item interactions (picking up items) - legacy system
+				if (Collider.IsInGroup("Item"))
+				{
+					Item item = Collider as Item;
+					_On_Item_Interaction(item);
+				}
+				// Handle External Inventory interactions (medkit chest, actual chests, etc.)
+				else if (Collider.IsInGroup("ExternalInventory"))
+				{
+					// Check if it's a medkit acting as a chest
+					if (Collider is Medkit medkit)
+					{
+						medkit.PlayerInteract();
+					}
+					// Handle other external inventory objects
+					else if (Collider.HasMethod("PlayerInteract"))
+					{
+						Collider.Call("PlayerInteract");
+					}
+				}
 			}
 		}
 
@@ -144,6 +157,39 @@ public partial class PlayerDad : CharacterBody3D
 
 		is_holding_item = true;
 	}
+	
+	public void Interaction()
+	{
+		if (raycast.IsColliding())
+		{
+			Node3D collider = raycast.GetCollider() as Node3D;
+			
+			if (collider is Pickup)
+			{
+				GD.Print("- This is a Pickup item");
+			}
+			else if (collider.IsInGroup("Item"))
+			{
+				GD.Print("- This is a pickupable Item");
+			}
+			else if (collider.IsInGroup("ExternalInventory"))
+			{
+				if (collider is Medkit)
+				{
+					GD.Print("- This is a Medkit chest");
+				}
+				else
+				{
+					GD.Print("- This is an External Inventory container");
+				}
+			}
+		}
+		else
+		{
+			GD.Print("Raycast is not colliding with anything");
+		}
+	}
+
 
 	private void _On_Body_Entered(Node3D body)
 	{

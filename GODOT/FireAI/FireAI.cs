@@ -62,13 +62,23 @@ public partial class FireAI : CharacterBody3D
 	}
 	private void SpawnFireTrail()
 	{
+		if (fireTrailScene == null)
+		{
+			GD.PushError("fireTrailScene is null! Cannot spawn fire trail.");
+			return;
+		}
+	
 		Node3D trail = fireTrailScene.Instantiate<Node3D>();
-		trail.GlobalPosition = GlobalPosition;
-
-		// Add it to the root of the scene, NOT under FireAI
-		GetTree().CurrentScene.AddChild(trail);
-		GD.Print("Spawned fire trail at: " + GlobalPosition);
-
+	
+		if (trail == null)
+		{
+			GD.PushError("Failed to instance fireTrailScene.");
+			return;
+		}
+	
+		GetTree().CurrentScene.AddChild(trail); // add to scene first
+		trail.GlobalPosition = GlobalPosition;  // then set position
+		// GD.Print("Spawned fire trail at: " + GlobalPosition);
 	}
 
 	private void _On_Fire_Disable()
