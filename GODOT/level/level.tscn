@@ -155,10 +155,8 @@ stackSizeMin = 1
 stackSizeMax = 99
 metadata/_custom_type_script = "uid://djlrkrs2nf3bi"
 
-[node name="Node3D" type="Node3D" node_paths=PackedStringArray("player", "inventoryInterface")]
+[node name="Node3D" type="Node3D"]
 script = ExtResource("1_b7y0n")
-player = NodePath("PlayerDad")
-inventoryInterface = NodePath("UI/InventoryInterface")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vonw3")
@@ -257,7 +255,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9898, -1.34295, -42.8042)
 
 [node name="Medkit" parent="." instance=ExtResource("13_l5lfc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.5989, 1.05077, -12.7277)
-inventoryData = null
 
 [node name="House_Interior_Pt1" parent="." instance=ExtResource("12_rhqlf")]
 transform = Transform3D(2.38498e-08, 0, -2, 0, 2, 0, 2, 0, 2.38498e-08, -60.28, -0.4, -1.637)
