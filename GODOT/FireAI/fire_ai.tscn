@@ -1,0 +1,131 @@
+[gd_scene load_steps=22 format=3 uid="uid://da7b34imyasos"]
+
+[ext_resource type="Script" uid="uid://cssam1v6lavyf" path="res://FireAI/FireAI.cs" id="1_ww841"]
+[ext_resource type="Shader" uid="uid://r6gx1x8qs5wc" path="res://FireAI/FireShader.tres" id="2_vmebx"]
+[ext_resource type="Texture2D" uid="uid://dsmkru5jwi1tx" path="res://FireAI/Voronoi01.png" id="3_b7d3u"]
+[ext_resource type="Texture2D" uid="uid://d27inr8m357y4" path="res://FireAI/Flame02.png" id="4_tofuv"]
+[ext_resource type="Shader" uid="uid://c8imwsi8pibue" path="res://FireAI/SimpleParticles.tres" id="5_gbbwj"]
+[ext_resource type="Texture2D" uid="uid://baekufnl0oyln" path="res://FireAI/Flare00.PNG" id="6_lwa82"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ivpvi"]
+transparency = 1
+albedo_color = Color(0.767, 0.376, 0.116, 0)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0v1st"]
+material = SubResource("StandardMaterial3D_ivpvi")
+height = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6gtgk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m5ivw"]
+render_priority = 0
+shader = ExtResource("2_vmebx")
+shader_parameter/MainTex = ExtResource("4_tofuv")
+shader_parameter/DissolveTiling = Vector2(1, 1)
+shader_parameter/DissolveSpeed = Vector2(0, 0)
+shader_parameter/DisolveTex = ExtResource("3_b7d3u")
+shader_parameter/DissolveAmount = 0.0
+
+[sub_resource type="Curve" id="Curve_sui6v"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.216058, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_tv7ir"]
+curve = SubResource("Curve_sui6v")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kp5pi"]
+emission_shape = 1
+emission_sphere_radius = 0.2
+angle_min = -360.0
+angle_max = 360.0
+gravity = Vector3(0, 5, 0)
+damping_min = 0.5
+damping_max = 1.0
+scale_min = 0.75
+scale_max = 1.01
+scale_curve = SubResource("CurveTexture_tv7ir")
+color = Color(4, 1.25, 0.6, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_b7y0n"]
+
+[sub_resource type="Gradient" id="Gradient_v4yay"]
+offsets = PackedFloat32Array(0.110092, 0.474771)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xl7j7"]
+gradient = SubResource("Gradient_v4yay")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o0wo3"]
+emission_shape = 1
+emission_sphere_radius = 0.4
+angle_min = -360.0
+angle_max = 360.0
+gravity = Vector3(0, 5, 0)
+damping_min = 0.5
+damping_max = 1.0
+scale_min = 1.5
+scale_max = 2.5
+scale_curve = SubResource("CurveTexture_tv7ir")
+color = Color(0.493545, 0.493546, 0.493546, 0.691)
+color_ramp = SubResource("GradientTexture1D_xl7j7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kdsbj"]
+render_priority = 0
+shader = ExtResource("5_gbbwj")
+shader_parameter/MainTex = ExtResource("6_lwa82")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ml0fe"]
+next_pass = SubResource("ShaderMaterial_kdsbj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h74y2"]
+emission_shape = 1
+emission_sphere_radius = 0.6
+gravity = Vector3(0, 4, 0)
+scale_min = 1.01
+scale_max = 1.12
+color = Color(4.3, 1.25, 0.6, 1)
+turbulence_enabled = true
+turbulence_noise_scale = 4.873
+
+[sub_resource type="QuadMesh" id="QuadMesh_7cdnq"]
+
+[node name="FireAI" type="CharacterBody3D" groups=["Fire"]]
+transform = Transform3D(-0.993562, 0, 0.11329, 0, 1, 0, -0.11329, 0, -0.993562, 0, 0, 0)
+script = ExtResource("1_ww841")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.205043, 0, -0.978753, 0, 1, 0, 0.978753, 0, 0.205043, 0, 0.635794, 0)
+mesh = SubResource("CylinderMesh_0v1st")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.70086, 0, 0.713299, 0, 1, 0, -0.713299, 0, -0.70086, 0, 0, 0)
+shape = SubResource("CylinderShape3D_6gtgk")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="FireShader" type="Node3D" parent="."]
+transform = Transform3D(-0.956453, 0, 0.291888, 0, 1, 0, -0.291888, 0, -0.956453, -2.39793, -0.267224, -1.6701)
+
+[node name="Flames" type="GPUParticles3D" parent="FireShader"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.170472, 0)
+material_override = SubResource("ShaderMaterial_m5ivw")
+amount = 20
+lifetime = 1.2
+process_material = SubResource("ParticleProcessMaterial_kp5pi")
+draw_pass_1 = SubResource("QuadMesh_b7y0n")
+
+[node name="Smoke" type="GPUParticles3D" parent="FireShader"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.037582, 0)
+sorting_offset = -1.0
+material_override = SubResource("ShaderMaterial_m5ivw")
+amount = 20
+lifetime = 2.5
+process_material = SubResource("ParticleProcessMaterial_o0wo3")
+draw_pass_1 = SubResource("QuadMesh_b7y0n")
+
+[node name="ParticlesFloating" type="GPUParticles3D" parent="FireShader"]
+sorting_offset = 1.0
+material_override = SubResource("StandardMaterial3D_ml0fe")
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_h74y2")
+draw_pass_1 = SubResource("QuadMesh_7cdnq")

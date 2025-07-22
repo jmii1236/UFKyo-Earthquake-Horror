@@ -19,7 +19,7 @@ public partial class FireAI : CharacterBody3D
 		nav = GetNode<NavigationAgent3D>("NavigationAgent3D");
 
 		// Find PlayerDad directly
-		playerDad = GetNode<CharacterBody3D>("../PlayerDad");
+		playerDad = GetTree().Root.GetNode("%PlayerDad") as CharacterBody3D;
 
 		fireTrailScene = GD.Load<PackedScene>("res://FireAI/fire_trail.tscn");
 
@@ -28,6 +28,7 @@ public partial class FireAI : CharacterBody3D
 
 		globals = GetNode("/root/Globals") as Globals;
 		globals.DisableFire += _On_Fire_Disable;
+		globals.SetPlayer += SetPlayer;
 	}
 
 
@@ -35,8 +36,10 @@ public partial class FireAI : CharacterBody3D
 	{
 		// Make sure we have a valid target
 		if (playerDad == null)
+		{
+			GD.Print("Invalid!");
 			return;
-
+		}
 
 		Vector3 direction = Vector3.Zero;
 
@@ -67,22 +70,27 @@ public partial class FireAI : CharacterBody3D
 			GD.PushError("fireTrailScene is null! Cannot spawn fire trail.");
 			return;
 		}
-	
+
 		Node3D trail = fireTrailScene.Instantiate<Node3D>();
-	
+
 		if (trail == null)
 		{
 			GD.PushError("Failed to instance fireTrailScene.");
 			return;
 		}
-	
+
 		GetTree().CurrentScene.AddChild(trail); // add to scene first
 		trail.GlobalPosition = GlobalPosition;  // then set position
-		// GD.Print("Spawned fire trail at: " + GlobalPosition);
+												// GD.Print("Spawned fire trail at: " + GlobalPosition);
 	}
 
 	private void _On_Fire_Disable()
 	{
 		ProcessMode = Node.ProcessModeEnum.Disabled;
+	}
+
+	public void SetPlayer(CharacterBody3D player)
+	{
+		playerDad = player;
 	}
 }
