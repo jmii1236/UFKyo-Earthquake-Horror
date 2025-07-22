@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Godot;
 
 public partial class FireAI : CharacterBody3D
@@ -11,6 +12,7 @@ public partial class FireAI : CharacterBody3D
 	private PackedScene fireTrailScene;
 	private float trailTimer = 0.0f;
 	private float trailInterval = 0.2f;
+	private Globals globals = null;
 
 	public override void _Ready()
 	{
@@ -24,6 +26,8 @@ public partial class FireAI : CharacterBody3D
 		if (fireTrailScene == null)
 			GD.PushError("FireTrail.tscn could not be loaded. Check the path.");
 
+		globals = GetNode("/root/Globals") as Globals;
+		globals.DisableFire += _On_Fire_Disable;
 	}
 
 
@@ -57,25 +61,28 @@ public partial class FireAI : CharacterBody3D
 		}
 	}
 	private void SpawnFireTrail()
-{
-	if (fireTrailScene == null)
 	{
-		GD.PushError("fireTrailScene is null! Cannot spawn fire trail.");
-		return;
+		if (fireTrailScene == null)
+		{
+			GD.PushError("fireTrailScene is null! Cannot spawn fire trail.");
+			return;
+		}
+	
+		Node3D trail = fireTrailScene.Instantiate<Node3D>();
+	
+		if (trail == null)
+		{
+			GD.PushError("Failed to instance fireTrailScene.");
+			return;
+		}
+	
+		GetTree().CurrentScene.AddChild(trail); // add to scene first
+		trail.GlobalPosition = GlobalPosition;  // then set position
+		// GD.Print("Spawned fire trail at: " + GlobalPosition);
 	}
 
-	Node3D trail = fireTrailScene.Instantiate<Node3D>();
-
-	if (trail == null)
+	private void _On_Fire_Disable()
 	{
-		GD.PushError("Failed to instance fireTrailScene.");
-		return;
+		ProcessMode = Node.ProcessModeEnum.Disabled;
 	}
-
-	GetTree().CurrentScene.AddChild(trail); // add to scene first
-	trail.GlobalPosition = GlobalPosition;  // then set position
-	// GD.Print("Spawned fire trail at: " + GlobalPosition);
-}
-
-
 }

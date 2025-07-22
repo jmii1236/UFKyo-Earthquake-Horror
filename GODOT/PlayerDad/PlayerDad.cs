@@ -21,8 +21,8 @@ public partial class PlayerDad : CharacterBody3D
 	private Globals globals = null;
 	private RayCast3D raycast;
 	private bool is_holding_item = false;
-
 	private float PitchAngle = 0.0f; // to track the current pitch for clamping
+	private Area3D FireDetector = null;
 
 	public override void _Ready()
 	{
@@ -33,6 +33,10 @@ public partial class PlayerDad : CharacterBody3D
 
 		globals = GetNode("/root/Globals") as Globals;
 		raycast = GetNode("%ItemChecker") as RayCast3D;
+		FireDetector = GetNode("FireDetector") as Area3D;
+
+		FireDetector.BodyEntered += _On_Body_Entered;
+		globals.Death += _On_Death;
 	}
 
 	public override void _UnhandledKeyInput(InputEvent @event)
@@ -184,5 +188,20 @@ public partial class PlayerDad : CharacterBody3D
 		{
 			GD.Print("Raycast is not colliding with anything");
 		}
+	}
+
+
+	private void _On_Body_Entered(Node3D body)
+	{
+		if (body.IsInGroup("Fire"))
+		{
+			_On_Death();
+		}
+	}
+
+	private void _On_Death()
+	{
+		EmitSignal("GameOver");
+		GD.Print("Game Over, Died");
 	}
 }
