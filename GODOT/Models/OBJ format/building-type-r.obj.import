@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cv8i0s1uho100"
+path="res://.godot/imported/building-type-r.obj-40a04afb5f20f8b96d465fd72802602f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building-type-r.obj-40a04afb5f20f8b96d465fd72802602f.mesh"]
+
+source_file="res://Models/OBJ format/building-type-r.obj"
+dest_files=["res://.godot/imported/building-type-r.obj-40a04afb5f20f8b96d465fd72802602f.mesh", "res://.godot/imported/building-type-r.obj-40a04afb5f20f8b96d465fd72802602f.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
