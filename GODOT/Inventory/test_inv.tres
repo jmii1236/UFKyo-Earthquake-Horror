@@ -2,35 +2,35 @@
 
 [ext_resource type="Script" uid="uid://ct6e3f1hbbgvu" path="res://Inventory/InventoryData.cs" id="1_stgn4"]
 [ext_resource type="Resource" uid="uid://0eumeh08jh6b" path="res://Items/Items/medkit.tres" id="2_ghyoh"]
-[ext_resource type="Script" uid="uid://djlrkrs2nf3bi" path="res://Inventory/SlotData.cs" id="3_d3a5g"]
+[ext_resource type="Script" uid="uid://djlrkrs2nf3bi" path="res://Inventory/SlotData.cs" id="2_j36rg"]
 [ext_resource type="Resource" uid="uid://b0bq00kh07w5y" path="res://Items/Items/water.tres" id="3_j36rg"]
 [ext_resource type="Resource" uid="uid://nka1dva2r3oo" path="res://Items/Items/other_medkit.tres" id="4_nb6ky"]
 
-[sub_resource type="Resource" id="Resource_28igi"]
-script = ExtResource("3_d3a5g")
-ItemData = ExtResource("3_j36rg")
-Quantity = 1
-stackSizeMin = 1
-stackSizeMax = 99
-metadata/_custom_type_script = "uid://djlrkrs2nf3bi"
-
-[sub_resource type="Resource" id="Resource_eyyk3"]
-script = ExtResource("3_d3a5g")
+[sub_resource type="Resource" id="Resource_j36rg"]
+script = ExtResource("2_j36rg")
 ItemData = ExtResource("2_ghyoh")
 Quantity = 1
 stackSizeMin = 1
 stackSizeMax = 99
 metadata/_custom_type_script = "uid://djlrkrs2nf3bi"
 
-[sub_resource type="Resource" id="Resource_b831s"]
-script = ExtResource("3_d3a5g")
+[sub_resource type="Resource" id="Resource_28igi"]
+script = ExtResource("2_j36rg")
 ItemData = ExtResource("4_nb6ky")
-Quantity = 3
-stackSizeMin = 3
+Quantity = 1
+stackSizeMin = 1
+stackSizeMax = 99
+metadata/_custom_type_script = "uid://djlrkrs2nf3bi"
+
+[sub_resource type="Resource" id="Resource_ewp5x"]
+script = ExtResource("2_j36rg")
+ItemData = ExtResource("3_j36rg")
+Quantity = 1
+stackSizeMin = 1
 stackSizeMax = 99
 metadata/_custom_type_script = "uid://djlrkrs2nf3bi"
 
 [resource]
 script = ExtResource("1_stgn4")
-slotdatas = Array[ExtResource("3_d3a5g")]([null, SubResource("Resource_28igi"), SubResource("Resource_eyyk3"), null, null, null, SubResource("Resource_b831s"), null, null])
+slotdatas = [null, SubResource("Resource_j36rg"), SubResource("Resource_28igi"), null, SubResource("Resource_ewp5x"), null]
 metadata/_custom_type_script = "uid://ct6e3f1hbbgvu"

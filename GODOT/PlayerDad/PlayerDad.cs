@@ -1,13 +1,16 @@
 using Godot;
 using Microsoft.VisualBasic;
 using System;
+using System.Formats.Asn1;
 
 public partial class PlayerDad : CharacterBody3D
 {
 	[Signal] public delegate void ToggleInventoryEventHandler();
+
+	[Signal] public delegate void HealthChangeEventHandler(int newHealth); 
 	[Export] public InventoryData InventoryData { get; set; }
-	
-	
+
+
 	private float MouseSensitivity = 0.001f;
 	private float TwistInput = 0.0f;
 	private float PitchInput = 0.0f;
@@ -21,6 +24,9 @@ public partial class PlayerDad : CharacterBody3D
 	private Globals globals = null;
 	private RayCast3D raycast;
 	private bool is_holding_item = false;
+	[Export] public int MaxHealth = 100; // Set a default maximum health value;
+	public int CurrentHealth;
+
 	private float PitchAngle = 0.0f; // to track the current pitch for clamping
 	private Area3D FireDetector = null;
 
@@ -33,10 +39,13 @@ public partial class PlayerDad : CharacterBody3D
 
 		globals = GetNode("/root/Globals") as Globals;
 		raycast = GetNode("%ItemChecker") as RayCast3D;
-		FireDetector = GetNode("FireDetector") as Area3D;
-
-		FireDetector.BodyEntered += _On_Body_Entered;
-		globals.Death += _On_Death;
+		PlayerDad player = GetNode<PlayerDad>("../PlayerDad");
+		if (player == null)
+		{
+			GD.PrintErr("Could not find PlayerDad node. (PlayerDad.cs)");
+			return;
+		}
+		CurrentHealth = MaxHealth;
 	}
 
 	public override void _UnhandledKeyInput(InputEvent @event)
@@ -96,7 +105,7 @@ public partial class PlayerDad : CharacterBody3D
 		if (raycast.IsColliding())
 		{
 			Node3D Collider = raycast.GetCollider() as Node3D;
-			
+
 			if (Input.IsActionJustPressed("interact"))
 			{
 				// Handle regular Item interactions (picking up items) - legacy system
@@ -157,13 +166,13 @@ public partial class PlayerDad : CharacterBody3D
 
 		is_holding_item = true;
 	}
-	
+
 	public void Interaction()
 	{
 		if (raycast.IsColliding())
 		{
 			Node3D collider = raycast.GetCollider() as Node3D;
-			
+
 			if (collider is Pickup)
 			{
 				GD.Print("- This is a Pickup item");
@@ -190,18 +199,31 @@ public partial class PlayerDad : CharacterBody3D
 		}
 	}
 
-
-	private void _On_Body_Entered(Node3D body)
+	public void TakeDamage(int damage)
 	{
-		if (body.IsInGroup("Fire"))
+		if (CurrentHealth <= 0)
 		{
-			_On_Death();
+			GD.Print("PlayerDad is already dead. Cannot take more damage.");
+			return;
+		}
+
+		CurrentHealth -= damage;
+		if (CurrentHealth < 0) CurrentHealth = 0;
+
+		//GD.Print($"PlayerDad took {damage} damage. Current Health: {CurrentHealth}");
+		EmitSignal(SignalName.HealthChange, CurrentHealth);
+
+		// Emit signal for health change
+
+		if (CurrentHealth <= 0)
+		{
+			GD.Print("PlayerDad has died.");
 		}
 	}
-
-	private void _On_Death()
+	public void _on_area_3d_area_entered(Node3D body)
 	{
-		EmitSignal("GameOver");
-		GD.Print("Game Over, Died");
+		//GD.Print("Current health: " + CurrentHealth);
+		GD.Print("Entered by non-PlayerDad: " + body.Name);
+		TakeDamage(5); // Example damage value
 	}
 }

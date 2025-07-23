@@ -13,7 +13,7 @@ public partial class MomNPC : CharacterBody3D
 		nav = GetNode<NavigationAgent3D>("NavigationAgent3D");
 		
 		// Find PlayerDad directly
-		// playerDad = GetNode<CharacterBody3D>("../MomTarget");
+		playerDad = GetNode<Node3D>("../MomTarget");
 	}
 	
 	public override void _PhysicsProcess(double delta)

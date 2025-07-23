@@ -5,7 +5,7 @@ public partial class Slot : PanelContainer
     [Signal] public delegate void SlotClickedEventHandler(int index, int button);
     [Export] private TextureRect textureRect;
     [Export] private Label quantityLabel;
-
+    private int index;
     public override void _Ready()
     {
         // Get the nodes if they're not assigned in the editor
@@ -14,6 +14,7 @@ public partial class Slot : PanelContainer
         if (quantityLabel == null)
             quantityLabel = GetNode<Label>("QuantityLabel");
     }
+
 
     public void SetSlotData(SlotData slotData)
     {
@@ -49,7 +50,7 @@ public partial class Slot : PanelContainer
         textureRect.Texture = itemData.Texture;
         TooltipText = $"{itemData.Name}\n{itemData.Description}";
 
-        GD.Print($"Setting slot data: {itemData.Name}, Quantity: {slotData.Quantity}");
+        //GD.Print($"Setting slot data: {itemData.Name}, Quantity: {slotData.Quantity}");
 
         if (slotData.Quantity > 1)
         {
@@ -66,10 +67,10 @@ public partial class Slot : PanelContainer
     {
         if (textureRect != null)
             textureRect.Texture = null;
-        
+
         if (quantityLabel != null)
             quantityLabel.Hide();
-        
+
         TooltipText = "";
     }
 
@@ -85,4 +86,8 @@ public partial class Slot : PanelContainer
             }
         }
     }
+    public void SetIndex(int index)
+{
+    this.index = index;
+}
 }

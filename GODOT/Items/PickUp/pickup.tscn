@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://b5n1w8nrqmm8r" path="res://Items/PickUp/Pickup.cs" id="1_haajc"]
 [ext_resource type="Texture2D" uid="uid://dljriqour1qbh" path="res://Items/icons/item_atlas.tres" id="1_tudlp"]
 [ext_resource type="Resource" uid="uid://nka1dva2r3oo" path="res://Items/Items/other_medkit.tres" id="2_2wytj"]
-[ext_resource type="Script" uid="uid://djlrkrs2nf3bi" path="res://Inventory/SlotData.cs" id="3_jcg62"]
+[ext_resource type="Script" uid="uid://djlrkrs2nf3bi" path="res://Inventory/SlotData.cs" id="3_2wytj"]
 
-[sub_resource type="Resource" id="Resource_2wytj"]
-script = ExtResource("3_jcg62")
+[sub_resource type="Resource" id="Resource_jcg62"]
+script = ExtResource("3_2wytj")
 ItemData = ExtResource("2_2wytj")
 Quantity = 1
 stackSizeMin = 1
@@ -16,9 +16,10 @@ metadata/_custom_type_script = "uid://djlrkrs2nf3bi"
 [sub_resource type="SphereShape3D" id="SphereShape3D_haajc"]
 
 [node name="Pickup" type="RigidBody3D"]
+collision_layer = 0
 lock_rotation = true
 script = ExtResource("1_haajc")
-SlotData = SubResource("Resource_2wytj")
+SlotData = SubResource("Resource_jcg62")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

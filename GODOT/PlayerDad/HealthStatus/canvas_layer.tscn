@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://drv88pq7gq3ol"]
+
+[ext_resource type="Script" uid="uid://cvqw7kdc76okf" path="res://PlayerDad/HealthStatus/ProgressBar.cs" id="1_gx0i3"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -282.0
+offset_bottom = 27.0
+grow_horizontal = 0
+value = 100.0
+script = ExtResource("1_gx0i3")

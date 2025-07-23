@@ -10,6 +10,8 @@ size = Vector3(50, 50, 10)
 
 [node name="SpawnTriggerZone" type="Area3D"]
 script = ExtResource("1_us1d8")
+thing_to_spawn = Object(CollisionShape3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"shape":SubResource("BoxShape3D_ysr17"),"disabled":false,"debug_fill":true,"script":null)
+
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_ysr17")
