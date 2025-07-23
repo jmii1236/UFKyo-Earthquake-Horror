@@ -1,16 +1,17 @@
-[gd_scene load_steps=40 format=3 uid="uid://i81kygw2dbc6"]
+[gd_scene load_steps=41 format=3 uid="uid://i81kygw2dbc6"]
 
 [ext_resource type="Script" uid="uid://byfog84srimr2" path="res://level/Level.cs" id="1_b7y0n"]
 [ext_resource type="PackedScene" uid="uid://c47krvq3ghs5w" path="res://PlayerDad/player_dad.tscn" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://fgwhvvmeae7m" path="res://level/Earthquake/earthquake.tscn" id="2_5gx2l"]
 [ext_resource type="Script" uid="uid://ct6e3f1hbbgvu" path="res://Inventory/InventoryData.cs" id="3_ml0fe"]
 [ext_resource type="Script" uid="uid://do5uypden6jop" path="res://level/GameOver.cs" id="3_qohg2"]
-[ext_resource type="Script" uid="uid://djlrkrs2nf3bi" path="res://Inventory/SlotData.cs" id="4_kdsbj"]
+[ext_resource type="Script" uid="uid://djlrkrs2nf3bi" path="res://Inventory/SplotData.cs" id="4_kdsbj"]
 [ext_resource type="Script" uid="uid://m4xso41vrq7c" path="res://HumanAI/MomNPC/MomNPC.cs" id="4_vkbyq"]
 [ext_resource type="PackedScene" uid="uid://c84q1rgpb4m8o" path="res://FireAI/fire_navigation.tscn" id="6_kdsbj"]
 [ext_resource type="PackedScene" uid="uid://da7b34imyasos" path="res://FireAI/fire_ai.tscn" id="7_tv7ir"]
 [ext_resource type="PackedScene" uid="uid://bqmplpp74sffc" path="res://house/House_Interior_Pt1.glb" id="12_rhqlf"]
 [ext_resource type="PackedScene" uid="uid://cd7hhr2ghs3bw" path="res://Items/Medkit/medkit.tscn" id="13_l5lfc"]
+[ext_resource type="Script" uid="uid://djlrkrs2nf3bi" path="res://Inventory/SlotData.cs" id="13_ml0fe"]
 [ext_resource type="PackedScene" uid="uid://clnnp3e7xet7j" path="res://FireAI/SpawnTrigger/spawn_trigger_zone.tscn" id="14_m3nah"]
 [ext_resource type="PackedScene" uid="uid://c4h65fys53dtx" path="res://FireAI/FireSafeZone/fire_safe_zone.tscn" id="15_m5ivw"]
 [ext_resource type="PackedScene" uid="uid://cagnctsnr11yr" path="res://level/WinTriggerZone/win_trigger_zone.tscn" id="15_sui6v"]
@@ -54,7 +55,7 @@ font_size = 100
 
 [sub_resource type="Resource" id="Resource_qslh7"]
 script = ExtResource("3_ml0fe")
-slotdatas = Array[ExtResource("4_kdsbj")]([])
+slotdatas = Array[ExtResource("13_ml0fe")]([])
 metadata/_custom_type_script = "uid://ct6e3f1hbbgvu"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jqyl"]
@@ -70,7 +71,6 @@ material = SubResource("StandardMaterial3D_ktfr2")
 
 [sub_resource type="Resource" id="Resource_kdsbj"]
 script = ExtResource("4_kdsbj")
-Quantity = 1
 stackSizeMin = 1
 stackSizeMax = 99
 metadata/_custom_type_script = "uid://djlrkrs2nf3bi"
