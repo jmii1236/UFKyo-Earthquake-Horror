@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://nka1dva2r3oo"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://nka1dva2r3oo"]
 
 [ext_resource type="Texture2D" uid="uid://bhbtnpvfw6syr" path="res://Items/icons/2D Pickups v6.2 spritesheet.png" id="1_8kmqy"]
 [ext_resource type="Script" uid="uid://c1y228j5sgvoy" path="res://Items/ItemData.cs" id="1_qf8m8"]
