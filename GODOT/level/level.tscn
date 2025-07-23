@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://i81kygw2dbc6"]
+[gd_scene load_steps=50 format=3 uid="uid://cfbigehpeh3n5"]
 
 [ext_resource type="Script" uid="uid://byfog84srimr2" path="res://level/Level.cs" id="1_b7y0n"]
 [ext_resource type="PackedScene" uid="uid://c47krvq3ghs5w" path="res://PlayerDad/player_dad.tscn" id="1_u52ul"]
@@ -9,19 +9,27 @@
 [ext_resource type="Script" uid="uid://m4xso41vrq7c" path="res://HumanAI/MomNPC/MomNPC.cs" id="4_vkbyq"]
 [ext_resource type="PackedScene" uid="uid://c84q1rgpb4m8o" path="res://FireAI/fire_navigation.tscn" id="6_kdsbj"]
 [ext_resource type="PackedScene" uid="uid://da7b34imyasos" path="res://FireAI/fire_ai.tscn" id="7_tv7ir"]
-[ext_resource type="PackedScene" uid="uid://bqmplpp74sffc" path="res://house/House_Interior_Pt1.glb" id="12_rhqlf"]
+[ext_resource type="Script" uid="uid://djlrkrs2nf3bi" path="res://Inventory/SlotData.cs" id="12_xdahv"]
 [ext_resource type="PackedScene" uid="uid://cd7hhr2ghs3bw" path="res://Items/Medkit/medkit.tscn" id="13_l5lfc"]
-[ext_resource type="Script" uid="uid://djlrkrs2nf3bi" path="res://Inventory/SlotData.cs" id="13_ml0fe"]
 [ext_resource type="PackedScene" uid="uid://clnnp3e7xet7j" path="res://FireAI/SpawnTrigger/spawn_trigger_zone.tscn" id="14_m3nah"]
 [ext_resource type="PackedScene" uid="uid://c4h65fys53dtx" path="res://FireAI/FireSafeZone/fire_safe_zone.tscn" id="15_m5ivw"]
 [ext_resource type="PackedScene" uid="uid://cagnctsnr11yr" path="res://level/WinTriggerZone/win_trigger_zone.tscn" id="15_sui6v"]
 [ext_resource type="PackedScene" uid="uid://dvhysox4grosx" path="res://HumanAI/MomNPC/mom_target.tscn" id="16_7jqyl"]
-[ext_resource type="Script" uid="uid://b67kiqe7vt3rf" path="res://HumanAI/ChildNPC/ChildNpc.cs" id="17_m5ivw"]
+[ext_resource type="PackedScene" uid="uid://eon0ykmpok72" path="res://Roads/road.tscn" id="17_m5ivw"]
 [ext_resource type="PackedScene" uid="uid://c08d03sj4go74" path="res://Inventory/slot.tscn" id="18_tv7ir"]
-[ext_resource type="PackedScene" uid="uid://gqyqyv1w3s2o" path="res://Inventory/inventory.tscn" id="19_kp5pi"]
+[ext_resource type="PackedScene" uid="uid://3lek7cfyvr1j" path="res://worldfeatures/ApartmentComplex (1).glb" id="19_kp5pi"]
+[ext_resource type="PackedScene" uid="uid://dwv4pkp70l43g" path="res://worldfeatures/7_11.glb" id="19_tv7ir"]
+[ext_resource type="PackedScene" uid="uid://c4oh48r33n1ym" path="res://worldfeatures/House_FixedNormals.glb" id="20_b7y0n"]
+[ext_resource type="PackedScene" uid="uid://b0bgwi6x1ery" path="res://worldfeatures/tokyo_japanese_house__casa_japonesa_low_poly.glb" id="20_kp5pi"]
 [ext_resource type="Script" uid="uid://ck2uu6c31y1mu" path="res://Inventory/InventoryInterface.cs" id="20_xl7j7"]
+[ext_resource type="PackedScene" uid="uid://c58ob6glra0gk" path="res://worldfeatures/japanese_residential_home_01.glb" id="21_b7y0n"]
 [ext_resource type="PackedScene" uid="uid://ced68wxragqi" path="res://HumanAI/ChildNPC/boy.tscn" id="21_u5n7q"]
+[ext_resource type="PackedScene" uid="uid://dh3y5ajio44u4" path="res://worldfeatures/japanese_residential_home_02.glb" id="22_v4yay"]
+[ext_resource type="PackedScene" uid="uid://cn5r7telq00tl" path="res://worldfeatures/basicStore.glb" id="23_ml0fe"]
 [ext_resource type="PackedScene" uid="uid://cpb27cldleyft" path="res://Items/PickUp/pickup.tscn" id="23_xl7j7"]
+[ext_resource type="PackedScene" uid="uid://c47rp0lqcso0a" path="res://worldfeatures/basicHouse_2Stories.glb" id="24_h74y2"]
+[ext_resource type="PackedScene" uid="uid://ckxuv37blsxvq" path="res://worldfeatures/basicHouse_1Story.glb" id="25_7cdnq"]
+[ext_resource type="PackedScene" uid="uid://bjsu14t7ph6hc" path="res://worldfeatures/Evacuation_Shelter.glb" id="26_lsj08"]
 [ext_resource type="PackedScene" uid="uid://dj0b43515uoo8" path="res://HumanAI/CrowdAI/crowd.tscn" id="26_ml0fe"]
 [ext_resource type="PackedScene" uid="uid://c6tp6560403w0" path="res://HumanAI/CrowdAI/crowdAnotherMan.tscn" id="27_h74y2"]
 [ext_resource type="PackedScene" uid="uid://cnpgh72e65lmp" path="res://HumanAI/CrowdAI/crowdFirstWoman.tscn" id="28_7cdnq"]
@@ -40,26 +48,19 @@ sky = SubResource("Sky_u52ul")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m5ivw"]
-albedo_color = Color(0.147859, 0.333988, 0.800969, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_sui6v"]
-material = SubResource("StandardMaterial3D_m5ivw")
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tv7ir"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m5ivw"]
-
 [sub_resource type="LabelSettings" id="LabelSettings_5gx2l"]
 font_size = 100
 
 [sub_resource type="Resource" id="Resource_qslh7"]
 script = ExtResource("3_ml0fe")
-slotdatas = Array[ExtResource("13_ml0fe")]([])
+slotdatas = Array[ExtResource("12_xdahv")]([])
 metadata/_custom_type_script = "uid://ct6e3f1hbbgvu"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jqyl"]
 size = Vector3(5.06003, 1, 0.78894)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sui6v"]
+size = Vector3(200.018, 30.6724, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktfr2"]
 albedo_color = Color(1, 0.423529, 1, 1)
@@ -75,7 +76,18 @@ stackSizeMin = 1
 stackSizeMax = 99
 metadata/_custom_type_script = "uid://djlrkrs2nf3bi"
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m5ivw"]
+albedo_color = Color(0.147859, 0.333988, 0.800969, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_sui6v"]
+material = SubResource("StandardMaterial3D_m5ivw")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tv7ir"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m5ivw"]
+
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.81794, 0.44753, 2.25734)
 script = ExtResource("1_b7y0n")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -86,28 +98,10 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="PlayerDad" parent="." instance=ExtResource("1_u52ul")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.4564, 1.8197, -3)
-
-[node name="ChildNPC" type="CharacterBody3D" parent="." node_paths=PackedStringArray("playerDad")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -61.3242, 1.59442, -1.2664)
-script = ExtResource("17_m5ivw")
-playerDad = NodePath("../PlayerDad")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ChildNPC"]
-mesh = SubResource("CapsuleMesh_sui6v")
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="ChildNPC"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ChildNPC"]
-shape = SubResource("CapsuleShape3D_tv7ir")
-
-[node name="PickUpArea" type="Area3D" parent="ChildNPC"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ChildNPC/PickUpArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.1936, 1.85469, -3)
-shape = SubResource("CapsuleShape3D_m5ivw")
 
 [node name="Earthquake" parent="." instance=ExtResource("2_5gx2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.2202, 0, -49.2477)
 
 [node name="GameOver" type="Control" parent="."]
 visible = false
@@ -153,14 +147,243 @@ debug = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.5989, 1.05077, -12.7277)
 inventoryData = SubResource("Resource_qslh7")
 
-[node name="House_Interior_Pt1" parent="." instance=ExtResource("12_rhqlf")]
-transform = Transform3D(2.38498e-08, 0, -2, 0, 2, 0, 2, 0, 2.38498e-08, -60.28, -0.4, -1.637)
+[node name="Roads" type="Node3D" parent="."]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="House_Interior_Pt1"]
+[node name="Road" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14.685, -0.1, -18.641)
+metadata/_edit_lock_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="House_Interior_Pt1/StaticBody3D"]
-transform = Transform3D(0.840567, 0.541708, 0, -0.541708, 0.840567, 0, 0, 0, 1, -1.49407, 1.22029, 3.63636)
+[node name="Road2" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14.69, -0.1, -29.5)
+metadata/_edit_lock_ = true
+
+[node name="Road3" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14.69, -0.1, -40.5)
+metadata/_edit_lock_ = true
+
+[node name="Road4" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.98907, -0.0763947, -18.6427)
+metadata/_edit_lock_ = true
+
+[node name="Road5" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.99444, -0.1, -29.5021)
+metadata/_edit_lock_ = true
+
+[node name="Road6" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.99444, -0.1, -40.5021)
+metadata/_edit_lock_ = true
+
+[node name="Road7" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.68631, -0.0763947, -18.6644)
+metadata/_edit_lock_ = true
+
+[node name="Road8" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.68094, -0.1, -29.5238)
+metadata/_edit_lock_ = true
+
+[node name="Road9" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.68094, -0.1, -40.5238)
+metadata/_edit_lock_ = true
+
+[node name="Road10" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 17.3082, -0.1, -18.6259)
+metadata/_edit_lock_ = true
+
+[node name="Road11" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 17.3032, -0.1, -29.4848)
+metadata/_edit_lock_ = true
+
+[node name="Road12" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 17.3032, -0.1, -40.4849)
+metadata/_edit_lock_ = true
+
+[node name="Road13" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 28.0041, -0.0763947, -18.6276)
+metadata/_edit_lock_ = true
+
+[node name="Road14" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 27.9988, -0.1, -29.4869)
+metadata/_edit_lock_ = true
+
+[node name="Road15" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 27.9988, -0.1, -40.487)
+metadata/_edit_lock_ = true
+
+[node name="Road16" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.6795, -0.0763947, -18.6493)
+metadata/_edit_lock_ = true
+
+[node name="Road17" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.6742, -0.1, -29.5087)
+metadata/_edit_lock_ = true
+
+[node name="Road18" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.6742, -0.1, -40.5087)
+metadata/_edit_lock_ = true
+
+[node name="Road19" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14.7451, -0.1, -51.2428)
+metadata/_edit_lock_ = true
+
+[node name="Road20" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14.7501, -0.1, -62.1018)
+metadata/_edit_lock_ = true
+
+[node name="Road21" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14.7501, -0.1, -73.1018)
+metadata/_edit_lock_ = true
+
+[node name="Road22" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.04916, -0.0763947, -51.2445)
+metadata/_edit_lock_ = true
+
+[node name="Road23" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.05453, -0.1, -62.1039)
+metadata/_edit_lock_ = true
+
+[node name="Road24" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.05453, -0.1, -73.1039)
+metadata/_edit_lock_ = true
+
+[node name="Road25" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.62622, -0.0763947, -51.2662)
+metadata/_edit_lock_ = true
+
+[node name="Road26" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.62085, -0.1, -62.1256)
+metadata/_edit_lock_ = true
+
+[node name="Road27" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.62085, -0.1, -73.1256)
+metadata/_edit_lock_ = true
+
+[node name="Road28" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 17.2481, -0.1, -51.2276)
+metadata/_edit_lock_ = true
+
+[node name="Road29" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 17.2431, -0.1, -62.0866)
+metadata/_edit_lock_ = true
+
+[node name="Road30" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 17.2431, -0.1, -73.0866)
+metadata/_edit_lock_ = true
+
+[node name="Road31" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 27.9441, -0.0763947, -51.2293)
+metadata/_edit_lock_ = true
+
+[node name="Road32" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 27.9387, -0.1, -62.0887)
+metadata/_edit_lock_ = true
+
+[node name="Road33" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 27.9387, -0.1, -73.0887)
+metadata/_edit_lock_ = true
+
+[node name="Road34" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.6194, -0.0763947, -51.251)
+metadata/_edit_lock_ = true
+
+[node name="Road35" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.6141, -0.1, -62.1104)
+metadata/_edit_lock_ = true
+
+[node name="Road36" parent="Roads" instance=ExtResource("17_m5ivw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.6141, -0.1, -73.1104)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(2.38498e-08, 0, -2, 0, 2, 0, 2, 0, 2.38498e-08, -34.5373, -0.400122, -47.8753)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.796129, 0.605127, -3.57545e-11, -0.605127, 0.796129, -9.22752e-10, -5.29919e-10, 7.56266e-10, 1, -2.21184, 1.572, 8.23311)
 shape = SubResource("BoxShape3D_7jqyl")
+
+[node name="Area3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.899, 3.73947, -23.2235)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -43.5, -0.954009, -108.503)
+shape = SubResource("BoxShape3D_sui6v")
+metadata/_edit_lock_ = true
+
+[node name="Area3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.899, 10.4755, -23.2235)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.1598, -12.9589, -208.22)
+shape = SubResource("BoxShape3D_sui6v")
+metadata/_edit_lock_ = true
+
+[node name="Area3D4" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.899, 10.4755, -23.2235)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.16, -12.959, -8)
+shape = SubResource("BoxShape3D_sui6v")
+
+[node name="Area3D3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.899, 3.73947, -23.2235)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 153.5, -0.954, -108.503)
+shape = SubResource("BoxShape3D_sui6v")
+metadata/_edit_lock_ = true
+
+[node name="7_112" parent="." instance=ExtResource("19_tv7ir")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -37.6604, 4.98341, -118.865)
+
+[node name="ApartmentComplex (1)" parent="." instance=ExtResource("19_kp5pi")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -14.3146, 8.43641, -71.0319)
+
+[node name="ApartmentComplex (1)2" parent="." instance=ExtResource("19_kp5pi")]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 5.5599, 8.30954, -139.553)
+
+[node name="House_FixedNormals" parent="." instance=ExtResource("20_b7y0n")]
+transform = Transform3D(-6.99382e-09, 0, 0.16, 0, 0.16, 0, -0.16, 0, -6.99382e-09, -43.3193, 0.886229, -91.1299)
+
+[node name="House_FixedNormals2" parent="." instance=ExtResource("20_b7y0n")]
+transform = Transform3D(1.90798e-09, 0, -0.16, 0, 0.16, 0, 0.16, 0, 1.90798e-09, -43.2551, 0.886229, -73.7181)
+
+[node name="House_FixedNormals3" parent="." instance=ExtResource("20_b7y0n")]
+transform = Transform3D(-0.23, 0, -3.4729e-08, 0, 0.23, 0, 3.4729e-08, 0, -0.23, -45.2884, 0.502437, -50.7158)
+
+[node name="house1_1" parent="." instance=ExtResource("20_kp5pi")]
+transform = Transform3D(0.011, 0, 0, 0, 0.011, 0, 0, 0, 0.011, 0.0279047, 1.35513, -49.2987)
+
+[node name="house1_2" parent="." instance=ExtResource("20_kp5pi")]
+transform = Transform3D(-0.011, 0, -1.66095e-09, 0, 0.011, 0, 1.66095e-09, 0, -0.011, -12.0133, 1.35513, -51.2028)
+
+[node name="house2_1" parent="." instance=ExtResource("21_b7y0n")]
+transform = Transform3D(-5.68248e-10, 0, -0.013, 0, 0.013, 0, 0.013, 0, -5.68248e-10, 33.6847, 0.343606, -42.9962)
+
+[node name="house2_2" parent="." instance=ExtResource("21_b7y0n")]
+transform = Transform3D(-5.68248e-10, 0, -0.013, 0, 0.013, 0, 0.013, 0, -5.68248e-10, 18.7991, 0.343606, -43.6476)
+
+[node name="house2_3" parent="." instance=ExtResource("21_b7y0n")]
+transform = Transform3D(-5.68248e-10, 0, 0.013, 0, 0.013, 0, -0.013, 0, -5.68248e-10, 19.1142, 0.343606, -57.3345)
+
+[node name="house2_4" parent="." instance=ExtResource("21_b7y0n")]
+transform = Transform3D(-5.68248e-10, 0, 0.013, 0, 0.013, 0, -0.013, 0, -5.68248e-10, 33.2685, 0.343606, -56.7464)
+
+[node name="house3_1" parent="." instance=ExtResource("22_v4yay")]
+transform = Transform3D(-0.017, 0, -1.48619e-09, 0, 0.017, 0, 1.48619e-09, 0, -0.017, 52.7338, 0.42924, -43.0133)
+
+[node name="basicStore" parent="." instance=ExtResource("23_ml0fe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.81794, 18.5525, -47.2573)
+
+[node name="basicHouse_2Stories" parent="." instance=ExtResource("24_h74y2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.81794, 5.55247, -54.2573)
+
+[node name="basicHouse_1Story" parent="." instance=ExtResource("25_7cdnq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.8179, 3.55247, -60.2573)
+
+[node name="Evacuation_Shelter" parent="." instance=ExtResource("26_lsj08")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 129.182, 26.436, -144.707)
 
 [node name="Mom" type="Node3D" parent="."]
 
@@ -195,19 +418,9 @@ grow_vertical = 2
 script = ExtResource("20_xl7j7")
 
 [node name="PlayerInventory" parent="UI/InventoryInterface" instance=ExtResource("19_kp5pi")]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 50.0
-offset_bottom = 50.0
 
 [node name="ExternalInventory" parent="UI/InventoryInterface" instance=ExtResource("19_kp5pi")]
 visible = false
-layout_mode = 0
-offset_left = 665.0
-offset_top = 286.0
-offset_right = 705.0
-offset_bottom = 326.0
 
 [node name="GrabbedSlot" parent="UI/InventoryInterface" instance=ExtResource("18_tv7ir")]
 visible = false
@@ -244,10 +457,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.2351, 0, -14.779)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("29_lsj08")]
 
-[node name="Boy" parent="." node_paths=PackedStringArray("playerDad") instance=ExtResource("21_u5n7q")]
+[node name="Boy" parent="." instance=ExtResource("21_u5n7q")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -41.0715, 1.42926, 0)
-script = ExtResource("17_m5ivw")
-playerDad = NodePath("../PlayerDad")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Boy"]
 visible = false
