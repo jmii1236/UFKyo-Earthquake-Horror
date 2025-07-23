@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://4quwhaoosx00"]
+
+[ext_resource type="Script" uid="uid://rbfst503vqil" path="res://GameUI/MainMenu/MainMenu.cs" id="1_5h1hf"]
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_5h1hf")
+
+[node name="Button Manager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="Button Manager"]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 260.0
+offset_right = 741.0
+offset_bottom = 319.0
+text = "Start
+"
+
+[node name="Quit" type="Button" parent="Button Manager"]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 366.0
+offset_right = 739.0
+offset_bottom = 425.0
+text = "Quit
+"
+
+[connection signal="pressed" from="Button Manager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button Manager/Quit" to="." method="_on_quit_pressed"]

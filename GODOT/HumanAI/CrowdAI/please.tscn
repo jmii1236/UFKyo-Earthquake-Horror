@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dps5k30bu4m36"]
+
+[ext_resource type="PackedScene" uid="uid://bgudxnbwg3a76" path="res://HumanAI/CrowdAI/Models/Animation/PLEASE.glb" id="1_py4cs"]
+
+[node name="PLEASE" instance=ExtResource("1_py4cs")]

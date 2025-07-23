@@ -15,7 +15,7 @@ public partial class Pickup : RigidBody3D
     var area3d = GetNode<Area3D>("Area3D");
     area3d.BodyEntered += _on_area_3d_body_entered;
     
-    var collisionShape = area3d.GetNode<CollisionShape3D>("CollisionShape3D");
+    var collisionShape = area3d.GetNode<CollisionShape3D>("CollisionShape3D2");
 }
     
     public override void _PhysicsProcess(double delta)

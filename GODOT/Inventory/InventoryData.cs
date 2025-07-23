@@ -6,8 +6,7 @@ public partial class InventoryData : Resource
 {
   [Signal] public delegate void InventoryInteractEventHandler(InventoryData inventoryData, int index, int button);
   [Signal] public delegate void InventoryUpdatedEventHandler(InventoryData inventoryData);
-  [Export]
-  public Godot.Collections.Array<SlotData> slotdatas { get; set; } = new();
+  [Export] public Godot.Collections.Array<SlotData> slotdatas { get; set; } = new();
 
   public void OnSlotClickedEventHandler(int index, int button)
   {
@@ -21,7 +20,6 @@ public partial class InventoryData : Resource
     {
       slotdatas[index] = grabbedSlotData;
       EmitSignal(SignalName.InventoryUpdated, this);
-
     }
     return slotData;
   }
