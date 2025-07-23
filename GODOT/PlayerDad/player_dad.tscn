@@ -9,7 +9,7 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xj4et"]
 
-[node name="PlayerDad" type="CharacterBody3D"]
+[node name="PlayerDad" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_4hbp1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

@@ -223,7 +223,7 @@ public partial class PlayerDad : CharacterBody3D
 	public void _on_area_3d_area_entered(Node3D body)
 	{
 		//GD.Print("Current health: " + CurrentHealth);
-			GD.Print("Entered by non-PlayerDad: " + body.Name);
-			TakeDamage(5); // Example damage value
-}
+		GD.Print("Entered by non-PlayerDad: " + body.Name);
+		TakeDamage(5); // Example damage value
+	}
 }
