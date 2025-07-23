@@ -28,6 +28,7 @@ public partial class PlayerDad : CharacterBody3D
 	public int CurrentHealth;
 
 	private float PitchAngle = 0.0f; // to track the current pitch for clamping
+	private Area3D FireDetector = null;
 
 	public override void _Ready()
 	{

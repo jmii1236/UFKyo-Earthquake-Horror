@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://yykdyg5pa7sd"]
+
+[ext_resource type="Script" uid="uid://c34b8kdjih52" path="res://Menus/MainMenu/MainMenu.cs" id="1_s5h8b"]
+[ext_resource type="Theme" uid="uid://jahlbpbftj1r" path="res://Menus/MainMenu/button_theme.tres" id="2_h6le2"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s5h8b")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -306.0
+offset_top = -140.5
+offset_right = 306.0
+offset_bottom = 140.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_h6le2")
+text = "Play"
+metadata/_edit_lock_ = true
+
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_h6le2")
+text = "Settings"
+metadata/_edit_lock_ = true
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_h6le2")
+text = "Quit"
+metadata/_edit_lock_ = true

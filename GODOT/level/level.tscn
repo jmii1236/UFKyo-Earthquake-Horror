@@ -44,6 +44,16 @@ sky = SubResource("Sky_u52ul")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m5ivw"]
+albedo_color = Color(0.147859, 0.333988, 0.800969, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_sui6v"]
+material = SubResource("StandardMaterial3D_m5ivw")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tv7ir"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m5ivw"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_5gx2l"]
 font_size = 100
 
@@ -179,8 +189,6 @@ material = SubResource("StandardMaterial3D_m5ivw")
 
 [node name="Node3D" type="Node3D" node_paths=PackedStringArray("player", "inventoryInterface")]
 script = ExtResource("1_b7y0n")
-player = NodePath("PlayerDad")
-inventoryInterface = NodePath("UI/InventoryInterface")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vonw3")
@@ -223,17 +231,17 @@ navigation_mesh = SubResource("NavigationMesh_fm1jd")
 [node name="World" parent="NavigationRegion3D" instance=ExtResource("5_fm1jd")]
 transform = Transform3D(400, 0, 0, 0, 400, 0, 0, 0, 400, -3.00684, -32.8963, 4.55495)
 
-[node name="FireAI" type="CharacterBody3D" parent="."]
-transform = Transform3D(-0.993562, 0, 0.11329, 0, 1, 0, -0.11329, 0, -0.993562, -47.6939, 1.88853, 7.72164)
-script = ExtResource("6_44x8d")
+[node name="TriggerZones" type="Node3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="FireAI"]
-transform = Transform3D(0.205043, 0, -0.978753, 0, 1, 0, 0.978753, 0, 0.205043, 0, 0.635794, 0)
-mesh = SubResource("CylinderMesh_0v1st")
+[node name="SpawnTriggerZone" parent="TriggerZones" node_paths=PackedStringArray("PlayerDad") instance=ExtResource("14_m3nah")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -8.6063, 0, 0)
+thing_to_spawn = ExtResource("7_tv7ir")
+PlayerDad = NodePath("../../PlayerDad")
+debug = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FireAI"]
-transform = Transform3D(-0.70086, 0, 0.713299, 0, 1, 0, -0.713299, 0, -0.70086, 0, 0, 0)
-shape = SubResource("CylinderShape3D_6gtgk")
+[node name="FireSafeZone" parent="TriggerZones" instance=ExtResource("15_m5ivw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.5986, 4.90571, 40.1918)
+debug = true
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="FireAI"]
 
@@ -285,10 +293,9 @@ shape = SubResource("BoxShape3D_7jqyl")
 
 [node name="Mom" type="Node3D" parent="."]
 
-[node name="MomNPC" type="CharacterBody3D" parent="Mom" node_paths=PackedStringArray("playerDad")]
+[node name="MomNPC" type="CharacterBody3D" parent="Mom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.25, 1.33793, -19.989)
 script = ExtResource("4_vkbyq")
-playerDad = NodePath("../MomTarget")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Mom/MomNPC"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.51369, 0, 0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://clnnp3e7xet7j"]
+[gd_scene load_steps=4 format=3 uid="uid://clnnp3e7xet7j"]
 
 [ext_resource type="Script" uid="uid://b4lfvwhpngjau" path="res://FireAI/SpawnTrigger/SpawnTriggerZone.cs" id="1_us1d8"]
 
