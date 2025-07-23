@@ -13,4 +13,6 @@ public partial class Globals : Node
 	public delegate void DisableFireEventHandler();
 	[Signal]
 	public delegate void WinGameEventHandler();
+	[Signal]
+	public delegate void SetPlayerEventHandler(CharacterBody3D Player);
 }
