@@ -1,0 +1,176 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://ddq23hrupd4ox"
+path="res://.godot/imported/House_FixedNormals.blend-b5fa03619d205480cfdfdfaefc1e3dc2.scn"
+
+[deps]
+
+source_file="res://worldfeatures/House_FixedNormals.blend"
+dest_files=["res://.godot/imported/House_FixedNormals.blend-b5fa03619d205480cfdfdfaefc1e3dc2.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"nodes": {
+"PATH:1F_ceilings": {
+"generate/physics": true
+},
+"PATH:1F_floors": {
+"generate/physics": true
+},
+"PATH:1F_innerWalls": {
+"generate/physics": true
+},
+"PATH:2F_ceiling": {
+"generate/physics": true
+},
+"PATH:2F_floors": {
+"generate/physics": true
+},
+"PATH:2F_innerWallDivisions": {
+"generate/physics": true
+},
+"PATH:2F_innerWalls": {
+"generate/physics": true
+},
+"PATH:CONCRETE_inbetweenFloorsWalls": {
+"generate/physics": true
+},
+"PATH:Cube": {
+"generate/physics": true
+},
+"PATH:STAIRS": {
+"generate/physics": true
+},
+"PATH:STAIRS/STAIRS_lightWood": {
+"generate/physics": true
+},
+"PATH:daughterBed": {
+"generate/physics": true
+},
+"PATH:daughterBed/pillows": {
+"generate/physics": true
+},
+"PATH:daughterBed/sheets": {
+"generate/physics": true
+},
+"PATH:daughtertable": {
+"generate/physics": true
+},
+"PATH:daughtertable/bottom_002": {
+"generate/physics": true
+},
+"PATH:garndparenttable": {
+"generate/physics": true
+},
+"PATH:garndparenttable/bottom": {
+"generate/physics": true
+},
+"PATH:glass": {
+"generate/physics": true
+},
+"PATH:grandparentBed": {
+"generate/physics": true
+},
+"PATH:grandparentBed/pillows_002": {
+"generate/physics": true
+},
+"PATH:grandparentBed/sheets_003": {
+"generate/physics": true
+},
+"PATH:inbetweenFloorsWalls": {
+"generate/physics": true
+},
+"PATH:kitchentable": {
+"generate/physics": true
+},
+"PATH:kitchentable/bottom_001": {
+"generate/physics": true
+},
+"PATH:livingroomtable": {
+"generate/physics": true
+},
+"PATH:livingroomtable/top_001": {
+"generate/physics": true
+},
+"PATH:outsideWalls": {
+"generate/physics": true
+},
+"PATH:parentBed": {
+"generate/physics": true
+},
+"PATH:parentBed/pillows_001": {
+"generate/physics": true
+},
+"PATH:parentBed/sheets_002": {
+"generate/physics": true
+},
+"PATH:parenttable": {
+"generate/physics": true
+},
+"PATH:parenttable/bottom_004": {
+"generate/physics": true
+},
+"PATH:roofs": {
+"generate/physics": true
+},
+"PATH:sonBed": {
+"generate/physics": true
+},
+"PATH:sonBed/mattress": {
+"generate/physics": true
+},
+"PATH:sonBed/sheets_001": {
+"generate/physics": true
+},
+"PATH:sontable": {
+"generate/physics": true
+},
+"PATH:sontable/bottom_003": {
+"generate/physics": true
+},
+"PATH:windows_doors": {
+"generate/physics": true
+}
+}
+}
+blender/nodes/visible=0
+blender/nodes/active_collection_only=false
+blender/nodes/punctual_lights=true
+blender/nodes/cameras=true
+blender/nodes/custom_properties=true
+blender/nodes/modifiers=1
+blender/meshes/colors=false
+blender/meshes/uvs=true
+blender/meshes/normals=true
+blender/meshes/export_geometry_nodes_instances=false
+blender/meshes/tangents=true
+blender/meshes/skins=2
+blender/meshes/export_bones_deforming_mesh_only=false
+blender/materials/unpack_enabled=true
+blender/materials/export_materials=1
+blender/animation/limit_playback=true
+blender/animation/always_sample=true
+blender/animation/group_tracks=true
