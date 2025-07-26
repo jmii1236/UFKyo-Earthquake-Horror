@@ -16,7 +16,7 @@ public partial class FireSafeZone : Area3D
         }
 
         BodyEntered += _On_Body_Entered;
-        globals = GetNode("/root/Globals") as Globals;
+        globals = Globals.Instance;
     }
 
     private void _On_Body_Entered(Node3D body)
