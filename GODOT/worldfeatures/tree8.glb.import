@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/tree8.glb-51f34e89df1897685eac30119350940e.sc
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="StaticBody3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
@@ -32,6 +32,12 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Sketchfab_model_006/tree_X12_+X1_Rock_Pack_fbx_006/RootNode_006/_8_tree/_8_tree__8_tree_0": {
+"generate/physics": true
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
