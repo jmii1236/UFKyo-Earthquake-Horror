@@ -6,14 +6,17 @@ public partial class ChildNpc : CharacterBody3D
 	private float accel = 7.0f;
 
 	private NavigationAgent3D nav;
-	[Export] private CharacterBody3D playerDad;
-	
+	private CharacterBody3D playerDad;
+	private ChildNpc childNpc;
+	public bool ChildNPCPickedUp { get; set; } = false;
+	private bool wasPickedUpLastFrame = false;
+
 	// Animation settings - exportable for easy configuration
 	[Export] private string SlowRunAnimationName = "BoyAnimations/SlowRun";
 	[Export] private string IdleAnimationName = "BoyAnimations/Idle";
 	[Export] private string AnimationPlayerPath = "AnimationPlayer";
 	[Export] private float MovementThreshold = 0.1f; // Speed threshold to switch between idle and run
-	
+
 	// Animation reference
 	private AnimationPlayer animationPlayer;
 	private string currentAnimation = "";
@@ -23,23 +26,30 @@ public partial class ChildNpc : CharacterBody3D
 	{
 		// Initialize NavigationAgent3D first
 		nav = GetNode<NavigationAgent3D>("NavigationAgent3D");
-		
+
 		if (nav == null)
 		{
 			GD.PrintErr("NavigationAgent3D node not found! Make sure it exists as a child node.");
 		}
-		
+
 		// Check if playerDad is assigned
+		playerDad = GetNode<CharacterBody3D>("../../PlayerDad");
 		if (playerDad == null)
 		{
 			GD.PrintErr("playerDad is not assigned! Please assign it in the editor.");
 		}
-		
+
 		// Find and initialize AnimationPlayer
 		FindAnimationPlayer();
-		
+
 		// Start with idle animation
 		PlayAnimation(IdleAnimationName);
+		childNpc = GetNode<ChildNpc>("../Boy");
+		if (childNpc == null)
+		{
+			GD.PrintErr("Child NPC not found! Please check the scene structure.");
+			return;
+		}
 	}
 
 	private void FindAnimationPlayer()
@@ -102,7 +112,7 @@ public partial class ChildNpc : CharacterBody3D
 		{
 			return player;
 		}
-		
+
 		foreach (Node child in node.GetChildren())
 		{
 			var result = FindAnimationPlayerRecursive(child);
@@ -111,7 +121,7 @@ public partial class ChildNpc : CharacterBody3D
 				return result;
 			}
 		}
-		
+
 		return null;
 	}
 
@@ -123,7 +133,7 @@ public partial class ChildNpc : CharacterBody3D
 			GD.PrintErr("playerDad is null! Please assign it in the editor or via code.");
 			return;
 		}
-		
+
 		if (nav == null)
 		{
 			GD.PrintErr("NavigationAgent3D is null! Make sure it exists in the scene.");
@@ -131,45 +141,67 @@ public partial class ChildNpc : CharacterBody3D
 		}
 
 		Vector3 direction = Vector3.Zero;
+		if (ChildNPCPickedUp)
+		{
+			childNpc.GlobalPosition = playerDad.GlobalPosition + new Vector3(0, 1.5f, 0); // Adjust position above player
+		}
+		else if (wasPickedUpLastFrame)
+    {
+        // Just dropped — place in front of player
+        Vector3 forward = -playerDad.GlobalTransform.Basis.Z.Normalized(); // forward direction
+        Vector3 dropPosition = playerDad.GlobalPosition + forward * 1.5f;   // 1.5 units in front
+        childNpc.GlobalPosition = dropPosition;
+    }
+
+    wasPickedUpLastFrame = ChildNPCPickedUp;
 
 		nav.TargetPosition = playerDad.GlobalPosition;
 
 		// Check if we have a valid path
+		//GD.Print("Player Dad Position: " + playerDad.GlobalPosition);
+		//GD.Print("Child NPC Position: " + childNpc.GlobalPosition);
+		//GD.Print("Global position: " + GlobalPosition);
 		if (nav.IsNavigationFinished())
 		{
 			// No movement needed, should be idle
+			//GD.Print("No path found, NPC is idle.");
 			isMoving = false;
 		}
 		else
 		{
+			// GD.Print(nav.IsTargetReachable());
+			// GD.Print(nav.GetFinalPosition());
 			direction = nav.GetNextPathPosition() - GlobalPosition;
 			direction = direction.Normalized();
+			//GD.Print($"{direction.X} {direction.Y} {speed} {accel} {delta}");
+
 
 			Velocity = Velocity.Lerp(direction * speed, (float)(accel * delta));
-			
+			// GD.Print("Velocity: " + Velocity);
+
 			// Check if we're actually moving
 			isMoving = Velocity.Length() > MovementThreshold;
 		}
 
 		MoveAndSlide();
-		
+
 		// Update animations based on movement
 		UpdateAnimationState();
 	}
-	
+
 	private void UpdateAnimationState()
 	{
 		if (animationPlayer == null) return;
-		
+
 		// Determine which animation should be playing
 		string targetAnimation = isMoving ? SlowRunAnimationName : IdleAnimationName;
-		
+
 		// Switch animations if needed
 		if (targetAnimation != currentAnimation)
 		{
 			PlayAnimation(targetAnimation);
 		}
-		
+
 		// Adjust animation speed based on movement speed if running
 		if (isMoving && currentAnimation == SlowRunAnimationName)
 		{
@@ -183,14 +215,14 @@ public partial class ChildNpc : CharacterBody3D
 			animationPlayer.SpeedScale = 1.0f;
 		}
 	}
-	
+
 	private void PlayAnimation(string animationName)
 	{
 		if (animationPlayer == null || string.IsNullOrEmpty(animationName)) return;
-		
+
 		// Don't restart the same animation
 		if (currentAnimation == animationName && animationPlayer.IsPlaying()) return;
-		
+
 		if (animationPlayer.HasAnimation(animationName))
 		{
 			animationPlayer.Play(animationName);
@@ -206,15 +238,30 @@ public partial class ChildNpc : CharacterBody3D
 			}
 		}
 	}
-	
+
 	// Public method to get current animation state (useful for debugging)
 	public string GetCurrentAnimation()
 	{
 		return currentAnimation;
 	}
-	
+
 	public bool IsMoving()
 	{
+		GD.Print($"IsMoving: {isMoving}, Velocity: {Velocity}");
 		return isMoving;
+	}
+	public void PickedUp()
+	{
+		GD.Print("Child NPC picked up by player.");
+		Visible = false; // Hide the NPC when picked up
+		speed = 5.0f;
+		ChildNPCPickedUp = true;
+	}
+	public void Droped()
+	{
+		GD.Print("Child NPC dropped by player.");
+		Visible = true;
+		ChildNPCPickedUp = false;
+		speed = 1.3f;
 	}
 }
