@@ -17,7 +17,7 @@ public partial class Siren : Area3D
 
         Timer start_timer = new Timer();
         start_timer.Timeout += () => timer.Start(interval_between);
-        start_timer.Start(start_time_siren);
+        start_timer.Autostart = true;
 
         timer.Timeout += PlaySiren;
     }
