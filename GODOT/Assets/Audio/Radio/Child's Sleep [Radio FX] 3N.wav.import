@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cg85574hcnjmh"
+path="res://.godot/imported/Child's Sleep [Radio FX] 3N.wav-df473e28ea09ae5633b906f8e40c8136.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Radio/Child's Sleep [Radio FX] 3N.wav"
+dest_files=["res://.godot/imported/Child's Sleep [Radio FX] 3N.wav-df473e28ea09ae5633b906f8e40c8136.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
