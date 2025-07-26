@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cak2leacnudic"]
+
+[ext_resource type="Script" uid="uid://cii2ofwxflk2p" path="res://Level/Speakers/Siren/Siren.cs" id="1_2pgfi"]
+[ext_resource type="PackedScene" uid="uid://q0jjoeoof77t" path="res://Assets/Models/GLB format/Siren.glb" id="2_6q232"]
+[ext_resource type="AudioStream" uid="uid://bvpsdnmq8iv6h" path="res://Assets/Audio/Siren/announcement.wav" id="3_6q232"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_csy4i"]
+size = Vector3(1, 20.398, 1)
+
+[node name="Siren" type="Area3D"]
+script = ExtResource("1_2pgfi")
+start_time_siren = 1.0
+interval_between = 3.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="SirenModel" parent="." instance=ExtResource("2_6q232")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.975, 0)
+shape = SubResource("BoxShape3D_csy4i")
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 5.0
+autostart = true
+
+[node name="Noise" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_6q232")

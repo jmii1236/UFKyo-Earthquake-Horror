@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwtu363onajbu"]
+
+[ext_resource type="Script" uid="uid://byf2a1bix1y3e" path="res://Level/Speakers/Radio/Radio.cs" id="1_6vp0h"]
+[ext_resource type="ArrayMesh" uid="uid://3hhei4q55i3m" path="res://Assets/Models/Radio/radio.obj" id="1_gnnwk"]
+[ext_resource type="AudioStream" uid="uid://rsh1ynnlvng3" path="res://Assets/Audio/Radio/Radio 1 Small Clicks w Buzz.wav" id="3_s2m1c"]
+[ext_resource type="AudioStream" uid="uid://cg85574hcnjmh" path="res://Assets/Audio/Radio/Child's Sleep [Radio FX] 3N.wav" id="4_ujsuo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ujsuo"]
+size = Vector3(0.203873, 0.541734, 0.0891113)
+
+[node name="Radio" type="Area3D"]
+script = ExtResource("1_6vp0h")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_gnnwk")
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="RadioOn" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_s2m1c")
+
+[node name="Music" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_ujsuo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00295258, 0.277291, -0.00012207)
+shape = SubResource("BoxShape3D_ujsuo")

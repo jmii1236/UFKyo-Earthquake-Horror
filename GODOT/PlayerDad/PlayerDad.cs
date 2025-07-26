@@ -113,6 +113,7 @@ public partial class PlayerDad : CharacterBody3D
 					Item item = Collider as Item;
 					_On_Item_Interaction(item);
 				}
+
 				// Handle External Inventory interactions (medkit chest, actual chests, etc.)
 				else if (Collider.IsInGroup("ExternalInventory"))
 				{
@@ -126,6 +127,11 @@ public partial class PlayerDad : CharacterBody3D
 					{
 						Collider.Call("PlayerInteract");
 					}
+				}
+
+				if (Collider is Radio radio)
+				{
+					radio.PlayerInteract();
 				}
 			}
 		}
