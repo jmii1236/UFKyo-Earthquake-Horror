@@ -4,12 +4,12 @@ using System;
 public partial class InventoryInterface : Control
 {
     private SlotData grabbedSlotData;
-    private PanelContainer playerInventory;
+    [Export] private PanelContainer playerInventory;
     private InventoryData externalInventoryOwner;
 
     private PanelContainer externalInventory;
 
-    private PanelContainer grabbedSlot;
+    [Export] private PanelContainer grabbedSlot;
 
     public override void _Ready()
     {
