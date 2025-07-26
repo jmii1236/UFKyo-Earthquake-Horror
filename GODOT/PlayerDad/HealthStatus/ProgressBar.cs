@@ -7,10 +7,10 @@ public partial class ProgressBar : Godot.ProgressBar
 
   public override void _Ready()
   {
-    PlayerDad = GetNode<PlayerDad>("../../PlayerDad");
+    PlayerDad = GetTree().Root.GetNode("Node3D/PlayerDad") as PlayerDad;
     if (PlayerDad == null)
     {
-      GD.PrintErr("Could not find PlayerDad node.");
+      GD.PrintErr("ProgressBar: Could not find PlayerDad node.");
       return;
     }
 

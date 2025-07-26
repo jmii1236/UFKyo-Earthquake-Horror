@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://fgwhvvmeae7m"]
 
-[ext_resource type="Script" uid="uid://bq78f3jbd1trg" path="res://level/Earthquake/Earthquake.cs" id="1_1ubav"]
+[ext_resource type="Script" uid="uid://bq78f3jbd1trg" path="res://Level/Earthquake/Earthquake.cs" id="1_1ubav"]
 
 [node name="Earthquake" type="Node3D"]
 script = ExtResource("1_1ubav")

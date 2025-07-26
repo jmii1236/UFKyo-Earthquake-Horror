@@ -8,7 +8,7 @@ public partial class Earthquake : Node3D
 
     public override void _Ready()
     {
-        globals = GetNode("/root/Globals") as Globals;
+        globals = Globals.Instance;
 
         _timer = GetNode<Timer>("Timer");
         _timer.Timeout += () => globals.EmitSignal(Globals.SignalName.EarthquakeOccurs);

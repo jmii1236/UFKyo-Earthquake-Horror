@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bu7kqahsryilc"
+path="res://.godot/imported/ManPosingFinal.obj-b7e50b7fadc4e8d7f98f7e43775a3bef.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ManPosingFinal.obj-b7e50b7fadc4e8d7f98f7e43775a3bef.mesh"]
+
+source_file="res://AI/HumanAI/CrowdAI/Models/Animation/ManPosingFinal.obj"
+dest_files=["res://.godot/imported/ManPosingFinal.obj-b7e50b7fadc4e8d7f98f7e43775a3bef.mesh", "res://.godot/imported/ManPosingFinal.obj-b7e50b7fadc4e8d7f98f7e43775a3bef.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

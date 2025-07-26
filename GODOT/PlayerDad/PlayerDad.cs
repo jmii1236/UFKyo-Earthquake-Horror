@@ -36,7 +36,7 @@ public partial class PlayerDad : CharacterBody3D
 		PitchPivot = TwistPivot.GetNode<Node3D>("PitchPivot");
 		Camera = PitchPivot.GetNode<Camera3D>("Camera3D");
 
-		globals = GetNode("/root/Globals") as Globals;
+		globals = Globals.Instance;
 		raycast = GetNode("%ItemChecker") as RayCast3D;
 		PlayerDad player = GetNode<PlayerDad>("../PlayerDad");
 		if (player == null)

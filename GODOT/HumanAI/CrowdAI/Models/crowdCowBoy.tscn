@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccmjtemgqesj"]
-
-[ext_resource type="PackedScene" uid="uid://d4ae1pvdktkqg" path="res://HumanAI/CrowdAI/Models/OtherMan.glb" id="1_2ytty"]
-
-[node name="OtherMan" instance=ExtResource("1_2ytty")]

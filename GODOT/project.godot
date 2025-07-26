@@ -11,12 +11,12 @@ config_version=5
 [application]
 
 config/name="UFKyo-Earthquake-Horror"
-run/main_scene="uid://i81kygw2dbc6"
+run/main_scene="uid://caexss41451q8"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 
 [autoload]
 
-Globals="*res://globals.gd"
+Globals="*res://Globals/Globals.cs"
 
 [display]
 

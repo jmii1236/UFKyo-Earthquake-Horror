@@ -7,7 +7,7 @@ public partial class Level : Node3D
 
     public override void _Ready()
     {
-        inventoryInterface = GetNode<Control>("UI/InventoryInterface");
+        inventoryInterface = GetNode<Control>("Menus/UI/InventoryInterface");
         player.Connect(nameof(PlayerDad.ToggleInventory), new Callable(this, nameof(ToggleInventoryInterface)));
         
         // Cast player to PlayerDad to access InventoryData
@@ -41,36 +41,36 @@ public partial class Level : Node3D
     }
 
   // Handle external inventory toggle (medkit chest, actual chests, etc.)
-  private void ToggleInventoryInterface(InventoryData externalInventory)
-  {
-    inventoryInterface.Visible = !inventoryInterface.Visible;
+  	private void ToggleInventoryInterface(InventoryData externalInventory)
+  	{
+  	  	inventoryInterface.Visible = !inventoryInterface.Visible;
 
-    if (inventoryInterface.Visible)
-    {
-      Input.MouseMode = Input.MouseModeEnum.Visible;
-      GD.Print("Opening external inventory: " + externalInventory.ToString());
+  	  	if (inventoryInterface.Visible)
+  	  	{
+  	    	Input.MouseMode = Input.MouseModeEnum.Visible;
+  	    	GD.Print("Opening external inventory: " + externalInventory.ToString());
 
-      // Set the external inventory when opening
-      ((InventoryInterface)inventoryInterface).SetExternalInventory(externalInventory);
-    }
-    else
-    {
-      Input.MouseMode = Input.MouseModeEnum.Captured;
-      GD.Print("Closing external inventory");
+  	    	// Set the external inventory when opening
+  	    	((InventoryInterface)inventoryInterface).SetExternalInventory(externalInventory);
+  	  	}
+  	  	else
+  	  	{
+  	    	Input.MouseMode = Input.MouseModeEnum.Captured;
+  	    	GD.Print("Closing external inventory");
 
-      // Clear/hide the external inventory when closing
-      // You might need to add a method to hide it, or pass null
-      ((InventoryInterface)inventoryInterface).ClearExternalInventory(externalInventory);
-    }
-    if (externalInventory != null && inventoryInterface.Visible)
-    {
-      GD.Print("External inventory toggled: " + externalInventory.ToString());
-      ((InventoryInterface)inventoryInterface).SetExternalInventory(externalInventory);
-    }
-    else
-    {
-      GD.Print("No external inventory to toggle");
-      ((InventoryInterface)inventoryInterface).ClearExternalInventory(externalInventory);
-    }
-}
+  	    	// Clear/hide the external inventory when closing
+  	    	// You might need to add a method to hide it, or pass null
+  	    	((InventoryInterface)inventoryInterface).ClearExternalInventory(externalInventory);
+  	  	}
+  	  	if (externalInventory != null && inventoryInterface.Visible)
+  	  	{
+  	    	GD.Print("External inventory toggled: " + externalInventory.ToString());
+  	    	((InventoryInterface)inventoryInterface).SetExternalInventory(externalInventory);
+  	  	}
+  	  	else
+  	  	{
+  	   		GD.Print("No external inventory to toggle");
+  	    	((InventoryInterface)inventoryInterface).ClearExternalInventory(externalInventory);
+  	  	}
+	}
 }
