@@ -7,8 +7,10 @@ public partial class PlayerDad : CharacterBody3D
 {
 	[Signal] public delegate void ToggleInventoryEventHandler();
 
-	[Signal] public delegate void HealthChangeEventHandler(int newHealth); 
+	[Signal] public delegate void HealthChangeEventHandler(int newHealth);
 	[Export] public InventoryData InventoryData { get; set; }
+	public ChildNpc childNpc;
+	public bool ChildNPCPickedUp { get; set; } = false;
 
 
 	private float MouseSensitivity = 0.001f;
@@ -39,6 +41,12 @@ public partial class PlayerDad : CharacterBody3D
 		globals = Globals.Instance;
 		raycast = GetNode("%ItemChecker") as RayCast3D;
 		PlayerDad player = GetNode<PlayerDad>("../PlayerDad");
+		childNpc = GetNode<ChildNpc>("../NPCs/Boy");
+		if (childNpc == null)
+		{
+			GD.PrintErr("Child NPC not found! Please check the scene structure.");
+			return;
+		}
 		if (player == null)
 		{
 			GD.PrintErr("Could not find PlayerDad node. (PlayerDad.cs)");
@@ -95,6 +103,21 @@ public partial class PlayerDad : CharacterBody3D
 				}
 			}
 		}
+		if (Input.IsActionJustPressed("drop"))
+		{
+			if (childNpc == null)
+			{
+				GD.PrintErr("Child NPC is null! Cannot drop.");
+				return;
+			}
+			if (ChildNPCPickedUp == true)
+			{
+				childNpc.Droped();
+				ChildNPCPickedUp = false;
+			}
+			IsChildIsPickedUp(childNpc.ChildNPCPickedUp);
+
+		}
 
 		if (Input.IsActionJustPressed("ui_cancel"))
 		{
@@ -107,6 +130,17 @@ public partial class PlayerDad : CharacterBody3D
 
 			if (Input.IsActionJustPressed("interact"))
 			{
+				if (Collider is ChildNpc childNpc)
+					{
+						childNpc.PickedUp();
+						ChildNPCPickedUp = true;
+					}
+					else
+					{
+						GD.PrintErr("Child NPC is null! Cannot pickup.");
+						return;
+					}
+					IsChildIsPickedUp(childNpc.ChildNPCPickedUp);
 				// Handle regular Item interactions (picking up items) - legacy system
 				if (Collider.IsInGroup("Item"))
 				{
@@ -228,7 +262,22 @@ public partial class PlayerDad : CharacterBody3D
 	public void _on_area_3d_area_entered(Node3D body)
 	{
 		//GD.Print("Current health: " + CurrentHealth);
-			GD.Print("Entered by non-PlayerDad: " + body.Name);
-			TakeDamage(5); // Example damage value
-}
+		GD.Print("Entered by non-PlayerDad: " + body.Name);
+		TakeDamage(5); // Example damage value
+	}
+	public void IsChildIsPickedUp(bool pickedUp)
+	{
+		if (pickedUp)
+		{
+			Speed = 2.5f;
+			JumpVelocity = 2.5f; // mechanics are diminished with holding child
+			// GD.Print("Speed is" + Speed + " and JumpVelocity is " + JumpVelocity);
+		}
+		else
+		{
+			Speed = 5.0f;
+			JumpVelocity = 4.5f; // mechanics are restored when child is dropped
+		  // GD.Print("Speed is " + Speed + " and JumpVelocity is " + JumpVelocity);
+		}
+	}
 }
