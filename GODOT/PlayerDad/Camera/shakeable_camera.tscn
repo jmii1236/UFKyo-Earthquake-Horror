@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnbp6x7hi2knn"]
+
+[ext_resource type="Script" uid="uid://b0phs3tv5t8cp" path="res://PlayerDad/Camera/ShakeableCamera.cs" id="1_jqgkj"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jqgkj"]
+frequency = 0.05
+fractal_octaves = 4
+fractal_gain = 0.8
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_m4twp"]
+radius = 1.5
+
+[node name="ShakeableCamera" type="Area3D"]
+script = ExtResource("1_jqgkj")
+trauma_reduction_rate = 0.5
+max_x = 20.0
+max_y = 20.0
+max_z = 10.0
+noise = SubResource("FastNoiseLite_jqgkj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_m4twp")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00194591, 0.525639, 0.00493586)
+current = true
+fov = 104.1

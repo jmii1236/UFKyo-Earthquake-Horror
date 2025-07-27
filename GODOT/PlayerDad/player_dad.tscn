@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c47krvq3ghs5w"]
+[gd_scene load_steps=7 format=3 uid="uid://c47krvq3ghs5w"]
 
 [ext_resource type="Script" uid="uid://bl1fy0ytg217y" path="res://PlayerDad/PlayerDad.cs" id="1_4hbp1"]
 [ext_resource type="Resource" uid="uid://behfighj4vqhk" path="res://Inventory/test_inv.tres" id="2_xj4et"]
+[ext_resource type="PackedScene" uid="uid://dnbp6x7hi2knn" path="res://PlayerDad/Camera/shakeable_camera.tscn" id="3_j4yqd"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rerps"]
 
@@ -26,14 +27,11 @@ shape = SubResource("ConvexPolygonShape3D_l0kxm")
 [node name="PitchPivot" type="Node3D" parent="TwistPivot"]
 transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871557, 0, 0.0871557, 0.996195, 0, 0, 0)
 
-[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00194591, 0.525639, 0.00493586)
-current = true
-fov = 104.063
+[node name="ShakeableCamera" parent="TwistPivot/PitchPivot" instance=ExtResource("3_j4yqd")]
 
-[node name="ItemChecker" type="RayCast3D" parent="TwistPivot/PitchPivot/Camera3D"]
+[node name="ItemChecker" type="RayCast3D" parent="TwistPivot/PitchPivot/ShakeableCamera"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195, 0.00194591, -0.525639, -0.00493586)
+transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195, 0, 1.1973e-07, 7.43578e-10)
 target_position = Vector3(0, 0, -1.5)
 collide_with_areas = true
 

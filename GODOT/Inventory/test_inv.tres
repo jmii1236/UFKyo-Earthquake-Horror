@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=9 format=3 uid="uid://behfighj4vqhk"]
+[gd_resource type="Resource" script_class="InventoryData" load_steps=9 format=3 uid="uid://behfighj4vqhk"]
 
 [ext_resource type="Script" uid="uid://ct6e3f1hbbgvu" path="res://Inventory/InventoryData.cs" id="1_stgn4"]
 [ext_resource type="Resource" uid="uid://0eumeh08jh6b" path="res://Items/Items/medkit.tres" id="2_ghyoh"]
@@ -32,5 +32,5 @@ metadata/_custom_type_script = "uid://djlrkrs2nf3bi"
 
 [resource]
 script = ExtResource("1_stgn4")
-slotdatas = [null, SubResource("Resource_j36rg"), SubResource("Resource_28igi"), null, SubResource("Resource_ewp5x"), null]
+slotdatas = Array[ExtResource("2_j36rg")]([null, SubResource("Resource_j36rg"), SubResource("Resource_28igi"), null, SubResource("Resource_ewp5x"), null])
 metadata/_custom_type_script = "uid://ct6e3f1hbbgvu"
