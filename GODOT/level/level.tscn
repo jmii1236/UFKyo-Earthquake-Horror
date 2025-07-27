@@ -1043,6 +1043,10 @@ layout_mode = 0
 [node name="ExternalInventory" parent="Menus/UI/InventoryInterface" instance=ExtResource("19_jexi8")]
 visible = false
 layout_mode = 0
+offset_left = 1000.0
+offset_top = 70.0
+offset_right = 1040.0
+offset_bottom = 110.0
 
 [node name="CanvasLayer" parent="Menus" instance=ExtResource("29_lsj08")]
 
