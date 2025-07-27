@@ -26,8 +26,10 @@ public partial class PlayerDad : CharacterBody3D
 	private Globals globals = null;
 	private RayCast3D raycast;
 	private bool is_holding_item = false;
+	InventoryInterface inventoryInterface;
 	[Export] public int MaxHealth = 100; // Set a default maximum health value;
 	public int CurrentHealth;
+	public bool BackPackIsPickedUp = false;
 
 	private float PitchAngle = 0.0f; // to track the current pitch for clamping
 
@@ -50,6 +52,12 @@ public partial class PlayerDad : CharacterBody3D
 		if (player == null)
 		{
 			GD.PrintErr("Could not find PlayerDad node. (PlayerDad.cs)");
+			return;
+		}
+		inventoryInterface = GetNode<InventoryInterface>("../Menus/UI/InventoryInterface");
+		if (inventoryInterface == null)
+		{
+			GD.PrintErr("Could not find InventoryInterface node. (PlayerDad.cs)");
 			return;
 		}
 		CurrentHealth = MaxHealth;
@@ -117,6 +125,14 @@ public partial class PlayerDad : CharacterBody3D
 			}
 			IsChildIsPickedUp(childNpc.ChildNPCPickedUp);
 
+		}
+		if (Input.IsActionJustPressed("useItem"))
+		{
+			if (inventoryInterface != null)
+			{
+				// GD.Print("Using item: " + inventoryInterface.GetGrabbedSlotData()?.ItemData?.Name ?? "No item grabbed");
+				inventoryInterface.UseGrabbedSlotData();
+			}
 		}
 
 		if (Input.IsActionJustPressed("ui_cancel"))
@@ -262,6 +278,20 @@ public partial class PlayerDad : CharacterBody3D
 			GD.Print("PlayerDad has died.");
 		}
 	}
+	public void Heal(int amount)
+	{
+		if (CurrentHealth <= 0)
+		{
+			GD.Print("PlayerDad is dead. Cannot heal.");
+			return;
+		}
+
+		CurrentHealth += amount;
+		if (CurrentHealth > MaxHealth) CurrentHealth = MaxHealth;
+
+		GD.Print($"PlayerDad healed {amount}. Current Health: {CurrentHealth}");
+		EmitSignal(SignalName.HealthChange, CurrentHealth);
+	}
 	public void _on_area_3d_area_entered(Node3D body)
 	{
 		//GD.Print("Current health: " + CurrentHealth);
@@ -274,13 +304,13 @@ public partial class PlayerDad : CharacterBody3D
 		{
 			Speed = 2.5f;
 			JumpVelocity = 2.5f; // mechanics are diminished with holding child
-			// GD.Print("Speed is" + Speed + " and JumpVelocity is " + JumpVelocity);
+													 // GD.Print("Speed is" + Speed + " and JumpVelocity is " + JumpVelocity);
 		}
 		else
 		{
 			Speed = 5.0f;
 			JumpVelocity = 4.5f; // mechanics are restored when child is dropped
-		  // GD.Print("Speed is " + Speed + " and JumpVelocity is " + JumpVelocity);
+													 // GD.Print("Speed is " + Speed + " and JumpVelocity is " + JumpVelocity);
 		}
 	}
 }
