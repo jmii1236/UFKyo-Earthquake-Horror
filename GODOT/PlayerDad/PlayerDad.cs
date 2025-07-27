@@ -147,11 +147,11 @@ public partial class PlayerDad : CharacterBody3D
 			if (Input.IsActionJustPressed("interact"))
 			{
 				if (Collider is ChildNpc childNPC)
-				{
-					childNPC.PickedUp();
-					ChildNPCPickedUp = true;
-				}
-				IsChildIsPickedUp(childNpc.ChildNPCPickedUp);
+					{
+						childNPC.PickedUp();
+						ChildNPCPickedUp = true;
+					}
+					IsChildIsPickedUp(childNpc.ChildNPCPickedUp);
 				// Handle regular Item interactions (picking up items) - legacy system
 				if (Collider.IsInGroup("Item"))
 				{
@@ -170,7 +170,6 @@ public partial class PlayerDad : CharacterBody3D
 					if (Collider is Backpack backpack)
 					{
 						backpack.PlayerInteract();
-						BackPackIsPickedUp = true; // Mark backpack as picked up
 					}
 					// Handle other external inventory objects
 					else if (Collider.HasMethod("PlayerInteract"))
@@ -312,19 +311,6 @@ public partial class PlayerDad : CharacterBody3D
 			Speed = 5.0f;
 			JumpVelocity = 4.5f; // mechanics are restored when child is dropped
 													 // GD.Print("Speed is " + Speed + " and JumpVelocity is " + JumpVelocity);
-		}
-	}
-	public bool IsBackPackIsPickedUp()
-	{
-		if (BackPackIsPickedUp)
-		{
-			GD.Print("Backpack is picked up");
-			return true;
-		}
-		else
-		{
-			GD.Print("Backpack is not picked up");
-			return false;
 		}
 	}
 }
