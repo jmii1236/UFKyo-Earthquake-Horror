@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://fgwhvvmeae7m"]
+[gd_scene load_steps=4 format=3 uid="uid://fgwhvvmeae7m"]
 
 [ext_resource type="Script" uid="uid://bq78f3jbd1trg" path="res://Level/Earthquake/Earthquake.cs" id="1_1ubav"]
+[ext_resource type="PackedScene" uid="uid://cfpivkrmuwhxq" path="res://PlayerDad/Camera/TraumaCauser/trauma_causer.tscn" id="2_yluy7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yluy7"]
+radius = 100.0
 
 [node name="Earthquake" type="Node3D"]
 script = ExtResource("1_1ubav")
@@ -8,3 +12,10 @@ script = ExtResource("1_1ubav")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+autostart = true
+
+[node name="TraumaCauser" parent="." instance=ExtResource("2_yluy7")]
+trauma_amount = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TraumaCauser"]
+shape = SubResource("SphereShape3D_yluy7")

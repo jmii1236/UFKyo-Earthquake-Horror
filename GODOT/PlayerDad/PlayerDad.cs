@@ -20,7 +20,7 @@ public partial class PlayerDad : CharacterBody3D
 	private float JumpVelocity = 4.5f;
 	private float Gravity = 9.8f;
 	private bool Crawling = false;
-	private Camera3D Camera;
+	private Area3D ShakeableCamera;
 	private Node3D TwistPivot;
 	private Node3D PitchPivot;
 	private Globals globals = null;
@@ -36,7 +36,7 @@ public partial class PlayerDad : CharacterBody3D
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 		TwistPivot = GetNode<Node3D>("TwistPivot");
 		PitchPivot = TwistPivot.GetNode<Node3D>("PitchPivot");
-		Camera = PitchPivot.GetNode<Camera3D>("Camera3D");
+		ShakeableCamera = PitchPivot.GetNode<Area3D>("ShakeableCamera") as ShakeableCamera;
 
 		globals = Globals.Instance;
 		raycast = GetNode("%ItemChecker") as RayCast3D;
@@ -95,11 +95,11 @@ public partial class PlayerDad : CharacterBody3D
 				Crawling = !Crawling;
 				if (Crawling)
 				{
-					Camera.Position = new Vector3(0, 0.1f, 0);
+					ShakeableCamera.Position = new Vector3(0, 0.1f, 0);
 				}
 				else
 				{
-					Camera.Position = new Vector3(0, 0.5f, 0);
+					ShakeableCamera.Position = new Vector3(0, 0.5f, 0);
 				}
 			}
 		}
