@@ -4,20 +4,27 @@ using System;
 public partial class InventoryInterface : Control
 {
     private SlotData grabbedSlotData;
-    [Export] private PanelContainer playerInventory;
+    private PanelContainer playerInventory;
     private InventoryData externalInventoryOwner;
     private InventoryData playerInventoryData;
-    
+
     private PanelContainer externalInventory;
     [Export] private PanelContainer grabbedSlot;
     public Backpack backpack;
+    PlayerDad playerDad;
+    public string grabbedSlotName = "GrabbedSlot";
 
     public override void _Ready()
     {
         playerInventory = GetNode<PanelContainer>("PlayerInventory");
         grabbedSlot = GetNode<PanelContainer>("GrabbedSlot");
         externalInventory = GetNode<PanelContainer>("ExternalInventory");
-        backpack = GetNode<Backpack>("Backpack");
+        backpack = GetNode<Backpack>("Items/Backpack");
+        playerDad = GetNode<PlayerDad>("../../../PlayerDad");
+        if (playerInventory == null)
+        {
+            GD.PrintErr("PlayerInventory UI is not assigned in InventoryInterface _Ready!");
+        }
         if (backpack == null)
         {
             GD.PrintErr("Backpack node not found in InventoryInterface _Ready!");
@@ -55,7 +62,7 @@ public partial class InventoryInterface : Control
 
         playerInventoryData = inventoryData;
         inventoryData.InventoryInteract += OnInventoryInteract;
-        
+
         var inventory = playerInventory as Inventory;
         inventory?.SetInventoryData(inventoryData);
     }
@@ -96,9 +103,9 @@ public partial class InventoryInterface : Control
             externalInventoryOwner.InventoryInteract -= OnInventoryInteract;
             externalInventoryOwner = null;
         }
-        
+
         externalInventory.Visible = false;
-        
+
         // If player was holding something from external inventory, drop it back
         if (grabbedSlotData != null)
         {
@@ -115,7 +122,7 @@ public partial class InventoryInterface : Control
     private void OnInventoryInteract(InventoryData inventoryData, int index, int button)
     {
         GD.Print($"OnInventoryInteract - Index: {index}, Button: {button}, HasGrabbedItem: {grabbedSlotData != null}");
-        
+
         switch (grabbedSlotData, button)
         {
             case (null, (int)MouseButton.Left):
@@ -126,7 +133,7 @@ public partial class InventoryInterface : Control
                     GD.Print($"Grabbed: {grabbedSlotData.ItemData?.Name}");
                 }
                 break;
-                
+
             case (_, (int)MouseButton.Left):
                 // Try to drop item
                 var returnedSlotData = inventoryData.DropSlotData(grabbedSlotData, index);
@@ -140,7 +147,7 @@ public partial class InventoryInterface : Control
                     GD.Print("Item dropped successfully");
                 }
                 break;
-                
+
             case (_, (int)MouseButton.Right):
                 // Right click - cancel grab or split stack
                 if (grabbedSlotData != null)
@@ -168,16 +175,17 @@ public partial class InventoryInterface : Control
         if (grabbedSlotData != null)
         {
             grabbedSlot.Show();
-            
-            // Try to get the Slot component from grabbedSlot
+
             // This assumes grabbedSlot contains a Slot as a child
             var slot = grabbedSlot.GetNode<Slot>("Slot"); // Adjust path as needed
             if (slot == null)
             {
                 // If grabbedSlot IS the slot
                 slot = grabbedSlot as Slot;
+                GD.PrintErr("Grabbed Slot is " + slot.GetType().Name);
+                grabbedSlotName = slot.GetType().Name;
             }
-            
+
             if (slot != null)
             {
                 slot.SetSlotData(grabbedSlotData);
@@ -190,6 +198,29 @@ public partial class InventoryInterface : Control
         else
         {
             grabbedSlot.Hide();
+        }
+    }
+    public SlotData GetGrabbedSlotData()
+    {
+        return grabbedSlotData;
+    }
+    public void UseGrabbedSlotData()
+    {
+        if (grabbedSlotData == null)
+        {
+            GD.PrintErr("No item to use from grabbed slot!");
+            return;
+        }
+
+        // Assuming the item has a Use method or similar logic
+        if (grabbedSlotData.ItemData != null)
+        {
+            GD.Print($"Used item: {grabbedSlotData.ItemData.Name}");
+            if (grabbedSlotData.ItemData.Name == "water") {
+                playerDad.Heal(3);
+            }
+            grabbedSlotData = null;
+            updateGrabbedSlot();
         }
     }
 }
