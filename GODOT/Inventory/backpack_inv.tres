@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="InventoryData" load_steps=5 format=3 uid="uid://dn6gt7ssojw0h"]
+
+[ext_resource type="Script" uid="uid://ct6e3f1hbbgvu" path="res://Inventory/InventoryData.cs" id="1_pl5ts"]
+[ext_resource type="Script" uid="uid://djlrkrs2nf3bi" path="res://Inventory/SlotData.cs" id="3_gg2k2"]
+[ext_resource type="Resource" uid="uid://b0bq00kh07w5y" path="res://Items/Items/water.tres" id="5_airhf"]
+
+[sub_resource type="Resource" id="Resource_ewp5x"]
+script = ExtResource("3_gg2k2")
+ItemData = ExtResource("5_airhf")
+Quantity = 1
+stackSizeMin = 1
+stackSizeMax = 99
+metadata/_custom_type_script = "uid://djlrkrs2nf3bi"
+
+[resource]
+script = ExtResource("1_pl5ts")
+slotdatas = [null, null, null, null, SubResource("Resource_ewp5x"), null]
+metadata/_custom_type_script = "uid://ct6e3f1hbbgvu"

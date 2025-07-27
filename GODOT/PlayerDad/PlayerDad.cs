@@ -130,15 +130,10 @@ public partial class PlayerDad : CharacterBody3D
 
 			if (Input.IsActionJustPressed("interact"))
 			{
-				if (Collider is ChildNpc childNpc)
+				if (Collider is ChildNpc childNPC)
 					{
-						childNpc.PickedUp();
+						childNPC.PickedUp();
 						ChildNPCPickedUp = true;
-					}
-					else
-					{
-						GD.PrintErr("Child NPC is null! Cannot pickup.");
-						return;
 					}
 					IsChildIsPickedUp(childNpc.ChildNPCPickedUp);
 				// Handle regular Item interactions (picking up items) - legacy system
@@ -155,6 +150,10 @@ public partial class PlayerDad : CharacterBody3D
 					if (Collider is Medkit medkit)
 					{
 						medkit.PlayerInteract();
+					}
+					if (Collider is Backpack backpack)
+					{
+						backpack.PlayerInteract();
 					}
 					// Handle other external inventory objects
 					else if (Collider.HasMethod("PlayerInteract"))
@@ -225,6 +224,10 @@ public partial class PlayerDad : CharacterBody3D
 				if (collider is Medkit)
 				{
 					GD.Print("- This is a Medkit chest");
+				}
+				if (collider is Backpack)
+				{
+					GD.Print("- This is a backpack");
 				}
 				else
 				{

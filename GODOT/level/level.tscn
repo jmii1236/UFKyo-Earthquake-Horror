@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://caexss41451q8"]
+[gd_scene load_steps=70 format=3 uid="uid://caexss41451q8"]
 
 [ext_resource type="Script" uid="uid://byfog84srimr2" path="res://level/Level.cs" id="1_b7y0n"]
 [ext_resource type="PackedScene" uid="uid://c47krvq3ghs5w" path="res://PlayerDad/player_dad.tscn" id="1_u52ul"]
@@ -46,6 +46,7 @@
 [ext_resource type="PackedScene" uid="uid://dwtu363onajbu" path="res://level/Speakers/Radio/radio.tscn" id="36_dtde3"]
 [ext_resource type="PackedScene" uid="uid://cn2vlkgxsdwy5" path="res://Assets/worldfeatures/tree9.glb" id="37_w18mj"]
 [ext_resource type="PackedScene" uid="uid://ccgdkmrehbp8x" path="res://Assets/worldfeatures/tree10.glb" id="38_j1fdq"]
+[ext_resource type="Resource" uid="uid://dn6gt7ssojw0h" path="res://Inventory/backpack_inv.tres" id="40_idjqq"]
 [ext_resource type="PackedScene" uid="uid://db84l0iw1pskp" path="res://Assets/worldfeatures/japanese_sedan_94_-_low_poly_model.glb" id="41_3dv6e"]
 [ext_resource type="PackedScene" uid="uid://chgxogg7kwdvp" path="res://Assets/worldfeatures/1988-honda-cr-x/source/1988 Honda CR-X.glb" id="42_w5qvu"]
 [ext_resource type="PackedScene" uid="uid://c4h65fys53dtx" path="res://AI/FireAI/FireSafeZone/fire_safe_zone.tscn" id="47_j88iw"]
@@ -982,9 +983,9 @@ transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -52.2544
 
 [node name="Items" type="Node3D" parent="."]
 
-[node name="Medkit" parent="Items" instance=ExtResource("13_l5lfc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.5989, 1.05077, -12.7277)
-inventoryData = null
+[node name="BackPack" parent="Items" instance=ExtResource("13_l5lfc")]
+transform = Transform3D(-0.738938, 0, 0.673774, 0, 1, 0, -0.673774, 0, -0.738938, -32.5756, 0.953273, -45.113)
+inventoryData = ExtResource("40_idjqq")
 
 [node name="OtherMedKit" parent="Items" instance=ExtResource("23_xl7j7")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -54.0267, 2.728, -12.7)
@@ -1040,6 +1041,7 @@ offset_bottom = 64.0
 layout_mode = 0
 
 [node name="ExternalInventory" parent="Menus/UI/InventoryInterface" instance=ExtResource("19_jexi8")]
+visible = false
 layout_mode = 0
 
 [node name="CanvasLayer" parent="Menus" instance=ExtResource("29_lsj08")]
