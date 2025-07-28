@@ -1,0 +1,291 @@
+[33mcommit 87a7d9cbdb7904ad18962e2e98addcc99b72bdc9[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfinal-world-branch[m[33m, [m[1;31morigin/backpack[m[33m, [m[1;32mbackpack[m[33m)[m
+Author: Chloe Bai <cbai71@yahoo.com>
+Date:   Sun Jul 27 15:32:11 2025 +0900
+
+    emergency bag inv
+
+[33mcommit ca8bd7be3d3f54fd28180b3b2276c7a0684cd93c[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Tristan Connolly <tristanconnolly1@gmail.com>
+Date:   Sun Jul 27 04:34:32 2025 +0900
+
+    Radio (#42)
+    
+    * Fixed Globals
+    
+    * Added Radio + Siren
+    
+    * Fixed Instancing Error
+    
+    * fixed conflicts
+    
+    ---------
+    
+    Co-authored-by: jmii1236 <steiertskyler@gmail.com>
+
+[33mcommit 885262e2e4330759076118a4eb21a3ebd4265d2b[m
+Author: jmii1236 <148896255+jmii1236@users.noreply.github.com>
+Date:   Sun Jul 27 04:18:11 2025 +0900
+
+    child is pickable fr this time (#43)
+
+[33mcommit 29379579ac4e62ed176b39eb5d90464c359b7f37[m
+Author: jmii1236 <148896255+jmii1236@users.noreply.github.com>
+Date:   Sat Jul 26 23:26:10 2025 +0900
+
+    navmesh fixed (#39)
+
+[33mcommit 4315411b3597661cb55619baee003f4ab778405d[m[33m ([m[1;31morigin/skyler-and-chloe-merge[m[33m)[m
+Author: Tarnest <tristanconnolly1@gmail.com>
+Date:   Sat Jul 26 19:48:30 2025 +0900
+
+    Cleaned Up EVERYTHING + Added All Menus and Triggers
+
+[33mcommit 12cb535b10d9e8b0ee4090909cc691ebb24cce36[m
+Author: jmii1236 <steiertskyler@gmail.com>
+Date:   Sat Jul 26 13:46:41 2025 +0900
+
+    merged code, WIP
+
+[33mcommit 5b9223edd3997108f20dcca4523dd3e086558221[m
+Author: jmii1236 <steiertskyler@gmail.com>
+Date:   Wed Jul 23 05:48:29 2025 +0900
+
+    all features last updated here
+
+[33mcommit 89dfb7594c7360224454319c4f9f7c611dd51457[m[33m ([m[1;31morigin/healthbar[m[33m)[m
+Author: jmii1236 <steiertskyler@gmail.com>
+Date:   Wed Jul 23 02:44:44 2025 +0900
+
+    healthbar feature
+
+[33mcommit 2ecbb3f3d403492f8a052c87d916eeb81d3267ca[m[33m ([m[1;31morigin/gameUI[m[33m)[m
+Author: jmii1236 <steiertskyler@gmail.com>
+Date:   Mon Jul 21 20:13:32 2025 +0900
+
+    main menu + restart screens, WIP
+
+[33mcommit 78654e1ab96775fca0caac68dbdf5c0a47adb4b4[m
+Author: jmii1236 <steiertskyler@gmail.com>
+Date:   Mon Jul 21 20:11:17 2025 +0900
+
+    main menu + restart screens, WIP
+
+[33mcommit 5d39c4fb75a0b88874f543f070e77c2ec05383e3[m[33m ([m[1;31morigin/crowdAI[m[33m)[m
+Author: jmii1236 <steiertskyler@gmail.com>
+Date:   Mon Jul 21 19:39:51 2025 +0900
+
+    crowd AI
+
+[33mcommit 6ceb6697446259da4b5c0e7c4bca03f6d25e2fce[m
+Merge: 317221c da359fa
+Author: jmii1236 <steiertskyler@gmail.com>
+Date:   Fri Jul 18 20:15:46 2025 +0900
+
+    fixed merge conflicts
+
+[33mcommit da359fac03a1cf86b0c7503d6d5e5c0721bdf9ac[m
+Author: jmii1236 <148896255+jmii1236@users.noreply.github.com>
+Date:   Wed Jul 16 14:37:18 2025 +0900
+
+    Inventory (#25)
+    
+    * child npc, follows dad + slow
+    
+    * fire debugging fixed
+    
+    * fireAI debugging fixed
+    
+    * updated fire debugging
+    
+    * inventory
+
+[33mcommit f45ccd76364b219a165c56b55f82d9f044a14cd6[m
+Author: Chloe Bai <145494305+chloe-bai@users.noreply.github.com>
+Date:   Wed Jul 16 14:09:17 2025 +0900
+
+    Road grid (#24)
+    
+    * created road square
+    
+    * added road collision and expanded the grid
+    
+    * feat: expanded road grid to 6x6
+
+[33mcommit 317221cd1dda49308e26ba8dd232ee97a13a4770[m
+Author: jmii1236 <steiertskyler@gmail.com>
+Date:   Sun Jul 6 22:06:15 2025 +0900
+
+    fire debugging fixed
+
+[33mcommit 76a9eb01a2f873f0ca3f84235733a4f7ab393fb2[m
+Author: jmii1236 <steiertskyler@gmail.com>
+Date:   Fri Jun 27 22:01:11 2025 +0900
+
+    child npc, follows dad + slow
+
+[33mcommit da4c76b5d58b6c7cc1dd8863bd7835fc063b4243[m
+Author: Chloe Bai <145494305+chloe-bai@users.noreply.github.com>
+Date:   Fri Jun 27 19:54:17 2025 +0900
+
+    added lost features like stair collision and fixed fire pathfinding issues (#21)
+
+[33mcommit 51acbf32fb82e9d23ad2a24511836e437d540bf2[m
+Author: Chloe Bai <145494305+chloe-bai@users.noreply.github.com>
+Date:   Fri Jun 27 19:30:59 2025 +0900
+
+    fixed merge conflicts for stairs and gravity (#20)
+
+[33mcommit cc521d770ac376db011f2d26ffc619e35199a266[m
+Author: Tristan Connolly <tristanconnolly1@gmail.com>
+Date:   Fri Jun 27 19:12:18 2025 +0900
+
+    Revert "Momnpcpt2 (#17)" (#19)
+    
+    This reverts commit c28143646dcedbc8cfb36cdd49d65f705b4e1fcb.
+
+[33mcommit c28143646dcedbc8cfb36cdd49d65f705b4e1fcb[m
+Author: jmii1236 <148896255+jmii1236@users.noreply.github.com>
+Date:   Fri Jun 27 19:03:35 2025 +0900
+
+    Momnpcpt2 (#17)
+    
+    * mom npc, follows dad now, will fix ltr
+    
+    * okay fr this time
+    
+    * eto updates for mom
+
+[33mcommit 2e5e4f2350fa46dc5ea91de918fb8c88accc752a[m
+Author: jmii1236 <148896255+jmii1236@users.noreply.github.com>
+Date:   Fri Jun 27 18:56:20 2025 +0900
+
+    new terrain (#16)
+    
+    * new terrain
+    
+    * new commit
+
+[33mcommit 00be71b7240bfdfc25d2c5466507bfbabcdd1aa1[m
+Author: Tristan Connolly <tristanconnolly1@gmail.com>
+Date:   Fri Jun 27 18:50:47 2025 +0900
+
+    Revert "Stairs and gravity (#11)" (#18)
+    
+    This reverts commit 35510b60bb848898609be0c4bd48c5346e1da80c.
+
+[33mcommit 35510b60bb848898609be0c4bd48c5346e1da80c[m
+Author: Chloe Bai <145494305+chloe-bai@users.noreply.github.com>
+Date:   Wed Jun 25 13:01:06 2025 +0900
+
+    Stairs and gravity (#11)
+    
+    * feat: tweaked house collision so the house can set on fire
+    
+    * feat: can go up stairs and fall with more realistic gravity
+
+[33mcommit c1dfbf358012dc3343cdb8d965b1e05fb462df35[m
+Author: jmii1236 <148896255+jmii1236@users.noreply.github.com>
+Date:   Wed Jun 25 12:45:10 2025 +0900
+
+    Fix level merge conflict (#15)
+    
+    * mom npc, follows dad now, will fix ltr
+    
+    * Fix merge conflict in level.tscn
+
+[33mcommit 338a4f128e8ce3d4d85601655d75dd19a4228ef4[m
+Author: Tristan Connolly <tristanconnolly1@gmail.com>
+Date:   Tue Jun 24 23:58:06 2025 +0900
+
+    Fire trigger (#12)
+    
+    * Added SpawnTrigger
+    
+    * Fixed a Couple Things
+
+[33mcommit 2bf3f436be587aebe7d11aa544e0a8ee165104d1[m
+Author: Tristan Connolly <tristanconnolly1@gmail.com>
+Date:   Tue Jun 24 23:15:43 2025 +0900
+
+    Items Class Outline + Pick up functionality (#10)
+    
+    * Added Items Class
+    
+    * Added Ability to Interact with Items and Pick them up
+    
+    * Fixed Merge issues
+    
+    * Made Level the main scene + Fixed Merge Conflicts
+
+[33mcommit bd6b4c80482a66ea7c25888126f9878a9b834ad5[m
+Author: Chloe Bai <145494305+chloe-bai@users.noreply.github.com>
+Date:   Tue Jun 24 22:58:13 2025 +0900
+
+    feat: tweaked house collision so the house can set on fire (#9)
+
+[33mcommit 4ba6895ee2ee8218fcfb0b882a131725c81026ac[m
+Author: jmii1236 <148896255+jmii1236@users.noreply.github.com>
+Date:   Mon Jun 23 19:39:25 2025 +0900
+
+    Fireai (#7)
+
+[33mcommit 7993e01c4da44d3c16ac67c938843cc335f31da2[m
+Author: jmii1236 <148896255+jmii1236@users.noreply.github.com>
+Date:   Thu Jun 19 11:06:15 2025 +0900
+
+    mom npc, follows dad now, will fix ltr (#5)
+    
+    * mom npc, follows dad now, will fix ltr
+    
+    * okay fr this time
+
+[33mcommit 03295e2d878baddf0ce08075c74fc6195e3a6c08[m
+Author: Tristan Connolly <tristanconnolly1@gmail.com>
+Date:   Wed Jun 18 17:54:05 2025 +0900
+
+    Added Earthquake and Game Over Trigger + Globals (#3)
+    
+    * Added Earthquake and Game Over Trigger + Globals
+    
+    * Removed Debug Print
+
+[33mcommit a5f51eb84897484af8a393f51d5dafab17d8a303[m
+Author: Chloe Bai <145494305+chloe-bai@users.noreply.github.com>
+Date:   Wed Jun 18 17:53:21 2025 +0900
+
+    Jump & crawl mechanics (#2)
+    
+    * feat: added jump and crawl mechanics
+    
+    * feat: jump and crawl mechanics
+    
+    ---------
+    
+    Co-authored-by: Chloe Bai <chloebai@Chloes-MacBook-Pro-2.local>
+
+[33mcommit 503d5625e2cec8dd1aed71bfddca5d0511c57f19[m
+Author: Tarnest <tristanconnolly1@gmail.com>
+Date:   Tue Jun 17 20:23:17 2025 +0900
+
+    Fixed File Organization
+
+[33mcommit 21ba0f94211a86adc35a3b376c124312b28b4162[m
+Merge: 2a2437f 75c0912
+Author: jmii1236 <148896255+jmii1236@users.noreply.github.com>
+Date:   Tue Jun 17 20:16:57 2025 +0900
+
+    Merge pull request #1 from jmii1236/navigation
+    
+    Dad player code + AI navigation code (its stupid)
+
+[33mcommit 75c0912057ef4ff6c5776fb956d5c988d31e1af1[m[33m ([m[1;31morigin/navigation[m[33m)[m
+Author: jmii1236 <steiertskyler@gmail.com>
+Date:   Mon Jun 16 22:22:39 2025 +0900
+
+    Dad player code + AI navigation code (its stupid)
+
+[33mcommit 2a2437fc02ec118b0175e6d0b64c9fc3de8dd5bb[m
+Author: Tarnest <tristanconnolly1@gmail.com>
+Date:   Tue Jun 10 22:34:19 2025 +0900
+
+    Initial Setup

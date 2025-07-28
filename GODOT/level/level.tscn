@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://caexss41451q8"]
+[gd_scene load_steps=76 format=3 uid="uid://caexss41451q8"]
 
 [ext_resource type="Script" uid="uid://byfog84srimr2" path="res://level/Level.cs" id="1_b7y0n"]
 [ext_resource type="PackedScene" uid="uid://c47krvq3ghs5w" path="res://PlayerDad/player_dad.tscn" id="1_u52ul"]
@@ -115,6 +115,15 @@ metadata/_custom_type_script = "uid://djlrkrs2nf3bi"
 
 [sub_resource type="LabelSettings" id="LabelSettings_5gx2l"]
 font_size = 100
+
+[sub_resource type="BoxMesh" id="BoxMesh_53vbi"]
+size = Vector3(4, 1, 600)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mj7mg"]
+albedo_color = Color(0.257808, 0.444986, 0.893687, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_53vbi"]
+size = Vector3(4, 1, 600)
 
 [node name="Node3D" type="Node3D" node_paths=PackedStringArray("player", "inventoryInterface")]
 script = ExtResource("1_b7y0n")
@@ -313,7 +322,7 @@ transform = Transform3D(-5.24537e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.24537e-08, 
 metadata/_edit_lock_ = true
 
 [node name="store vending machine" parent="Buildings/store2" instance=ExtResource("26_u5n7q")]
-transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 0.741998, 0.842092, -81.2704)
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 0.741997, 0.342282, -81.2704)
 metadata/_edit_lock_ = true
 
 [node name="tree3" parent="Buildings/store2" instance=ExtResource("28_qslh7")]
@@ -329,7 +338,7 @@ transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 67.5841, 0.395907, -92.6689)
 metadata/_edit_lock_ = true
 
 [node name="rock" parent="Buildings/store2" instance=ExtResource("30_s1aav")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 48.675, 1.10497, -92.0645)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 48.675, 0.510776, -92.0645)
 metadata/_edit_lock_ = true
 
 [node name="bicycle1" parent="Buildings/store2" instance=ExtResource("28_8yb03")]
@@ -3609,9 +3618,10 @@ transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -120.601
 
 [node name="basicStore" parent="Buildings3/store2" instance=ExtResource("23_ml0fe")]
 transform = Transform3D(-5.24537e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.24537e-08, 58.1265, 4.54899, -79.5617)
+metadata/_edit_lock_ = true
 
 [node name="store vending machine" parent="Buildings3/store2" instance=ExtResource("26_u5n7q")]
-transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 0.741998, 0.842092, -81.2704)
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 0.741997, 0.414545, -81.2704)
 metadata/_edit_lock_ = true
 
 [node name="tree3" parent="Buildings3/store2" instance=ExtResource("28_qslh7")]
@@ -3627,7 +3637,7 @@ transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 67.5841, 0.395907, -92.6689)
 metadata/_edit_lock_ = true
 
 [node name="rock" parent="Buildings3/store2" instance=ExtResource("30_s1aav")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 48.675, 1.10497, -92.0645)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 48.675, 0.595169, -92.0645)
 metadata/_edit_lock_ = true
 
 [node name="bicycle1" parent="Buildings3/store2" instance=ExtResource("28_8yb03")]
@@ -11373,3 +11383,258 @@ debug = true
 [node name="WinTriggerZone" parent="Triggers" instance=ExtResource("48_3xl46")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109.844, 0, -94.5657)
 debug = true
+
+[node name="new roads" type="Node3D" parent="."]
+
+[node name="new road" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26194, 0.360608, 220.386)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 2" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4078, 0.360608, 0)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 2/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 3" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.4266, 0.360608, 0)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 3/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 4" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.24, 0.360608, 0)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 4/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 5" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.9085, 0.360608, 0)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 5/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 6" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.8819, 0.360608, 0)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 6/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 7" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.6538, 0.360608, 0)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 7/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 8" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -204.304, 0.360608, 85.0612)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 8/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 9" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -204.304, 0.360608, 52.8551)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 9/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 10" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -204.304, 0.360608, 19.7068)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 10/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 11" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -204.304, 0.360608, -110.519)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 11/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 12" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -236.505, 0.360608, -77.8438)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 12/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 13" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -236.505, 0.360608, -12.0208)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 13/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 14" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -366.257, 0.360608, -45.1691)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 14"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 14/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 15" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26123, 0.360608, -408.032)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 15"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 15/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 16" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.26123, 0.360608, -110.141)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 16"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 16/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 17" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.26123, 0.360608, -146.864)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 17"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 17/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 18" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.26123, 0.360608, -180.365)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 18"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 18/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 19" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.26123, 0.360608, -210.166)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 19"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 19/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 20" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 200.677, 0.360608, 120.275)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 20"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 20/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 21" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 200.677, 0.360608, 155.035)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 21"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 21/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 22" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 199.333, 0.360608, 185.706)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 22"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 22/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 23" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 210.085, 0.360608, 220.649)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 23"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 23/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
