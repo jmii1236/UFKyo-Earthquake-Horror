@@ -273,9 +273,13 @@ metadata/_edit_lock_ = true
 
 [node name="7-11" parent="Buildings" instance=ExtResource("19_tv7ir")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -37.6604, 4.98341, -118.865)
+visible = false
+metadata/_edit_lock_ = true
 
 [node name="7-12" parent="Buildings" instance=ExtResource("19_tv7ir")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 90.1053, 4.98341, -213.629)
+visible = false
+metadata/_edit_lock_ = true
 
 [node name="Evacuation_Shelter" parent="Buildings" instance=ExtResource("26_lsj08")]
 transform = Transform3D(0.56, 0, 0, 0, 0.56, 0, 0, 0, 0.56, 122.016, 20.9557, -152.339)
@@ -1703,9 +1707,13 @@ metadata/_edit_lock_ = true
 
 [node name="7-11" parent="Buildings2" instance=ExtResource("19_tv7ir")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -37.6604, 4.98341, -118.865)
+visible = false
+metadata/_edit_lock_ = true
 
 [node name="7-12" parent="Buildings2" instance=ExtResource("19_tv7ir")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 90.1053, 4.98341, -213.629)
+visible = false
+metadata/_edit_lock_ = true
 
 [node name="Evacuation_Shelter" parent="Buildings2" instance=ExtResource("26_lsj08")]
 transform = Transform3D(0.56, 0, 0, 0, 0.56, 0, 0, 0, 0.56, 122.016, 20.9557, -152.339)
@@ -2980,9 +2988,13 @@ metadata/_edit_lock_ = true
 
 [node name="7-11" parent="Buildings3" instance=ExtResource("19_tv7ir")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -37.6604, 4.98341, -118.865)
+visible = false
+metadata/_edit_lock_ = true
 
 [node name="7-12" parent="Buildings3" instance=ExtResource("19_tv7ir")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 90.1053, 4.98341, -213.629)
+visible = false
+metadata/_edit_lock_ = true
 
 [node name="Evacuation_Shelter" parent="Buildings3" instance=ExtResource("26_lsj08")]
 transform = Transform3D(0.56, 0, 0, 0, 0.56, 0, 0, 0, 0.56, 122.016, 20.9557, -152.339)
@@ -4257,9 +4269,13 @@ metadata/_edit_lock_ = true
 
 [node name="7-11" parent="Buildings4" instance=ExtResource("19_tv7ir")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -37.6604, 4.98341, -118.865)
+visible = false
+metadata/_edit_lock_ = true
 
 [node name="7-12" parent="Buildings4" instance=ExtResource("19_tv7ir")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 90.1053, 4.98341, -213.629)
+visible = false
+metadata/_edit_lock_ = true
 
 [node name="Evacuation_Shelter" parent="Buildings4" instance=ExtResource("26_lsj08")]
 transform = Transform3D(0.56, 0, 0, 0, 0.56, 0, 0, 0, 0.56, 122.016, 20.9557, -152.339)
@@ -5534,9 +5550,13 @@ metadata/_edit_lock_ = true
 
 [node name="7-11" parent="Buildings5" instance=ExtResource("19_tv7ir")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -37.6604, 4.98341, -118.865)
+visible = false
+metadata/_edit_lock_ = true
 
 [node name="7-12" parent="Buildings5" instance=ExtResource("19_tv7ir")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 90.1053, 4.98341, -213.629)
+visible = false
+metadata/_edit_lock_ = true
 
 [node name="Evacuation_Shelter" parent="Buildings5" instance=ExtResource("26_lsj08")]
 transform = Transform3D(0.56, 0, 0, 0, 0.56, 0, 0, 0, 0.56, 122.016, 20.9557, -152.339)
@@ -6731,9 +6751,13 @@ metadata/_edit_lock_ = true
 
 [node name="7-11" parent="Buildings6" instance=ExtResource("19_tv7ir")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -37.6604, 4.98341, -118.865)
+visible = false
+metadata/_edit_lock_ = true
 
 [node name="7-12" parent="Buildings6" instance=ExtResource("19_tv7ir")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 90.1053, 4.98341, -213.629)
+visible = false
+metadata/_edit_lock_ = true
 
 [node name="Evacuation_Shelter" parent="Buildings6" instance=ExtResource("26_lsj08")]
 transform = Transform3D(0.56, 0, 0, 0, 0.56, 0, 0, 0, 0.56, 122.016, 20.9557, -152.339)
@@ -7928,9 +7952,13 @@ metadata/_edit_lock_ = true
 
 [node name="7-11" parent="Buildings7" instance=ExtResource("19_tv7ir")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -37.6604, 4.98341, -118.865)
+visible = false
+metadata/_edit_lock_ = true
 
 [node name="7-12" parent="Buildings7" instance=ExtResource("19_tv7ir")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 90.1053, 4.98341, -213.629)
+visible = false
+metadata/_edit_lock_ = true
 
 [node name="Evacuation_Shelter" parent="Buildings7" instance=ExtResource("26_lsj08")]
 transform = Transform3D(0.56, 0, 0, 0, 0.56, 0, 0, 0, 0.56, 122.016, 20.9557, -152.339)
