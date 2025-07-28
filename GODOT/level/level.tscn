@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://caexss41451q8"]
+[gd_scene load_steps=77 format=3 uid="uid://caexss41451q8"]
 
 [ext_resource type="Script" uid="uid://byfog84srimr2" path="res://level/Level.cs" id="1_b7y0n"]
 [ext_resource type="PackedScene" uid="uid://c47krvq3ghs5w" path="res://PlayerDad/player_dad.tscn" id="1_u52ul"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cd7hhr2ghs3bw" path="res://Items/Medkit/medkit.tscn" id="13_l5lfc"]
 [ext_resource type="PackedScene" uid="uid://clnnp3e7xet7j" path="res://AI/FireAI/SpawnTrigger/spawn_trigger_zone.tscn" id="14_m3nah"]
 [ext_resource type="PackedScene" uid="uid://dvhysox4grosx" path="res://AI/HumanAI/MomNPC/mom_target.tscn" id="16_7jqyl"]
-[ext_resource type="PackedScene" uid="uid://eon0ykmpok72" path="res://Assets/Roads/road.tscn" id="17_m5ivw"]
 [ext_resource type="PackedScene" uid="uid://c08d03sj4go74" path="res://Inventory/slot.tscn" id="18_tv7ir"]
 [ext_resource type="PackedScene" uid="uid://cak2leacnudic" path="res://level/Speakers/Siren/siren.tscn" id="19_51qkb"]
 [ext_resource type="PackedScene" uid="uid://gqyqyv1w3s2o" path="res://Inventory/inventory.tscn" id="19_jexi8"]
@@ -68,7 +67,6 @@ sky = SubResource("Sky_u52ul")
 tonemap_mode = 2
 glow_enabled = true
 fog_light_color = Color(0.617087, 0.532901, 0.696467, 1)
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.03
 volumetric_fog_albedo = Color(0.286311, 0.225369, 0.250311, 1)
 volumetric_fog_emission = Color(0.344076, 0.344076, 0.344076, 1)
@@ -125,10 +123,16 @@ font_size = 100
 size = Vector3(4, 1, 600)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mj7mg"]
-albedo_color = Color(0.257808, 0.444986, 0.893687, 1)
+albedo_color = Color(0.103451, 0.0986251, 0.0998412, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_53vbi"]
 size = Vector3(4, 1, 600)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jexi8"]
+size = Vector3(4, 1, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53vbi"]
+albedo_color = Color(0.292479, 0.499117, 0.331222, 1)
 
 [node name="Node3D" type="Node3D" node_paths=PackedStringArray("player", "inventoryInterface")]
 script = ExtResource("1_b7y0n")
@@ -11153,163 +11157,6 @@ metadata/_edit_lock_ = true
 transform = Transform3D(0.003, 0, 0, 0, 0.003, 0, 0, 0, 0.003, 60.9375, 1.91454, -187.056)
 metadata/_edit_lock_ = true
 
-[node name="roads" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.25, 0, 40.15)
-
-[node name="Road" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.2128, -0.114767, -19.1297)
-metadata/_edit_lock_ = true
-
-[node name="Road2" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.2178, -0.114767, -29.9887)
-metadata/_edit_lock_ = true
-
-[node name="Road3" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.2178, -0.114767, -40.9887)
-metadata/_edit_lock_ = true
-
-[node name="Road4" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.51682, -0.0911614, -19.1314)
-metadata/_edit_lock_ = true
-
-[node name="Road5" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.52219, -0.114767, -29.9908)
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="Road6" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.52219, -0.114767, -40.9908)
-metadata/_edit_lock_ = true
-
-[node name="Road7" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.15856, -0.0911614, -19.1531)
-metadata/_edit_lock_ = true
-
-[node name="Road8" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.15319, -0.114767, -30.0125)
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="Road9" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.15319, -0.114767, -41.0125)
-metadata/_edit_lock_ = true
-
-[node name="Road10" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.7804, -0.114767, -19.1146)
-metadata/_edit_lock_ = true
-
-[node name="Road11" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.7754, -0.114767, -29.9735)
-metadata/_edit_lock_ = true
-
-[node name="Road12" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.7754, -0.114767, -40.9736)
-metadata/_edit_lock_ = true
-
-[node name="Road13" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 27.4763, -0.0911614, -19.1163)
-metadata/_edit_lock_ = true
-
-[node name="Road14" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 27.471, -0.114767, -29.9756)
-metadata/_edit_lock_ = true
-
-[node name="Road15" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 27.471, -0.114767, -40.9757)
-metadata/_edit_lock_ = true
-
-[node name="Road16" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.1517, -0.0911614, -19.138)
-metadata/_edit_lock_ = true
-
-[node name="Road17" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.1464, -0.114767, -29.9974)
-metadata/_edit_lock_ = true
-
-[node name="Road18" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.1464, -0.114767, -40.9974)
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="Road19" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.2729, -0.114767, -51.7315)
-metadata/_edit_lock_ = true
-
-[node name="Road20" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.2779, -0.114767, -62.5905)
-metadata/_edit_lock_ = true
-
-[node name="Road21" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.2779, -0.114767, -73.5905)
-metadata/_edit_lock_ = true
-
-[node name="Road22" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.57691, -0.0911614, -51.7332)
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="Road23" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.58228, -0.114767, -62.5926)
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="Road24" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.58228, -0.114767, -73.5926)
-metadata/_edit_lock_ = true
-
-[node name="Road25" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.09847, -0.0911614, -51.7549)
-metadata/_edit_lock_ = true
-
-[node name="Road26" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.0931, -0.114767, -62.6143)
-metadata/_edit_lock_ = true
-
-[node name="Road27" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.0931, -0.114767, -73.6143)
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="Road28" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.7203, -0.114767, -51.7163)
-metadata/_edit_lock_ = true
-
-[node name="Road29" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.7153, -0.114767, -62.5753)
-metadata/_edit_lock_ = true
-
-[node name="Road30" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.7153, -0.114767, -73.5753)
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="Road31" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 27.4163, -0.0911614, -51.718)
-metadata/_edit_lock_ = true
-
-[node name="Road32" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 27.4109, -0.114767, -62.5774)
-metadata/_edit_lock_ = true
-
-[node name="Road33" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 27.4109, -0.114767, -73.5774)
-metadata/_edit_lock_ = true
-
-[node name="Road34" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.0916, -0.0911614, -51.7397)
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="Road35" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.0863, -0.114767, -62.5991)
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="Road36" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.0863, -0.114767, -73.5991)
-visible = false
-metadata/_edit_lock_ = true
-
 [node name="Items" type="Node3D" parent="."]
 
 [node name="BackPack" parent="Items" instance=ExtResource("13_l5lfc")]
@@ -11398,6 +11245,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26194, 0.360608, 220.386)
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road"]
 
@@ -11405,10 +11253,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
 shape = SubResource("BoxShape3D_53vbi")
 
 [node name="new road 2" type="MeshInstance3D" parent="new roads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4078, 0.360608, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.6732, 0.360608, 0)
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 2"]
 
@@ -11416,10 +11265,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
 shape = SubResource("BoxShape3D_53vbi")
 
 [node name="new road 3" type="MeshInstance3D" parent="new roads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.4266, 0.360608, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.6717, 0.360608, 0)
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 3"]
 
@@ -11427,10 +11277,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
 shape = SubResource("BoxShape3D_53vbi")
 
 [node name="new road 4" type="MeshInstance3D" parent="new roads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.24, 0.360608, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.24, 0.360608, -278.805)
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 4"]
 
@@ -11438,10 +11289,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
 shape = SubResource("BoxShape3D_53vbi")
 
 [node name="new road 5" type="MeshInstance3D" parent="new roads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.9085, 0.360608, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.3697, 0.360608, 0)
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 5"]
 
@@ -11449,10 +11301,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
 shape = SubResource("BoxShape3D_53vbi")
 
 [node name="new road 6" type="MeshInstance3D" parent="new roads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.8819, 0.360608, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.3879, 0.360608, 0)
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 6"]
 
@@ -11464,6 +11317,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.6538, 0.360608, 0)
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 7"]
 
@@ -11475,6 +11329,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -204.3
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 8"]
 
@@ -11482,10 +11337,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
 shape = SubResource("BoxShape3D_53vbi")
 
 [node name="new road 9" type="MeshInstance3D" parent="new roads"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -204.304, 0.360608, 52.8551)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -204.304, 0.360608, 52.9137)
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 9"]
 
@@ -11493,10 +11349,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
 shape = SubResource("BoxShape3D_53vbi")
 
 [node name="new road 10" type="MeshInstance3D" parent="new roads"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -204.304, 0.360608, 19.7068)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -204.304, 0.360608, 19.7414)
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 10"]
 
@@ -11508,6 +11365,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -204.3
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 11"]
 
@@ -11519,6 +11377,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -236.5
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 12"]
 
@@ -11526,10 +11385,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
 shape = SubResource("BoxShape3D_53vbi")
 
 [node name="new road 13" type="MeshInstance3D" parent="new roads"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -236.505, 0.360608, -12.0208)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -236.505, 0.360608, -12.9317)
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 13"]
 
@@ -11541,6 +11401,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -366.2
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 14"]
 
@@ -11552,6 +11413,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26123, 0.360608, -408.032)
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 15"]
 
@@ -11563,6 +11425,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.261
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 16"]
 
@@ -11574,6 +11437,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.261
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 17"]
 
@@ -11585,6 +11449,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.261
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 18"]
 
@@ -11596,6 +11461,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.261
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 19"]
 
@@ -11607,6 +11473,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 200.67
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 20"]
 
@@ -11618,6 +11485,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 200.67
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 21"]
 
@@ -11629,6 +11497,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 199.33
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 22"]
 
@@ -11640,8 +11509,50 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 210.08
 mesh = SubResource("BoxMesh_53vbi")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 23"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 23/StaticBody3D"]
 shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 24" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 264.827, 0.360608, -44.898)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 24"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 24/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 25" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135.799, 0.360608, -44.898)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 25"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 25/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="new road 26" type="MeshInstance3D" parent="new roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.9502, 0.360608, 351.786)
+mesh = SubResource("BoxMesh_53vbi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mj7mg")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="new roads/new road 26"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="new roads/new road 26/StaticBody3D"]
+shape = SubResource("BoxShape3D_53vbi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.8272, 0.366276, -44.8398)
+mesh = SubResource("BoxMesh_jexi8")
+surface_material_override/0 = SubResource("StandardMaterial3D_53vbi")
