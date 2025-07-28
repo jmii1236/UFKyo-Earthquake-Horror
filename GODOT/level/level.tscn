@@ -67,6 +67,11 @@ background_mode = 2
 sky = SubResource("Sky_u52ul")
 tonemap_mode = 2
 glow_enabled = true
+fog_light_color = Color(0.617087, 0.532901, 0.696467, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.03
+volumetric_fog_albedo = Color(0.286311, 0.225369, 0.250311, 1)
+volumetric_fog_emission = Color(0.344076, 0.344076, 0.344076, 1)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_sui6v"]
 vertices = PackedVector3Array(-59, 1.33249, -210.051, -57.25, 1.33249, -210.301, -57.5, 1.33249, -250.551, -249.5, 1.33249, -250.551, -249.5, 1.33249, -11.3011, -59, 1.33249, -11.3011, 140.5, 1.33249, -210.301, 140.75, 1.33249, -250.551, 142.25, 1.33249, -210.051, 249.5, 1.33249, -250.551, 142.25, 1.33249, -10.8011, 249.5, 1.33249, -10.5511, -58, 2.33249, -209.301, -58, 2.33249, -10.0511, 141.25, 2.33249, -10.0511, 141.25, 2.33249, -209.301, -59, 1.33249, -9.30109, -56.75, 1.33249, -9.05109, -249.5, 1.33249, 248.449, -56.75, 1.33249, 248.449, 142, 1.33249, -9.05109, 249.5, 1.33249, 248.449)
@@ -135,6 +140,8 @@ environment = SubResource("Environment_vonw3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+light_energy = 0.677
+light_volumetric_fog_energy = 4.556
 shadow_enabled = true
 
 [node name="PlayerDad" parent="." instance=ExtResource("1_u52ul")]
