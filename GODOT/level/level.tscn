@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cd7hhr2ghs3bw" path="res://Items/Medkit/medkit.tscn" id="13_l5lfc"]
 [ext_resource type="PackedScene" uid="uid://clnnp3e7xet7j" path="res://AI/FireAI/SpawnTrigger/spawn_trigger_zone.tscn" id="14_m3nah"]
 [ext_resource type="PackedScene" uid="uid://dvhysox4grosx" path="res://AI/HumanAI/MomNPC/mom_target.tscn" id="16_7jqyl"]
-[ext_resource type="PackedScene" uid="uid://eon0ykmpok72" path="res://Assets/Roads/road.tscn" id="17_m5ivw"]
 [ext_resource type="PackedScene" uid="uid://c08d03sj4go74" path="res://Inventory/slot.tscn" id="18_tv7ir"]
 [ext_resource type="PackedScene" uid="uid://cak2leacnudic" path="res://level/Speakers/Siren/siren.tscn" id="19_51qkb"]
 [ext_resource type="PackedScene" uid="uid://gqyqyv1w3s2o" path="res://Inventory/inventory.tscn" id="19_jexi8"]
@@ -53,6 +52,7 @@
 [ext_resource type="PackedScene" uid="uid://chgxogg7kwdvp" path="res://Assets/worldfeatures/1988-honda-cr-x/source/1988 Honda CR-X.glb" id="42_w5qvu"]
 [ext_resource type="PackedScene" uid="uid://c4h65fys53dtx" path="res://AI/FireAI/FireSafeZone/fire_safe_zone.tscn" id="47_j88iw"]
 [ext_resource type="PackedScene" uid="uid://cagnctsnr11yr" path="res://level/WinTriggerZone/win_trigger_zone.tscn" id="48_3xl46"]
+[ext_resource type="PackedScene" uid="uid://ddq23hrupd4ox" path="res://Assets/worldfeatures/House_FixedNormals.blend" id="52_wsbnc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5xgho"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -11096,163 +11096,6 @@ metadata/_edit_lock_ = true
 
 [node name="playground" parent="Buildings7" instance=ExtResource("40_jexi8")]
 transform = Transform3D(0.003, 0, 0, 0, 0.003, 0, 0, 0, 0.003, 60.9375, 1.91454, -187.056)
-metadata/_edit_lock_ = true
-
-[node name="roads" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.25, 0, 40.15)
-
-[node name="Road" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.2128, -0.114767, -19.1297)
-metadata/_edit_lock_ = true
-
-[node name="Road2" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.2178, -0.114767, -29.9887)
-metadata/_edit_lock_ = true
-
-[node name="Road3" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.2178, -0.114767, -40.9887)
-metadata/_edit_lock_ = true
-
-[node name="Road4" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.51682, -0.0911614, -19.1314)
-metadata/_edit_lock_ = true
-
-[node name="Road5" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.52219, -0.114767, -29.9908)
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="Road6" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.52219, -0.114767, -40.9908)
-metadata/_edit_lock_ = true
-
-[node name="Road7" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.15856, -0.0911614, -19.1531)
-metadata/_edit_lock_ = true
-
-[node name="Road8" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.15319, -0.114767, -30.0125)
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="Road9" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.15319, -0.114767, -41.0125)
-metadata/_edit_lock_ = true
-
-[node name="Road10" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.7804, -0.114767, -19.1146)
-metadata/_edit_lock_ = true
-
-[node name="Road11" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.7754, -0.114767, -29.9735)
-metadata/_edit_lock_ = true
-
-[node name="Road12" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.7754, -0.114767, -40.9736)
-metadata/_edit_lock_ = true
-
-[node name="Road13" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 27.4763, -0.0911614, -19.1163)
-metadata/_edit_lock_ = true
-
-[node name="Road14" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 27.471, -0.114767, -29.9756)
-metadata/_edit_lock_ = true
-
-[node name="Road15" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 27.471, -0.114767, -40.9757)
-metadata/_edit_lock_ = true
-
-[node name="Road16" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.1517, -0.0911614, -19.138)
-metadata/_edit_lock_ = true
-
-[node name="Road17" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.1464, -0.114767, -29.9974)
-metadata/_edit_lock_ = true
-
-[node name="Road18" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.1464, -0.114767, -40.9974)
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="Road19" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.2729, -0.114767, -51.7315)
-metadata/_edit_lock_ = true
-
-[node name="Road20" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.2779, -0.114767, -62.5905)
-metadata/_edit_lock_ = true
-
-[node name="Road21" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.2779, -0.114767, -73.5905)
-metadata/_edit_lock_ = true
-
-[node name="Road22" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.57691, -0.0911614, -51.7332)
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="Road23" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.58228, -0.114767, -62.5926)
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="Road24" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.58228, -0.114767, -73.5926)
-metadata/_edit_lock_ = true
-
-[node name="Road25" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.09847, -0.0911614, -51.7549)
-metadata/_edit_lock_ = true
-
-[node name="Road26" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.0931, -0.114767, -62.6143)
-metadata/_edit_lock_ = true
-
-[node name="Road27" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.0931, -0.114767, -73.6143)
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="Road28" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.7203, -0.114767, -51.7163)
-metadata/_edit_lock_ = true
-
-[node name="Road29" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.7153, -0.114767, -62.5753)
-metadata/_edit_lock_ = true
-
-[node name="Road30" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.7153, -0.114767, -73.5753)
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="Road31" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 27.4163, -0.0911614, -51.718)
-metadata/_edit_lock_ = true
-
-[node name="Road32" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 27.4109, -0.114767, -62.5774)
-metadata/_edit_lock_ = true
-
-[node name="Road33" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 27.4109, -0.114767, -73.5774)
-metadata/_edit_lock_ = true
-
-[node name="Road34" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.0916, -0.0911614, -51.7397)
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="Road35" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.0863, -0.114767, -62.5991)
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="Road36" parent="roads" instance=ExtResource("17_m5ivw")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 38.0863, -0.114767, -73.5991)
-visible = false
 metadata/_edit_lock_ = true
 
 [node name="Items" type="Node3D" parent="."]
