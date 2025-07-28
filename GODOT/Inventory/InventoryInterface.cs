@@ -10,7 +10,7 @@ public partial class InventoryInterface : Control
 
     private PanelContainer externalInventory;
     [Export] private PanelContainer grabbedSlot;
-    public Backpack backpack;
+    [Export] public Backpack backpack;
     PlayerDad playerDad;
     public string grabbedSlotName = "GrabbedSlot";
 
@@ -19,7 +19,7 @@ public partial class InventoryInterface : Control
         playerInventory = GetNode<PanelContainer>("PlayerInventory");
         grabbedSlot = GetNode<PanelContainer>("GrabbedSlot");
         externalInventory = GetNode<PanelContainer>("ExternalInventory");
-        backpack = GetNode<Backpack>("Items/BackPack");
+        //backpack = GetNode<Backpack>("Items/BackPack");
         playerDad = GetNode<PlayerDad>("../../../PlayerDad");
         if (playerInventory == null)
         {
