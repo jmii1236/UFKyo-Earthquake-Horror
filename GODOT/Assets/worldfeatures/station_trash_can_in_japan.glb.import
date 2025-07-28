@@ -32,6 +32,15 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Sketchfab_model/Scaniverse_obj_cleaner_materialmerger_gles/Object_2": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/Scaniverse_obj_cleaner_materialmerger_gles/Object_3": {
+"generate/physics": true
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

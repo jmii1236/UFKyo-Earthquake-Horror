@@ -32,6 +32,30 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Sketchfab_model/Japanese Trash Can_fbx/RootNode/Box008/Box008_kolom bawah_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/Japanese Trash Can_fbx/RootNode/Box009/Box009_kolom bawah_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/Japanese Trash Can_fbx/RootNode/Box010/Box010_kolom bawah_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/Japanese Trash Can_fbx/RootNode/Box011/Box011_kolom bawah_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/Japanese Trash Can_fbx/RootNode/Plane031/Plane031_tempat sampah2_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/Japanese Trash Can_fbx/RootNode/Plane031/Plane031_tempat sampah3_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/Japanese Trash Can_fbx/RootNode/Plane031/Plane031_tempat sampah_0": {
+"generate/physics": true
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
