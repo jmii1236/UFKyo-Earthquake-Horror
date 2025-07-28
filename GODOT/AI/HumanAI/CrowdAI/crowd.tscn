@@ -6,8 +6,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_qahrq"]
 radius = 7.5
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_8tkr3"]
-radius = 1.0
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_phv23"]
 
 [sub_resource type="Animation" id="Animation_ldkur"]
 resource_name = "Armature|mixamo_com|Layer0"
@@ -820,7 +819,7 @@ shape = SubResource("SphereShape3D_qahrq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0360677, 0.810816, -0.0181227)
-shape = SubResource("SphereShape3D_8tkr3")
+shape = SubResource("CapsuleShape3D_phv23")
 
 [node name="PLEASE" parent="." instance=ExtResource("2_qahrq")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
