@@ -1,4 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
-GODOT/worldfeatures/House_FixedNormals.blend
+GODOT/Assets/worldfeatures/House_FixedNormals.blend

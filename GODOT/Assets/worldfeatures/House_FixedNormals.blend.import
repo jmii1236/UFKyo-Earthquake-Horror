@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ddq23hrupd4ox"
-path="res://.godot/imported/House_FixedNormals.blend-b5fa03619d205480cfdfdfaefc1e3dc2.scn"
+path="res://.godot/imported/House_FixedNormals.blend-9dd8111c0de625af07c44b83e9a284a6.scn"
 
 [deps]
 
-source_file="res://worldfeatures/House_FixedNormals.blend"
-dest_files=["res://.godot/imported/House_FixedNormals.blend-b5fa03619d205480cfdfdfaefc1e3dc2.scn"]
+source_file="res://Assets/worldfeatures/House_FixedNormals.blend"
+dest_files=["res://.godot/imported/House_FixedNormals.blend-9dd8111c0de625af07c44b83e9a284a6.scn"]
 
 [params]
 
