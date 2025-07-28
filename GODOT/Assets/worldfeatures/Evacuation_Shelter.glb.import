@@ -32,6 +32,30 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:bigWalls": {
+"generate/physics": true
+},
+"PATH:doorHandles": {
+"generate/physics": true
+},
+"PATH:doors": {
+"generate/physics": true
+},
+"PATH:glass": {
+"generate/physics": true
+},
+"PATH:ledges": {
+"generate/physics": true
+},
+"PATH:metalBorders_White": {
+"generate/physics": true
+},
+"PATH:smallWalls": {
+"generate/physics": true
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

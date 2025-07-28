@@ -32,6 +32,12 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Sketchfab_model/0ea5f075d1114658865392519be4b20b_fbx/RootNode/JapaneseResidentialHome_01/JapaneseResidentialHome_01_blinn1_0": {
+"generate/physics": true
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

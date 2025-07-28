@@ -32,6 +32,36 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Sketchfab_model/cf9957e6d5b34fc98e33296d9b2b930f_fbx/RootNode/child ground/child ground_child ground_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/cf9957e6d5b34fc98e33296d9b2b930f_fbx/RootNode/child lamp/child lamp_lamp em_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/cf9957e6d5b34fc98e33296d9b2b930f_fbx/RootNode/child lamp/child lamp_metal_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/cf9957e6d5b34fc98e33296d9b2b930f_fbx/RootNode/child sand/child sand_sand_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/cf9957e6d5b34fc98e33296d9b2b930f_fbx/RootNode/child sandbox/child sandbox_sandbox_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/cf9957e6d5b34fc98e33296d9b2b930f_fbx/RootNode/child swing/child swing_swing_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/cf9957e6d5b34fc98e33296d9b2b930f_fbx/RootNode/child swing2/child swing2_swing1_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/cf9957e6d5b34fc98e33296d9b2b930f_fbx/RootNode/child swing2/child swing2_swing2_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/cf9957e6d5b34fc98e33296d9b2b930f_fbx/RootNode/child zabor/child zabor_child zabor_0": {
+"generate/physics": true
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
