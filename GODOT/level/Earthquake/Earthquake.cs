@@ -3,14 +3,29 @@ using System;
 
 public partial class Earthquake : Node3D
 {
-    private Timer _timer = null;
+    private Area3D trigger_zone = null;
     private TraumaCauser trauma_causer = null;
+    private bool occurred = false;
+    Globals globals = null;
 
     public override void _Ready()
     {
-        trauma_causer = GetNode<TraumaCauser>("TraumaCauser");
+        globals = Globals.Instance;
 
-        _timer = GetNode<Timer>("Timer");
-        _timer.Timeout += () => trauma_causer.CauseTrauma();
+        trauma_causer = GetNode<TraumaCauser>("TraumaCauser") as TraumaCauser;
+        trigger_zone = GetNode<Area3D>("%TriggerZone") as Area3D;
+
+        trigger_zone.BodyEntered += OnBodyEntered;
+    }
+
+    private void OnBodyEntered(Node3D body)
+    {
+        if (body.IsInGroup("Player") && !occurred)
+        {
+            trauma_causer.CauseTrauma();
+            globals.EmitSignal("EarthquakeOccurs");
+
+            occurred = true;
+        }
     }
 }

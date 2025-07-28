@@ -30,7 +30,6 @@ public partial class PlayerDad : CharacterBody3D
 	[Export] public int MaxHealth = 100; // Set a default maximum health value;
 	public int CurrentHealth;
 	public bool BackPackIsPickedUp = false;
-
 	private float PitchAngle = 0.0f; // to track the current pitch for clamping
 
 	public override void _Ready()
@@ -147,11 +146,11 @@ public partial class PlayerDad : CharacterBody3D
 			if (Input.IsActionJustPressed("interact"))
 			{
 				if (Collider is ChildNpc childNPC)
-					{
-						childNPC.PickedUp();
-						ChildNPCPickedUp = true;
-					}
-					IsChildIsPickedUp(childNpc.ChildNPCPickedUp);
+				{
+					childNPC.PickedUp();
+					ChildNPCPickedUp = true;
+				}
+				IsChildIsPickedUp(childNpc.ChildNPCPickedUp);
 				// Handle regular Item interactions (picking up items) - legacy system
 				if (Collider.IsInGroup("Item"))
 				{
@@ -198,6 +197,11 @@ public partial class PlayerDad : CharacterBody3D
 		// Reset inputs each frame
 		TwistInput = 0.0f;
 		PitchInput = 0.0f;
+
+		if (CurrentHealth <= 0)
+		{
+			globals.EmitSignal("GameOver");
+		}
 	}
 
 	public override void _UnhandledInput(InputEvent @event)

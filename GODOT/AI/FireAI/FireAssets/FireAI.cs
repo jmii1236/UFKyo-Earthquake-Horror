@@ -11,19 +11,22 @@ public partial class FireAI : CharacterBody3D
 	private PackedScene fireTrailScene;
 	private float trailTimer = 0.0f;
 	private float trailInterval = 0.2f;
+	Globals globals = null;
 
 	public override void _Ready()
 	{
 		nav = GetNode<NavigationAgent3D>("NavigationAgent3D");
 
 		// Find PlayerDad directly
-		playerDad = GetNode<CharacterBody3D>("../PlayerDad");
+		//playerDad = GetNode<CharacterBody3D>("../PlayerDad");
 
-		fireTrailScene = GD.Load<PackedScene>("res://FireAI/fire_trail.tscn");
+		fireTrailScene = GD.Load<PackedScene>("res://AI/FireAI/FireAssets/fire_trail.tscn");
 
 		if (fireTrailScene == null)
 			GD.PushError("FireTrail.tscn could not be loaded. Check the path.");
 
+		globals = Globals.Instance;
+		globals.SetPlayer += SetPlayer;
 	}
 
 
@@ -32,7 +35,6 @@ public partial class FireAI : CharacterBody3D
 		// Make sure we have a valid target
 		if (playerDad == null)
 			return;
-
 
 		Vector3 direction = Vector3.Zero;
 
@@ -57,25 +59,28 @@ public partial class FireAI : CharacterBody3D
 		}
 	}
 	private void SpawnFireTrail()
-{
-	if (fireTrailScene == null)
 	{
-		GD.PushError("fireTrailScene is null! Cannot spawn fire trail.");
-		return;
+		if (fireTrailScene == null)
+		{
+			GD.PushError("fireTrailScene is null! Cannot spawn fire trail.");
+			return;
+		}
+
+		Node3D trail = fireTrailScene.Instantiate<Node3D>();
+
+		if (trail == null)
+		{
+			GD.PushError("Failed to instance fireTrailScene.");
+			return;
+		}
+
+		GetTree().CurrentScene.AddChild(trail); // add to scene first
+		trail.GlobalPosition = GlobalPosition;  // then set position
+		// GD.Print("Spawned fire trail at: " + GlobalPosition);
 	}
 
-	Node3D trail = fireTrailScene.Instantiate<Node3D>();
-
-	if (trail == null)
+	private void SetPlayer(CharacterBody3D player)
 	{
-		GD.PushError("Failed to instance fireTrailScene.");
-		return;
+		playerDad = player;
 	}
-
-	GetTree().CurrentScene.AddChild(trail); // add to scene first
-	trail.GlobalPosition = GlobalPosition;  // then set position
-	// GD.Print("Spawned fire trail at: " + GlobalPosition);
-}
-
-
 }

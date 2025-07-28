@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://fgwhvvmeae7m"]
+[gd_scene load_steps=6 format=3 uid="uid://fgwhvvmeae7m"]
 
 [ext_resource type="Script" uid="uid://bq78f3jbd1trg" path="res://Level/Earthquake/Earthquake.cs" id="1_1ubav"]
 [ext_resource type="PackedScene" uid="uid://cfpivkrmuwhxq" path="res://PlayerDad/Camera/TraumaCauser/trauma_causer.tscn" id="2_yluy7"]
@@ -6,16 +6,27 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_yluy7"]
 radius = 100.0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_yluy7"]
+size = Vector3(10, 10, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7hbks"]
+size = Vector3(10, 10, 5)
+
 [node name="Earthquake" type="Node3D"]
 script = ExtResource("1_1ubav")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
-one_shot = true
-autostart = true
 
 [node name="TraumaCauser" parent="." instance=ExtResource("2_yluy7")]
 trauma_amount = 10.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TraumaCauser"]
 shape = SubResource("SphereShape3D_yluy7")
+
+[node name="TriggerZone" type="Area3D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerZone"]
+shape = SubResource("BoxShape3D_yluy7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TriggerZone"]
+visible = false
+mesh = SubResource("BoxMesh_7hbks")

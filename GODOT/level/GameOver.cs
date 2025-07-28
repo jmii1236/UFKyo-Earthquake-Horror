@@ -7,7 +7,6 @@ public partial class GameOver : Control
     public override void _Ready()
     {
         globals = Globals.Instance;
-        globals.EarthquakeOccurs += _On_Earthquake_Occurs;
     }
 
     private void _On_Earthquake_Occurs()
