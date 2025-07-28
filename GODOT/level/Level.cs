@@ -60,7 +60,7 @@ public partial class Level : Node3D
 
   	    	// Clear/hide the external inventory when closing
   	    	// You might need to add a method to hide it, or pass null
-  	    	((InventoryInterface)inventoryInterface).ClearExternalInventory(externalInventory);
+  	    	((InventoryInterface)inventoryInterface).ClearExternalInventory();
   	  	}
   	  	if (externalInventory != null && inventoryInterface.Visible)
   	  	{
@@ -70,7 +70,7 @@ public partial class Level : Node3D
   	  	else
   	  	{
   	   		GD.Print("No external inventory to toggle");
-  	    	((InventoryInterface)inventoryInterface).ClearExternalInventory(externalInventory);
+  	    	((InventoryInterface)inventoryInterface).ClearExternalInventory();
   	  	}
 	}
 }
