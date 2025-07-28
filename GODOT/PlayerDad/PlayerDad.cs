@@ -296,14 +296,14 @@ public partial class PlayerDad : CharacterBody3D
 	{
 		//GD.Print("Current health: " + CurrentHealth);
 		GD.Print("Entered by non-PlayerDad: " + body.Name);
-		TakeDamage(5); // Example damage value
+		TakeDamage(1); // Example damage value
 	}
 	public void IsChildIsPickedUp(bool pickedUp)
 	{
 		if (pickedUp)
 		{
 			Speed = 2.5f;
-			JumpVelocity = 2.5f; // mechanics are diminished with holding child
+			JumpVelocity = 3.0f; // mechanics are diminished with holding child
 													 // GD.Print("Speed is" + Speed + " and JumpVelocity is " + JumpVelocity);
 		}
 		else

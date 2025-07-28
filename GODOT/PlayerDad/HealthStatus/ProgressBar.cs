@@ -1,9 +1,9 @@
 using Godot;
 using System;
 
-public partial class ProgressBar : Godot.ProgressBar
+public partial class ProgressBar : Godot.TextureProgressBar
 {
-  PlayerDad PlayerDad { get; set; }
+  PlayerDad PlayerDad;
 
   public override void _Ready()
   {
