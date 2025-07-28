@@ -1,9 +1,9 @@
-[gd_scene load_steps=76 format=3 uid="uid://caexss41451q8"]
+[gd_scene load_steps=75 format=3 uid="uid://caexss41451q8"]
 
-[ext_resource type="Script" uid="uid://byfog84srimr2" path="res://level/Level.cs" id="1_b7y0n"]
+[ext_resource type="Script" uid="uid://byfog84srimr2" path="res://Level/Level.cs" id="1_b7y0n"]
 [ext_resource type="PackedScene" uid="uid://c47krvq3ghs5w" path="res://PlayerDad/player_dad.tscn" id="1_u52ul"]
-[ext_resource type="PackedScene" uid="uid://fgwhvvmeae7m" path="res://level/Earthquake/earthquake.tscn" id="2_5gx2l"]
-[ext_resource type="Script" uid="uid://do5uypden6jop" path="res://level/GameOver.cs" id="3_qohg2"]
+[ext_resource type="PackedScene" uid="uid://fgwhvvmeae7m" path="res://Level/Earthquake/earthquake.tscn" id="2_5gx2l"]
+[ext_resource type="Script" uid="uid://do5uypden6jop" path="res://Level/GameOver.cs" id="3_qohg2"]
 [ext_resource type="Script" uid="uid://djlrkrs2nf3bi" path="res://Inventory/SlotData.cs" id="4_kdsbj"]
 [ext_resource type="Script" uid="uid://m4xso41vrq7c" path="res://AI/HumanAI/MomNPC/MomNPC.cs" id="4_vkbyq"]
 [ext_resource type="Script" uid="uid://b67kiqe7vt3rf" path="res://AI/HumanAI/ChildNPC/ChildNpc.cs" id="7_j88iw"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dvhysox4grosx" path="res://AI/HumanAI/MomNPC/mom_target.tscn" id="16_7jqyl"]
 [ext_resource type="PackedScene" uid="uid://eon0ykmpok72" path="res://Assets/Roads/road.tscn" id="17_m5ivw"]
 [ext_resource type="PackedScene" uid="uid://c08d03sj4go74" path="res://Inventory/slot.tscn" id="18_tv7ir"]
-[ext_resource type="PackedScene" uid="uid://cak2leacnudic" path="res://level/Speakers/Siren/siren.tscn" id="19_51qkb"]
+[ext_resource type="PackedScene" uid="uid://cak2leacnudic" path="res://Level/Speakers/Siren/siren.tscn" id="19_51qkb"]
 [ext_resource type="PackedScene" uid="uid://gqyqyv1w3s2o" path="res://Inventory/inventory.tscn" id="19_jexi8"]
 [ext_resource type="PackedScene" uid="uid://3lek7cfyvr1j" path="res://Assets/worldfeatures/ApartmentComplex (1).glb" id="19_kp5pi"]
 [ext_resource type="PackedScene" uid="uid://dwv4pkp70l43g" path="res://Assets/worldfeatures/7_11.glb" id="19_tv7ir"]
@@ -44,7 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://u4tx60yg78f1" path="res://Assets/worldfeatures/tree6.glb" id="34_3dv6e"]
 [ext_resource type="PackedScene" uid="uid://dtnh2ll8km31h" path="res://Assets/worldfeatures/tree7.glb" id="35_w5qvu"]
 [ext_resource type="PackedScene" uid="uid://ba7uvcjfg8vdu" path="res://Assets/worldfeatures/tree8.glb" id="36_4vkke"]
-[ext_resource type="PackedScene" uid="uid://dwtu363onajbu" path="res://level/Speakers/Radio/radio.tscn" id="36_dtde3"]
+[ext_resource type="PackedScene" uid="uid://dwtu363onajbu" path="res://Level/Speakers/Radio/radio.tscn" id="36_dtde3"]
 [ext_resource type="PackedScene" uid="uid://cn2vlkgxsdwy5" path="res://Assets/worldfeatures/tree9.glb" id="37_w18mj"]
 [ext_resource type="PackedScene" uid="uid://ccgdkmrehbp8x" path="res://Assets/worldfeatures/tree10.glb" id="38_j1fdq"]
 [ext_resource type="Resource" uid="uid://dn6gt7ssojw0h" path="res://Inventory/backpack_inv.tres" id="40_idjqq"]
@@ -52,8 +52,7 @@
 [ext_resource type="PackedScene" uid="uid://db84l0iw1pskp" path="res://Assets/worldfeatures/japanese_sedan_94_-_low_poly_model.glb" id="41_3dv6e"]
 [ext_resource type="PackedScene" uid="uid://chgxogg7kwdvp" path="res://Assets/worldfeatures/1988-honda-cr-x/source/1988 Honda CR-X.glb" id="42_w5qvu"]
 [ext_resource type="PackedScene" uid="uid://c4h65fys53dtx" path="res://AI/FireAI/FireSafeZone/fire_safe_zone.tscn" id="47_j88iw"]
-[ext_resource type="PackedScene" uid="uid://cagnctsnr11yr" path="res://level/WinTriggerZone/win_trigger_zone.tscn" id="48_3xl46"]
-[ext_resource type="PackedScene" uid="uid://ddq23hrupd4ox" path="res://Assets/worldfeatures/House_FixedNormals.blend" id="52_wsbnc"]
+[ext_resource type="PackedScene" uid="uid://cagnctsnr11yr" path="res://Level/WinTriggerZone/win_trigger_zone.tscn" id="48_3xl46"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5xgho"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -1877,8 +1876,18 @@ metadata/_edit_lock_ = true
 [node name="Radio" parent="Buildings/startinghouse" instance=ExtResource("36_dtde3")]
 transform = Transform3D(-4, 0, 3.49691e-07, 0, 4, 0, -3.49691e-07, 0, -4, -31.4536, 0.497716, -47.042)
 
-[node name="oghouse1" parent="Buildings/startinghouse" instance=ExtResource("52_wsbnc")]
+[node name="oghouse1" parent="Buildings/startinghouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, -43.5763, 0.506559, -50.7288)
+script = null
 metadata/_edit_lock_ = true
 
 [node name="stairs collision" type="StaticBody3D" parent="Buildings"]
@@ -1945,8 +1954,18 @@ metadata/_edit_lock_ = true
 transform = Transform3D(2, 0, 0, 0, 0.06, 0, 0, 0, 2, -33.1075, 0.47, -83.3601)
 metadata/_edit_lock_ = true
 
-[node name="oghouse2" parent="Buildings/neighborhouse" instance=ExtResource("52_wsbnc")]
+[node name="oghouse2" parent="Buildings/neighborhouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, -43.5763, 0.592118, -82.9477)
+script = null
 metadata/_edit_lock_ = true
 
 [node name="sedan" parent="Buildings/neighborhouse" instance=ExtResource("33_53vbi")]
@@ -3450,8 +3469,18 @@ metadata/_edit_lock_ = true
 [node name="Radio" parent="Buildings2/startinghouse" instance=ExtResource("36_dtde3")]
 transform = Transform3D(-4, 0, 3.49691e-07, 0, 4, 0, -3.49691e-07, 0, -4, -31.4536, 0.497716, -47.042)
 
-[node name="oghouse1" parent="Buildings2/startinghouse" instance=ExtResource("52_wsbnc")]
+[node name="oghouse1" parent="Buildings2/startinghouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, -43.5763, 0.506559, -50.7288)
+script = null
 metadata/_edit_lock_ = true
 
 [node name="stairs collision" type="StaticBody3D" parent="Buildings2"]
@@ -3518,8 +3547,18 @@ metadata/_edit_lock_ = true
 transform = Transform3D(2, 0, 0, 0, 0.06, 0, 0, 0, 2, -33.1075, 0.47, -83.3601)
 metadata/_edit_lock_ = true
 
-[node name="oghouse2" parent="Buildings2/neighborhouse" instance=ExtResource("52_wsbnc")]
+[node name="oghouse2" parent="Buildings2/neighborhouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, -43.5763, 0.592118, -82.9477)
+script = null
 metadata/_edit_lock_ = true
 
 [node name="sedan" parent="Buildings2/neighborhouse" instance=ExtResource("33_53vbi")]
@@ -5021,8 +5060,18 @@ metadata/_edit_lock_ = true
 [node name="Radio" parent="Buildings3/startinghouse" instance=ExtResource("36_dtde3")]
 transform = Transform3D(-4, 0, 3.49691e-07, 0, 4, 0, -3.49691e-07, 0, -4, -31.4536, 0.497716, -47.042)
 
-[node name="oghouse1" parent="Buildings3/startinghouse" instance=ExtResource("52_wsbnc")]
+[node name="oghouse1" parent="Buildings3/startinghouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, -43.5763, 0.506559, -50.7288)
+script = null
 metadata/_edit_lock_ = true
 
 [node name="stairs collision" type="StaticBody3D" parent="Buildings3"]
@@ -5089,8 +5138,18 @@ metadata/_edit_lock_ = true
 transform = Transform3D(2, 0, 0, 0, 0.06, 0, 0, 0, 2, -33.1075, 0.47, -83.3601)
 metadata/_edit_lock_ = true
 
-[node name="oghouse2" parent="Buildings3/neighborhouse" instance=ExtResource("52_wsbnc")]
+[node name="oghouse2" parent="Buildings3/neighborhouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, -43.5763, 0.592118, -82.9477)
+script = null
 metadata/_edit_lock_ = true
 
 [node name="sedan" parent="Buildings3/neighborhouse" instance=ExtResource("33_53vbi")]
@@ -6594,8 +6653,18 @@ metadata/_edit_lock_ = true
 [node name="Radio" parent="Buildings4/startinghouse" instance=ExtResource("36_dtde3")]
 transform = Transform3D(-4, 0, 3.49691e-07, 0, 4, 0, -3.49691e-07, 0, -4, -31.4536, 0.497716, -47.042)
 
-[node name="oghouse1" parent="Buildings4/startinghouse" instance=ExtResource("52_wsbnc")]
+[node name="oghouse1" parent="Buildings4/startinghouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, -43.5763, 0.506559, -50.7288)
+script = null
 metadata/_edit_lock_ = true
 
 [node name="stairs collision" type="StaticBody3D" parent="Buildings4"]
@@ -6662,8 +6731,18 @@ metadata/_edit_lock_ = true
 transform = Transform3D(2, 0, 0, 0, 0.06, 0, 0, 0, 2, -33.1075, 0.47, -83.3601)
 metadata/_edit_lock_ = true
 
-[node name="oghouse2" parent="Buildings4/neighborhouse" instance=ExtResource("52_wsbnc")]
+[node name="oghouse2" parent="Buildings4/neighborhouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, -43.5763, 0.592118, -82.9477)
+script = null
 metadata/_edit_lock_ = true
 
 [node name="sedan" parent="Buildings4/neighborhouse" instance=ExtResource("33_53vbi")]
@@ -8087,8 +8166,18 @@ metadata/_edit_lock_ = true
 [node name="Radio" parent="Buildings5/startinghouse" instance=ExtResource("36_dtde3")]
 transform = Transform3D(-4, 0, 3.49691e-07, 0, 4, 0, -3.49691e-07, 0, -4, -31.4536, 0.497716, -47.042)
 
-[node name="oghouse1" parent="Buildings5/startinghouse" instance=ExtResource("52_wsbnc")]
+[node name="oghouse1" parent="Buildings5/startinghouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, -43.5763, 0.506559, -50.7288)
+script = null
 metadata/_edit_lock_ = true
 
 [node name="stairs collision" type="StaticBody3D" parent="Buildings5"]
@@ -8155,8 +8244,18 @@ metadata/_edit_lock_ = true
 transform = Transform3D(2, 0, 0, 0, 0.06, 0, 0, 0, 2, -33.1075, 0.47, -83.3601)
 metadata/_edit_lock_ = true
 
-[node name="oghouse2" parent="Buildings5/neighborhouse" instance=ExtResource("52_wsbnc")]
+[node name="oghouse2" parent="Buildings5/neighborhouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, -43.5763, 0.592118, -82.9477)
+script = null
 metadata/_edit_lock_ = true
 
 [node name="sedan" parent="Buildings5/neighborhouse" instance=ExtResource("33_53vbi")]
@@ -9580,8 +9679,18 @@ metadata/_edit_lock_ = true
 [node name="Radio" parent="Buildings6/startinghouse" instance=ExtResource("36_dtde3")]
 transform = Transform3D(-4, 0, 3.49691e-07, 0, 4, 0, -3.49691e-07, 0, -4, -31.4536, 0.497716, -47.042)
 
-[node name="oghouse1" parent="Buildings6/startinghouse" instance=ExtResource("52_wsbnc")]
+[node name="oghouse1" parent="Buildings6/startinghouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, -43.5763, 0.506559, -50.7288)
+script = null
 metadata/_edit_lock_ = true
 
 [node name="stairs collision" type="StaticBody3D" parent="Buildings6"]
@@ -9648,8 +9757,18 @@ metadata/_edit_lock_ = true
 transform = Transform3D(2, 0, 0, 0, 0.06, 0, 0, 0, 2, -33.1075, 0.47, -83.3601)
 metadata/_edit_lock_ = true
 
-[node name="oghouse2" parent="Buildings6/neighborhouse" instance=ExtResource("52_wsbnc")]
+[node name="oghouse2" parent="Buildings6/neighborhouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, -43.5763, 0.592118, -82.9477)
+script = null
 metadata/_edit_lock_ = true
 
 [node name="sedan" parent="Buildings6/neighborhouse" instance=ExtResource("33_53vbi")]
@@ -11073,8 +11192,18 @@ metadata/_edit_lock_ = true
 [node name="Radio" parent="Buildings7/startinghouse" instance=ExtResource("36_dtde3")]
 transform = Transform3D(-4, 0, 3.49691e-07, 0, 4, 0, -3.49691e-07, 0, -4, -31.4536, 0.497716, -47.042)
 
-[node name="oghouse1" parent="Buildings7/startinghouse" instance=ExtResource("52_wsbnc")]
+[node name="oghouse1" parent="Buildings7/startinghouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, -43.5763, 0.506559, -50.7288)
+script = null
 metadata/_edit_lock_ = true
 
 [node name="stairs collision" type="StaticBody3D" parent="Buildings7"]
@@ -11141,8 +11270,18 @@ metadata/_edit_lock_ = true
 transform = Transform3D(2, 0, 0, 0, 0.06, 0, 0, 0, 2, -33.1075, 0.47, -83.3601)
 metadata/_edit_lock_ = true
 
-[node name="oghouse2" parent="Buildings7/neighborhouse" instance=ExtResource("52_wsbnc")]
+[node name="oghouse2" parent="Buildings7/neighborhouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, -43.5763, 0.592118, -82.9477)
+script = null
 metadata/_edit_lock_ = true
 
 [node name="sedan" parent="Buildings7/neighborhouse" instance=ExtResource("33_53vbi")]
@@ -11346,7 +11485,7 @@ horizontal_alignment = 1
 
 [node name="UI" type="CanvasLayer" parent="Menus"]
 
-[node name="InventoryInterface" type="Control" parent="Menus/UI" node_paths=PackedStringArray("playerInventory", "grabbedSlot")]
+[node name="InventoryInterface" type="Control" parent="Menus/UI" node_paths=PackedStringArray("grabbedSlot")]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -11355,7 +11494,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("20_xl7j7")
-playerInventory = NodePath("PlayerInventory")
 grabbedSlot = NodePath("GrabbedSlot")
 
 [node name="GrabbedSlot" parent="Menus/UI/InventoryInterface" instance=ExtResource("18_tv7ir")]
@@ -11372,6 +11510,10 @@ layout_mode = 0
 [node name="ExternalInventory" parent="Menus/UI/InventoryInterface" instance=ExtResource("19_jexi8")]
 visible = false
 layout_mode = 0
+offset_left = 1000.0
+offset_top = 70.0
+offset_right = 1040.0
+offset_bottom = 110.0
 
 [node name="CanvasLayer" parent="Menus" instance=ExtResource("29_lsj08")]
 

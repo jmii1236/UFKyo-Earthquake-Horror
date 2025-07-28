@@ -4,13 +4,13 @@ using System;
 public partial class Earthquake : Node3D
 {
     private Timer _timer = null;
-    private Globals globals = null;
+    private TraumaCauser trauma_causer = null;
 
     public override void _Ready()
     {
-        globals = Globals.Instance;
+        trauma_causer = GetNode<TraumaCauser>("TraumaCauser");
 
         _timer = GetNode<Timer>("Timer");
-        _timer.Timeout += () => globals.EmitSignal(Globals.SignalName.EarthquakeOccurs);
+        _timer.Timeout += () => trauma_causer.CauseTrauma();
     }
 }
