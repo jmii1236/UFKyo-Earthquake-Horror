@@ -32,6 +32,156 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Blinker_Front_Glass": {
+"generate/physics": true
+},
+"PATH:Blinker_Front_Reflector": {
+"generate/physics": true
+},
+"PATH:Body": {
+"generate/physics": true
+},
+"PATH:Body_Bolts": {
+"generate/physics": true
+},
+"PATH:Exhaust": {
+"generate/physics": true
+},
+"PATH:Fuel_Cap": {
+"generate/physics": true
+},
+"PATH:Headlights_Diffuser_Orange": {
+"generate/physics": true
+},
+"PATH:Headlights_Glass_White": {
+"generate/physics": true
+},
+"PATH:Interior_Backseats": {
+"generate/physics": true
+},
+"PATH:Interior_Base": {
+"generate/physics": true
+},
+"PATH:Interior_Panel": {
+"generate/physics": true
+},
+"PATH:Interior_Seats_Front": {
+"generate/physics": true
+},
+"PATH:Interior_Steering/Interior_Steering": {
+"generate/physics": true
+},
+"PATH:Keyholes": {
+"generate/physics": true
+},
+"PATH:LicPlate02": {
+"generate/physics": true
+},
+"PATH:Lights_Lamps": {
+"generate/physics": true
+},
+"PATH:Mirrors_Side_Glass": {
+"generate/physics": true
+},
+"PATH:Taillights_AddStop_Diffuser": {
+"generate/physics": true
+},
+"PATH:Taillights_AddStop_Glass": {
+"generate/physics": true
+},
+"PATH:Taillights_AddStop_Reflector": {
+"generate/physics": true
+},
+"PATH:Taillights_Diffuser_Orange": {
+"generate/physics": true
+},
+"PATH:Taillights_Diffuser_Red": {
+"generate/physics": true
+},
+"PATH:Wheel_Back_Left_Bolts": {
+"generate/physics": true
+},
+"PATH:Wheel_Back_Left_Bolts_2": {
+"generate/physics": true
+},
+"PATH:Wheel_Back_Left_Cap": {
+"generate/physics": true
+},
+"PATH:Wheel_Back_Left_Rim": {
+"generate/physics": true
+},
+"PATH:Wheel_Back_Left_Sidewall": {
+"generate/physics": true
+},
+"PATH:Wheel_Back_Right_Cap": {
+"generate/physics": true
+},
+"PATH:Wheel_Back_Right_Logo": {
+"generate/physics": true
+},
+"PATH:Wheel_Front_Left_Logo": {
+"generate/physics": true
+},
+"PATH:Wheel_Front_Left_Rim": {
+"generate/physics": true
+},
+"PATH:Wheel_Front_Left_Sidewall": {
+"generate/physics": true
+},
+"PATH:Wheel_Front_Right_Logo": {
+"generate/physics": true
+},
+"PATH:Wheel_Front_Right_Sidewall": {
+"generate/physics": true
+},
+"PATH:Wheels_Back_Left_BrakeCaliper_Chrome": {
+"generate/physics": true
+},
+"PATH:Wheels_Back_Right_Bolts": {
+"generate/physics": true
+},
+"PATH:Wheels_Back_Right_BrakeCaliper": {
+"generate/physics": true
+},
+"PATH:Wheels_Back_Right_BrakeCaliper_Chrome": {
+"generate/physics": true
+},
+"PATH:Wheels_Front_Left_BrakeCaliper_Chrome": {
+"generate/physics": true
+},
+"PATH:Wheels_Front_Right_Bolts_2": {
+"generate/physics": true
+},
+"PATH:Wheels_Front_Right_BrakeCaliper": {
+"generate/physics": true
+},
+"PATH:Wheels_Front_Right_Brakedisc": {
+"generate/physics": true
+},
+"PATH:Window_BackBot_BlackRegion": {
+"generate/physics": true
+},
+"PATH:Window_Back_Washers": {
+"generate/physics": true
+},
+"PATH:Window_Front_BlackRegion": {
+"generate/physics": true
+},
+"PATH:Window_Front_Glass": {
+"generate/physics": true
+},
+"PATH:Window_Front_Plastic": {
+"generate/physics": true
+},
+"PATH:Windows_Side_BlackRegion": {
+"generate/physics": true
+},
+"PATH:Windows_Side_Glass": {
+"generate/physics": true
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

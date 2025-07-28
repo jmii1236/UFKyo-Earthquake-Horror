@@ -32,6 +32,240 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Bisagra_1/Bisagra_1_Manilla_P_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Bisagra_1_001/Bisagra_1_001__0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Bisagra_2/Bisagra_2_Manilla_P_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Bisagra_2_001/Bisagra_2_001__0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Bisagra_3/Bisagra_3_Manilla_P_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Bisagra_3_001/Bisagra_3_001__0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Casa_1/Casa_1_Concretre_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Casa_1/Casa_1_Entrada_Techo_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Casa_1/Casa_1_Fachada_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Casa_1/Casa_1_Techo_C_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Cube_001/Cube_001_Pared_Piso_A_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Cube_021/Cube_021_Barandilla_buena_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Cube_022/Cube_022_Barandilla_buena_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Cube_100/Cube_100_Barandilla_buena_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Cube_101/Cube_101_Barandilla_buena_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Cube_102/Cube_102_Barandilla_buena_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Cube_103/Cube_103_Barandilla_buena_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Cube_104/Cube_104_Barandilla_buena_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Cylinder/Cylinder_Barandilla_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Cylinder_012/Cylinder_012_Lamparita_Techo_Ext_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Cylinder_012/Cylinder_012_Lamparita_luz_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Cylinder_013/Cylinder_013_Lamparita_Techo_Ext_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Cylinder_013/Cylinder_013_Lamparita_luz_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Cylinder_014/Cylinder_014_Lamparita_Techo_Ext_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Cylinder_014/Cylinder_014_Lamparita_luz_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Cylinder_015/Cylinder_015_Lamparita_Techo_Ext_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Cylinder_015/Cylinder_015_Lamparita_luz_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Cylinder_016/Cylinder_016_Lamparita_Techo_Ext_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Cylinder_016/Cylinder_016_Lamparita_luz_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Direcc/Direcc_Numero_Casa_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Escaleras_2/Escaleras_2_Escaleras_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Escaleras_A/Escaleras_A_Escaleras_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Escaleras_D/Escaleras_D_Escaleras_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Escalon/Escalon_Escaleras_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Escalon/Escalon_Escaleras_B_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Maceta/Maceta_Muros_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Manilla_S/Manilla_S_Manilla_P_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Manilla_S_001/Manilla_S_001_Manilla_P_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Manilla_S_2_001/Manilla_S_2_001_Manilla_P_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Manilla_p/Manilla_p_Manilla_P_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Manilla_p_001/Manilla_p_001_Manilla_P_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Marco_puerta/Marco_puerta_Marco_Puerta_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Marco_puerta_001/Marco_puerta_001_Marco_Puerta_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Muro_1/Muro_1_Muros_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Muro_2/Muro_2_Muros_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Muro_3/Muro_3_Muros_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Muro_atr/Muro_atr_Muros_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Pared_Piso_A/Pared_Piso_A_Pared_Piso_A_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Plane/Plane_Suelo_H_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Puerta/Puerta_Cristal_001_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Puerta/Puerta_Puerta_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Puerta_001/Puerta_001_Puerta_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Suelo_Piso_B/Suelo_Piso_B_Suelo_Piso_A_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Suelo_piso_A/Suelo_piso_A_Suelo_Piso_A_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Tierra_G/Tierra_G_Cesped_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Tierra_P/Tierra_P_Ces_Maceta_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Timbre/Timbre_Telefonillo_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Ventana/Ventana_Cristal_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Ventana/Ventana_Ventana_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Ventana_001/Ventana_001_Cristal_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Ventana_001/Ventana_001_Ventana_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Ventana_002/Ventana_002_Cristal_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Ventana_002/Ventana_002_Ventana_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Ventana_003/Ventana_003_Cristal_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Ventana_003/Ventana_003_Ventana_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Ventana_004/Ventana_004_Cristal_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Ventana_004/Ventana_004_Ventana_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Ventana_005/Ventana_005_Cristal_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Ventana_005/Ventana_005_Ventana_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Ventana_A/Ventana_A_Ventana_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Ventana_A_001/Ventana_A_001_Ventana_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Ventana_A_003/Ventana_A_003_Ventana_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Ventana_A_004/Ventana_A_004_Ventana_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Ventana_A_005/Ventana_A_005_Ventana_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Ventana_A_007/Ventana_A_007_Ventana_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/Ventana_A_008/Ventana_A_008_Ventana_0": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/fb6928b9f6e4420a89b4f873a49290b8_fbx/RootNode/post/post_Ventana_0": {
+"generate/physics": true
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

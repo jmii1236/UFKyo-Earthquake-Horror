@@ -32,6 +32,27 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:bigWalls": {
+"generate/physics": true
+},
+"PATH:cover": {
+"generate/physics": true
+},
+"PATH:doorEntrance": {
+"generate/physics": true
+},
+"PATH:floor": {
+"generate/physics": true
+},
+"PATH:innerFlags": {
+"generate/physics": true
+},
+"PATH:insideTables": {
+"generate/physics": true
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
